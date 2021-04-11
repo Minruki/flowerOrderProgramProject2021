@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 import flowerOrderProgramProject.dto.Customer_information;
-
+import flowerOrderProgramProject.exception.InvalidCheckException;
 
 @SuppressWarnings("serial")
 public class CustomerPanel extends JPanel {
@@ -21,9 +21,6 @@ public class CustomerPanel extends JPanel {
 	private JLabel lblmembership;
 	private JTextField tfMembership_title;
 
-	/**
-	 * Create the panel.
-	 */
 	public CustomerPanel() {
 
 		initialize();
@@ -74,6 +71,19 @@ public class CustomerPanel extends JPanel {
 		add(tfMembership_title);
 	}
 
+	public void clearTf() {
+		tfid.setText("");
+		tfMember_name.setText("");
+		tfPhone_number.setText("");
+		tfCumulative_amount.setText("");
+		tfMembership_title.setText("");
+
+		if (!tfid.isEditable()) {
+			tfid.setEditable(true);
+		}
+
+	}
+
 	public Customer_information getcustomer_information() {
 		String id = tfid.getText().trim();
 		String Member_name = tfMember_name.getText().trim();
@@ -91,12 +101,14 @@ public class CustomerPanel extends JPanel {
 		tfMembership_title.setText(customer_information.getMembership_title());
 	}
 
-	public void clearTf() {
-		tfid.setText("");
-		tfMember_name.setText("");
-		tfPhone_number.setText("");
-		tfCumulative_amount.setText("");
-		tfMembership_title.setText("");
+////	@Override
+////	public void validCheck() {
+////		if (tfid.getText().contentEquals("") || tfMember_name.getText().equals("")
+////				|| tfPhone_number.getText().equals("") || tfPhone_number.getText().equals("")
+////				|| tfCumulative_amount.getText().equals("") || tfMembership_title.getText().equals("")) {
+////			throw new InvalidCheckException();
+////
+////		}
+//	}
 
-	}
 }

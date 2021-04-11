@@ -16,11 +16,12 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import flowerOrderProgramProject.panel.Flowerpricelist;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Detailview extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -53,15 +54,37 @@ public class Detailview extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 2, 10, 20));
 		
+		JPanel panel_5 = new JPanel();
+		panel.add(panel_5);
+		
+		JPanel panel_6 = new JPanel();
+		panel.add(panel_6);
+		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
+		
 		JButton btnAdd = new JButton("추가");
-		panel.add(btnAdd);
+		panel_6.add(btnAdd);
 		
 		JButton btnCancel = new JButton("취소");
-		panel.add(btnCancel);
+		panel_6.add(btnCancel);
+		
+		JPanel panel_4 = new JPanel();
+		contentPane.add(panel_4);
+		
+		JLabel lblNewLabel_1 = new JLabel("l");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		panel_4.add(lblNewLabel_1);
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.add(panel_2);
+		panel_2.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		panel_2.add(lblNewLabel, BorderLayout.CENTER);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "List view", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel_1);
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "List view", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JList list = new JList();
@@ -78,30 +101,5 @@ public class Detailview extends JFrame {
 		
 		JButton btnNewButton_2 = new JButton("삭제");
 		panel_3.add(btnNewButton_2);
-		
-		table = new JTable();
-		panel_1.add(table, BorderLayout.WEST);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{1, 2, 3, 4, 5},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-			},
-			new String[] {
-				"\uBC88\uD638", "\uAF43 \uCF54\uB4DC", "\uAF43 \uC774\uB984", "\uB2E8\uAC00", "New column"
-			}
-		));
-		
-		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2);
-		panel_2.setLayout(new BorderLayout(0, 0));
 	}
 }

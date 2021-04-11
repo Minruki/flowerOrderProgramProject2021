@@ -12,11 +12,15 @@ import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import javax.swing.plaf.PanelUI;
 
+import flowerOrderProgramProject.dto.Flower_information;
+
+@SuppressWarnings("serial")
 public class Flowerpricelist extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField tfFlowerCode;
+	private JTextField tfFlowerName;
+	private JTextField tfFlowerPrice;
 
 	/**
 	 * Create the panel.
@@ -29,26 +33,29 @@ public class Flowerpricelist extends JPanel {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(lblNewLabel);
 		
-		textField = new JTextField();
-		add(textField);
-		textField.setColumns(10);
+		tfFlowerCode = new JTextField();
+		add(tfFlowerCode);
+		tfFlowerCode.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("꽃 이름(flower name)");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(lblNewLabel_1);
 		
-		textField_1 = new JTextField();
-		add(textField_1);
-		textField_1.setColumns(10);
+		tfFlowerName = new JTextField();
+		add(tfFlowerName);
+		tfFlowerName.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("가격(flower price)");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(lblNewLabel_2);
 		
-		textField_2 = new JTextField();
-		add(textField_2);
-		textField_2.setColumns(10);
+		tfFlowerPrice = new JTextField();
+		add(tfFlowerPrice);
+		tfFlowerPrice.setColumns(10);
 
 	}
+
+
+
 
 }

@@ -58,6 +58,7 @@ public class OrderPage extends JFrame {
 	private JList list;
 //	private JDateChooser dateChooser;
 	private JTextArea textArea;
+	private JPanel panel;
 
 
 	public OrderPage() {
@@ -168,6 +169,9 @@ public class OrderPage extends JFrame {
 		
 		textArea = new JTextArea();
 		orderList.add(textArea);
+		
+		panel = new JPanel();
+		writePanel.add(panel);
 		
 		gubunPanel = new JPanel();
 		gubunPanel.setBackground(Color.PINK);

@@ -12,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
 
 public class SearchPage extends JFrame {
 
@@ -62,24 +63,30 @@ public class SearchPage extends JFrame {
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		panel_1.add(lblNewLabel);
-		
 		textField = new JTextField();
 		panel_1.add(textField);
-		textField.setColumns(10);
+		textField.setColumns(30);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JButton btnNewButton_2 = new JButton("Search");
 		panel_1.add(btnNewButton_2);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		
+		JPanel panel_5 = new JPanel();
+		panel_2.add(panel_5);
+		
 		table = new JTable();
+		panel_5.add(table);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"ono", "order_number", "order_date", "id", "member_name", "phone_number", "membership", "flower_code", "flower_name"},
-				{null, null, null, null, "", null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
@@ -109,7 +116,9 @@ public class SearchPage extends JFrame {
 		table.getColumnModel().getColumn(5).setPreferredWidth(109);
 		table.getColumnModel().getColumn(6).setPreferredWidth(106);
 		table.getColumnModel().getColumn(7).setPreferredWidth(89);
-		panel_2.add(table);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		panel_2.add(scrollPane);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);

@@ -26,17 +26,7 @@ public class Customer_information {
 		this.membership_title = membership_title;
 	}
 
-	public Customer_information(int i) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Customer_information(String string, int i) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Customer_information(int i, String string) {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	/**
 	 * @return the id
