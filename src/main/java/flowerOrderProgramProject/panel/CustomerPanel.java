@@ -9,6 +9,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.exception.InvalidCheckException;
 
 @SuppressWarnings("serial")
@@ -71,18 +72,7 @@ public class CustomerPanel extends JPanel {
 		add(tfMembership_title);
 	}
 
-	public void clearTf() {
-		tfid.setText("");
-		tfMember_name.setText("");
-		tfPhone_number.setText("");
-		tfCumulative_amount.setText("");
-		tfMembership_title.setText("");
 
-		if (!tfid.isEditable()) {
-			tfid.setEditable(true);
-		}
-
-	}
 
 	public Customer_information getcustomer_information() {
 		String id = tfid.getText().trim();
@@ -100,15 +90,52 @@ public class CustomerPanel extends JPanel {
 		tfCumulative_amount.setText(customer_information.getCumulative_amount() + "");
 		tfMembership_title.setText(customer_information.getMembership_title());
 	}
+	public void clearTf() {
+		tfid.setText("");
+		tfMember_name.setText("");
+		tfPhone_number.setText("");
+		tfCumulative_amount.setText("");
+		tfMembership_title.setText("");
+		
+		if (!tfid.isEditable()) {
+			tfid.setEditable(true);
+		}
+		
+	}
+	
 
-////	@Override
-////	public void validCheck() {
-////		if (tfid.getText().contentEquals("") || tfMember_name.getText().equals("")
-////				|| tfPhone_number.getText().equals("") || tfPhone_number.getText().equals("")
-////				|| tfCumulative_amount.getText().equals("") || tfMembership_title.getText().equals("")) {
-////			throw new InvalidCheckException();
-////
-////		}
-//	}
+	public void setItem(Customer_information item) {
+		tfid.setText(String.valueOf(item.getId()));
+		tfMember_name.setText(item.getMember_name());
+		tfPhone_number.setText(item.getPhone_number());
+		tfCumulative_amount.setText(item.getCumulative_amount() + "");
+		tfMembership_title.setText("");
+		
+		tfid.setEditable(false);
+	}
+	
+	public Customer_information getItem() {
+		validCheck();
+		String id = tfid.getText().trim();
+		String Member_name = tfMember_name.getText().trim();
+		String Phone_number = tfPhone_number.getText().trim();
+		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
+		String Membership_title = tfMembership_title.getText().trim();
+		
+		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
+		
+	}
+
+	private void validCheck() {
+		if (tfid.getText().contentEquals("") 
+				|| tfMember_name.getText().equals("")
+				|| tfPhone_number.getText().equals("")
+				|| tfCumulative_amount.getText().equals("")
+				|| tfMembership_title.getText().equals("")
+				) {
+			throw new InvalidCheckException();
+		}		
+		
+	}
 
 }

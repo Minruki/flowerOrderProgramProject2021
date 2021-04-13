@@ -43,6 +43,10 @@ public class ChooseFlowers extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseFlowers() {
+		initialize();
+	}
+	private void initialize() {
+		setTitle("꽃 선택하는 페이지");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 913, 549);
 		contentPane = new JPanel();

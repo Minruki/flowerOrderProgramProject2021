@@ -63,7 +63,7 @@ public class OrderPage extends JFrame {
 		initialize();
 	}
 	private void initialize() {
-		setTitle("OrderProgramMain");
+		setTitle("Order Program Main");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(300, 300, 900, 500);
 		contentPane = new JPanel();
