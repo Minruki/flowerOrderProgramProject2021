@@ -1,20 +1,15 @@
 package flowerOrderProgramProject.panel;
 
-import javax.swing.JPanel;
 import java.awt.GridLayout;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import java.awt.FlowLayout;
-import javax.swing.JTable;
-import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
-import javax.swing.SwingConstants;
+
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
-import javax.swing.plaf.PanelUI;
 
 import flowerOrderProgramProject.dto.Flower_information;
+import flowerOrderProgramProject.exception.InvalidCheckException;
 
 @SuppressWarnings("serial")
 public class Flowerpricelist extends JPanel {
@@ -54,8 +49,43 @@ public class Flowerpricelist extends JPanel {
 		tfFlowerPrice.setColumns(10);
 
 	}
+	
+	public void clearTf() {
+		tfFlowerCode.setText("");
+		tfFlowerName.setText("");
+		tfFlowerPrice.setText("");
+		
+		if (!tfFlowerCode.isEditable()) {
+			tfFlowerCode.setEditable(true);
+		}
+	}
 
+	public void setItem(Flower_information item) {
+		tfFlowerCode.setText(String.valueOf(item.getFlower_code()));
+		tfFlowerName.setText(item.getFlower_name());
+		tfFlowerPrice.setText(item.getFlower_price() + "");
+		
+		tfFlowerCode.setEditable(false);
+	}
+	
+	public Flower_information getItem() {
+		validCheck();
+		String FlowerCode = tfFlowerCode.getText().trim();
+		String FlowerName = tfFlowerName.getText().trim();
+		int FlowerPrice = Integer.parseInt(tfFlowerPrice.getText().trim());
+		
+		return new Flower_information(FlowerCode, FlowerName, FlowerPrice);
+		
+	}
 
+	private void validCheck() {
+		if (tfFlowerCode.getText().contentEquals("") 
+				|| tfFlowerName.getText().equals("")
+				|| tfFlowerPrice.getText().equals("")) {
+			throw new InvalidCheckException();
+		}		
+		
+	}
 
 
 }

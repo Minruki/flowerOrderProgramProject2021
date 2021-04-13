@@ -1,4 +1,4 @@
-package flowerOrderProgramProject.control;
+package flowerOrderProgramProject.ui.content;
 
 import java.awt.SystemColor;
 

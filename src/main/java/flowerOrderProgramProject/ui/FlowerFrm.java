@@ -14,10 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import flowerOrderProgramProject.control.CustomerInfo;
-import flowerOrderProgramProject.control.Detailview;
-import flowerOrderProgramProject.control.OrderPage;
-import flowerOrderProgramProject.control.SearchPage;
+import flowerOrderProgramProject.ui.content.CustomerInfo;
+import flowerOrderProgramProject.ui.content.Detailview;
+import flowerOrderProgramProject.ui.content.OrderPage;
+import flowerOrderProgramProject.ui.content.SearchPage_info;
+import flowerOrderProgramProject.ui.content.SearchPage_main;
 
 // 로그인 성공 후 메인 화면
  
@@ -74,7 +75,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	JButton btnSD = new JButton("View All");
     	btnSD.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
-    			SearchPage frame = new SearchPage();
+    			SearchPage_main frame = new SearchPage_main();
 				frame.setVisible(true);
     		}
     		

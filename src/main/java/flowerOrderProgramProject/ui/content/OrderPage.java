@@ -1,4 +1,4 @@
-package flowerOrderProgramProject.control;
+package flowerOrderProgramProject.ui.content;
 
 
 import java.awt.BorderLayout;
@@ -18,6 +18,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import com.toedter.calendar.JDateChooser;
 
 public class OrderPage extends JFrame {
 
@@ -40,8 +41,6 @@ public class OrderPage extends JFrame {
 	private JLabel lblchoice;
 	private JLabel backgroundTop;
 	private JTextField tfNo;
-
-	private JTextField tfId;
 	private JTextField tfOrderNo;
 	private JLabel backgroundBottom;
 	private JPanel gubunPanel;
@@ -56,9 +55,8 @@ public class OrderPage extends JFrame {
 	private JButton btnSave;
 	private JTextField resultPrice;
 	private JList list;
-//	private JDateChooser dateChooser;
-	private JTextArea textArea;
 	private JPanel panel;
+	private JTextField textField;
 
 
 	public OrderPage() {
@@ -143,14 +141,8 @@ public class OrderPage extends JFrame {
 		writePanel.add(tfOrderNo);
 		tfOrderNo.setColumns(10);
 		
-//		dateChooser = new JDateChooser();
-//		writePanel.add(dateChooser);
-//		
-
-		
-		tfId = new JTextField();
-		writePanel.add(tfId);
-		tfId.setColumns(10);
+		JDateChooser dateChooser = new JDateChooser();
+		writePanel.add(dateChooser);
 		
 		flowerChoice = new JPanel();
 		writePanel.add(flowerChoice);
@@ -167,8 +159,9 @@ public class OrderPage extends JFrame {
 		list = new JList();
 		orderList.add(list);
 		
-		textArea = new JTextArea();
-		orderList.add(textArea);
+		textField = new JTextField();
+		orderList.add(textField);
+		textField.setColumns(10);
 		
 		panel = new JPanel();
 		writePanel.add(panel);
@@ -225,9 +218,4 @@ public class OrderPage extends JFrame {
 		background2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 	}
-	
-		
-
-
-	
 }

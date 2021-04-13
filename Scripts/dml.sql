@@ -75,7 +75,7 @@ select id, member_name, phone_number from customer_information cus where id = 'l
 
 -- insert test
 select * from flower_information;
-
+select id,member_name,phone_number,cumulative_amount,membership_title from customer_information ci ;
 DELETE FROM flower_information
 where flower_code ='A011';
 -- 
@@ -86,4 +86,4 @@ select ono, order_number, order_date, op.id as id, order_count, choice,
   from order_program op 
   	join customer_information ci on op.id= ci.id
   	join membership_discount md on ci.membership_title = md.membership_title 
-  	join flower_information fi on op.flower_code = fi.flower_code ;
+  	join flower_information fi on op.flower_code = fi.flower_code;

@@ -62,7 +62,7 @@ public class Flower_information {
 	 * @return the flower_price
 	 */
 	public int getFlower_price() {
-		return 0;
+		return flower_price;
 	}
 
 	/**
