@@ -17,9 +17,6 @@ public class Flowerpricelist extends JPanel {
 	private JTextField tfFlowerName;
 	private JTextField tfFlowerPrice;
 
-	/**
-	 * Create the panel.
-	 */
 	public Flowerpricelist() {
 		setBorder(new TitledBorder(null, "Flower Add", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setLayout(new GridLayout(0, 2, 10, 20));

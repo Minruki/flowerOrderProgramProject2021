@@ -9,18 +9,34 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import flowerOrderProgramProject.dto.Customer_information;
 import flowerOrderProgramProject.panel.CustomerPanel;
+import flowerOrderProgramProject.service.Customer_informationService;
+
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class CustomerInfo extends JFrame {
-
+private Customer_informationService service;
+	
 	private JPanel contentPane;
 	private JButton btnSave; 
+	private CustomerPanel panel;
 
+	
 	public CustomerInfo() {
+		setService();
 		initialize();
+		
 	}
+	
+	protected void setService() {
+		service = new Customer_informationService();
+	}
+	
+	
 	private void initialize() {
 		setTitle("customer information");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -37,30 +53,65 @@ public class CustomerInfo extends JFrame {
 		panel.setBounds(235, 56, 310, 222);
 		contentPane.add(panel);
 		
-		JPanel panel_1 = new JPanel();
-		panel.add(panel_1);
+		JPanel empty = new JPanel();
+		panel.add(empty);
 		
-		JPanel panel_2 = new JPanel();
-		panel.add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
+		JPanel panelbuttons = new JPanel();
+		panel.add(panelbuttons);
+		panelbuttons.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JButton btnNewButton = new JButton("Save");
-		panel_2.add(btnNewButton);
+		JButton btnSaveInfo = new JButton("Save");
+		btnSaveInfo.addActionListener(new ActionListener() {
+			
+		public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnSaveInfo(e);
+			}
+		});
+		panelbuttons.add(btnSaveInfo);
 		
-		JButton btnNewButton_1 = new JButton("Del");
-		panel_2.add(btnNewButton_1);
+		JButton btnCancel = new JButton("Clear");
+		btnCancel.addActionListener(new ActionListener() {
+		
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnCancel(e);
+			}
+		});
+		panelbuttons.add(btnCancel);
+		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
 		lblNewLabel.setBounds(0, -187, 1002, 735);
 		contentPane.add(lblNewLabel);
 	}
-	public JButton getBtnSave() {
-		return btnSave;
-	}
-	public void setBtnSave(JButton btnSave) {
-		this.btnSave = btnSave;
+
+	
+	protected void actionPerformedBtnSaveInfo(ActionEvent e) {
+		String customer = btnSave.getText();
+		
+		String ci = customer.substring(0, customer.indexOf(","));
+		String mn = customer.substring(customer.indexOf(","));
+		String pn = customer.substring(customer.indexOf(","));
+		int ca = Integer.parseInt(customer.substring(customer.indexOf(",")));
+		String mt = customer.substring(customer.indexOf(",")+1);
+		
+		String customer_id = ci;
+		String member_name = mn;
+		String phone_number = pn;
+		int cumulative_amount = ca;
+		String membership_title = mt;
+		
+		Customer_information c = new Customer_information(customer_id, member_name, phone_number, cumulative_amount, membership_title);
+		System.out.println(c);
+		service = new Customer_informationService();
+		service.addCustomer_information(c);
+				
 	}
 	
+	protected void actionPerformedBtnCancel(ActionEvent e) {
+		panel.clearTf();
+		
+	}
+
 	
 }

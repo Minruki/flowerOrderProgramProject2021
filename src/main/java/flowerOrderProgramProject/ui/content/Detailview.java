@@ -28,8 +28,8 @@ import java.awt.event.ActionEvent;
 public class Detailview extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private Flowerpricelist panel;
+	private JTextField tfResult;
+	private Flowerpricelist paneltable;
 	private Flower_informationService service;
 
 	/**
@@ -59,16 +59,16 @@ public class Detailview extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		panel = new Flowerpricelist();
-		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 2, 10, 20));
+		paneltable = new Flowerpricelist();
+		contentPane.add(paneltable);
+		paneltable.setLayout(new GridLayout(0, 2, 10, 20));
 		
-		JPanel panel_5 = new JPanel();
-		panel.add(panel_5);
+		JPanel empty = new JPanel();
+		paneltable.add(empty);
 		
-		JPanel panel_6 = new JPanel();
-		panel.add(panel_6);
-		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
+		JPanel panelAddandCancel = new JPanel();
+		paneltable.add(panelAddandCancel);
+		panelAddandCancel.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton btnAdd = new JButton("추가");
 		btnAdd.addActionListener(new ActionListener() {
@@ -76,7 +76,7 @@ public class Detailview extends JFrame {
 				actionPerformedBtnAdd(e);
 			}
 		});
-		panel_6.add(btnAdd);
+		panelAddandCancel.add(btnAdd);
 		
 		JButton btnCancel = new JButton("취소");
 		btnCancel.addActionListener(new ActionListener() {
@@ -84,63 +84,63 @@ public class Detailview extends JFrame {
 				actionPerformedBtnCancel(e);
 			}
 		});
-		panel_6.add(btnCancel);
+		panelAddandCancel.add(btnCancel);
 		
 		JPanel panel_4 = new JPanel();
 		contentPane.add(panel_4);
 		
-		JLabel lblNewLabel_1 = new JLabel("l");
-		lblNewLabel_1.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
-		panel_4.add(lblNewLabel_1);
+		JLabel lblimg2 = new JLabel("");
+		lblimg2.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		panel_4.add(lblimg2);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
-		panel_2.add(lblNewLabel, BorderLayout.CENTER);
+		JLabel lblimg = new JLabel("");
+		lblimg.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		panel_2.add(lblimg, BorderLayout.CENTER);
 		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "List view", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_1.setLayout(new BorderLayout(0, 0));
+		JPanel ListViewPanel = new JPanel();
+		contentPane.add(ListViewPanel);
+		ListViewPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "List view", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		ListViewPanel.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_3 = new JPanel();
-		panel_1.add(panel_3, BorderLayout.SOUTH);
+		JPanel FunctionPanel = new JPanel();
+		ListViewPanel.add(FunctionPanel, BorderLayout.SOUTH);
 		
-		JButton btnNewButton = new JButton("수정");
-		panel_3.add(btnNewButton); 
+		JButton btnModify = new JButton("수정");
+		FunctionPanel.add(btnModify); 
 		
-		JButton btnNewButton_1 = new JButton("저장");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnSave = new JButton("저장");
+		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_1(e);
 			}
 		});
-		panel_3.add(btnNewButton_1);
+		FunctionPanel.add(btnSave);
 		
-		JButton btnNewButton_2 = new JButton("삭제");
-		panel_3.add(btnNewButton_2);
+		JButton btnDel = new JButton("삭제");
+		FunctionPanel.add(btnDel);
 		
-		textField = new JTextField();
-		panel_1.add(textField, BorderLayout.CENTER);
-		textField.setColumns(10);
+		tfResult = new JTextField();
+		ListViewPanel.add(tfResult, BorderLayout.CENTER);
+		tfResult.setColumns(10);
 	}
 	
 	private void setTextField(String f) {
-		textField.setText(f+"");
+		tfResult.setText(f+"");
 	}
 	
 	
 	
 	protected void actionPerformedBtnAdd(ActionEvent e) {
-		Flower_information flower = panel.getItem();
+		Flower_information flower = paneltable.getItem();
 //		
 		setTextField(String.format("%s,%s,%s", flower.getFlower_code(),flower.getFlower_name(),flower.getFlower_price()));
 	}
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
-		String flower = textField.getText();	
+		String flower = tfResult.getText();	
 		
 		String fc = flower.substring(0, flower.indexOf(","));
 		String fn = flower.substring(flower.indexOf(",")+1, flower.lastIndexOf(","));
@@ -156,6 +156,6 @@ public class Detailview extends JFrame {
 		service.addFlower_information(f);
 	}
 	protected void actionPerformedBtnCancel(ActionEvent e) {
-		panel.clearTf();
+		paneltable.clearTf();
 	}
 }

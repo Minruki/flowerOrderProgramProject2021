@@ -22,12 +22,9 @@ public class CustomerPanel extends JPanel {
 	private JLabel lblmembership;
 	private JTextField tfMembership_title;
 
+	
+
 	public CustomerPanel() {
-
-		initialize();
-	}
-
-	private void initialize() {
 		setBorder(new TitledBorder(null, "\uD68C\uC6D0 \uC815\uBCF4", TitledBorder.LEFT, TitledBorder.TOP, null, null));
 		setLayout(new GridLayout(0, 2, 10, 10));
 
@@ -72,24 +69,6 @@ public class CustomerPanel extends JPanel {
 		add(tfMembership_title);
 	}
 
-
-
-	public Customer_information getcustomer_information() {
-		String id = tfid.getText().trim();
-		String Member_name = tfMember_name.getText().trim();
-		String Phone_number = tfPhone_number.getText().trim();
-		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
-		String Membership_title = tfMembership_title.getText().trim();
-		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
-	}
-
-	public void setcustomer_information(Customer_information customer_information) {
-		tfid.setText(customer_information.getId());
-		tfMember_name.setText(customer_information.getMember_name());
-		tfPhone_number.setText(customer_information.getPhone_number());
-		tfCumulative_amount.setText(customer_information.getCumulative_amount() + "");
-		tfMembership_title.setText(customer_information.getMembership_title());
-	}
 	public void clearTf() {
 		tfid.setText("");
 		tfMember_name.setText("");
@@ -101,6 +80,25 @@ public class CustomerPanel extends JPanel {
 			tfid.setEditable(true);
 		}
 		
+	}
+	
+
+	public Customer_information getcustomer_information() {
+		String id = tfid.getText().trim();
+		String Member_name = tfMember_name.getText().trim();
+		String Phone_number = tfPhone_number.getText().trim();
+		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
+		String Membership_title = tfMembership_title.getText().trim();
+		
+		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
+	}
+
+	public void setcustomer_information(Customer_information customer_information) {
+		tfid.setText(customer_information.getId());
+		tfMember_name.setText(customer_information.getMember_name());
+		tfPhone_number.setText(customer_information.getPhone_number());
+		tfCumulative_amount.setText(customer_information.getCumulative_amount() + "");
+		tfMembership_title.setText(customer_information.getMembership_title());
 	}
 	
 
