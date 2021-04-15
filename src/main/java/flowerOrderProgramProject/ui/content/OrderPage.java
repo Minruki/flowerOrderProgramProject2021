@@ -12,14 +12,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
 import com.toedter.calendar.JDateChooser;
 
+
+@SuppressWarnings("serial")
 public class OrderPage extends JFrame {
 
 	private JPanel contentPane;
@@ -54,10 +56,10 @@ public class OrderPage extends JFrame {
 	private JPanel saveBtnPanel;
 	private JButton btnSave;
 	private JTextField resultPrice;
-	private JList list;
 	private JPanel panel;
 	private JTextField textField;
-
+	private JTextField textField_1;
+	private JDateChooser dateChooser;
 
 	public OrderPage() {
 		initialize();
@@ -156,15 +158,17 @@ public class OrderPage extends JFrame {
 		writePanel.add(orderList);
 		orderList.setLayout(new BoxLayout(orderList, BoxLayout.X_AXIS));
 		
-		list = new JList();
-		orderList.add(list);
-		
 		textField = new JTextField();
 		orderList.add(textField);
 		textField.setColumns(10);
 		
 		panel = new JPanel();
 		writePanel.add(panel);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		textField_1 = new JTextField();
+		panel.add(textField_1);
+		textField_1.setColumns(10);
 		
 		gubunPanel = new JPanel();
 		gubunPanel.setBackground(Color.PINK);
@@ -217,5 +221,12 @@ public class OrderPage extends JFrame {
 		lblNewLabel = new JLabel("");
 		background2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
+	}
+	
+	public JDateChooser getDateChooser() {
+		return dateChooser;
+	}
+	public void setDateChooser(JDateChooser dateChooser) {
+		this.dateChooser = dateChooser;
 	}
 }

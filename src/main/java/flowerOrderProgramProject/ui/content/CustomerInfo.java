@@ -97,7 +97,7 @@ private Customer_informationService service;
 	}
 	
 	protected void actionPerformedBtnCancel(ActionEvent e) {
-		panel.clearTf();
+		panel_1.clearTf();
 		
 	}
 
