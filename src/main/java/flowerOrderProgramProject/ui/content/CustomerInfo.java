@@ -24,12 +24,11 @@ private Customer_informationService service;
 	private JPanel contentPane;
 	private JButton btnSave; 
 	private CustomerPanel panel;
+	private CustomerPanel panel_1;
 
 	
 	public CustomerInfo() {
-		setService();
 		initialize();
-		
 	}
 	
 	protected void setService() {
@@ -48,16 +47,16 @@ private Customer_informationService service;
 		JLabel label = new JLabel("");
 		contentPane.setLayout(null);
 		
-		CustomerPanel panel = new CustomerPanel();
-		panel.setBackground(SystemColor.control);
-		panel.setBounds(235, 56, 310, 222);
-		contentPane.add(panel);
+		panel_1 = new CustomerPanel();
+		panel_1.setBackground(SystemColor.control);
+		panel_1.setBounds(235, 56, 310, 222);
+		contentPane.add(panel_1);
 		
 		JPanel empty = new JPanel();
-		panel.add(empty);
+		panel_1.add(empty);
 		
 		JPanel panelbuttons = new JPanel();
-		panel.add(panelbuttons);
+		panel_1.add(panelbuttons);
 		panelbuttons.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton btnSaveInfo = new JButton("Save");
@@ -87,24 +86,13 @@ private Customer_informationService service;
 
 	
 	protected void actionPerformedBtnSaveInfo(ActionEvent e) {
-		String customer = btnSave.getText();
 		
-		String ci = customer.substring(0, customer.indexOf(","));
-		String mn = customer.substring(customer.indexOf(","));
-		String pn = customer.substring(customer.indexOf(","));
-		int ca = Integer.parseInt(customer.substring(customer.indexOf(",")));
-		String mt = customer.substring(customer.indexOf(",")+1);
 		
-		String customer_id = ci;
-		String member_name = mn;
-		String phone_number = pn;
-		int cumulative_amount = ca;
-		String membership_title = mt;
-		
-		Customer_information c = new Customer_information(customer_id, member_name, phone_number, cumulative_amount, membership_title);
-		System.out.println(c);
 		service = new Customer_informationService();
-		service.addCustomer_information(c);
+		
+		service.addCustomer_information(panel_1.getItem());
+	
+		dispose();
 				
 	}
 	
