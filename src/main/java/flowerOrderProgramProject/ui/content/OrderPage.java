@@ -6,6 +6,9 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -14,11 +17,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import com.toedter.calendar.JDateChooser;
+
+import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Order_program;
+import flowerOrderProgramProject.service.Customer_informationService;
 
 
 @SuppressWarnings("serial")
@@ -50,20 +56,27 @@ public class OrderPage extends JFrame {
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JPanel orderList;
 	private JPanel flowerChoice;
-	private JTextField textField_2;
+	private JTextField tfId;
 	private JPanel background2;
 	private JPanel panel_4;
 	private JPanel saveBtnPanel;
 	private JButton btnSave;
-	private JTextField resultPrice;
+	private JTextField tfresultPrice;
 	private JPanel panel;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField tfOL;
+	private JTextField tfList;
 	private JDateChooser dateChooser;
+	private Customer_informationService service;
+	private JDateChooser dateChooser_1;
 
 	public OrderPage() {
 		initialize();
 	}
+	
+	protected void setService() {
+		service = new Customer_informationService();
+	}
+	
 	private void initialize() {
 		setTitle("Order Program Main");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -143,32 +156,32 @@ public class OrderPage extends JFrame {
 		writePanel.add(tfOrderNo);
 		tfOrderNo.setColumns(10);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		writePanel.add(dateChooser);
+		dateChooser_1 = new JDateChooser();
+		writePanel.add(dateChooser_1);
 		
 		flowerChoice = new JPanel();
 		writePanel.add(flowerChoice);
 		flowerChoice.setLayout(new BoxLayout(flowerChoice, BoxLayout.X_AXIS));
 		
-		textField_2 = new JTextField();
-		flowerChoice.add(textField_2);
-		textField_2.setColumns(10);
+		tfId = new JTextField();
+		flowerChoice.add(tfId);
+		tfId.setColumns(10);
 		
 		orderList = new JPanel();
 		writePanel.add(orderList);
 		orderList.setLayout(new BoxLayout(orderList, BoxLayout.X_AXIS));
 		
-		textField = new JTextField();
-		orderList.add(textField);
-		textField.setColumns(10);
+		tfOL = new JTextField();
+		orderList.add(tfOL);
+		tfOL.setColumns(10);
 		
 		panel = new JPanel();
 		writePanel.add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		textField_1 = new JTextField();
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		tfList = new JTextField();
+		panel.add(tfList);
+		tfList.setColumns(10);
 		
 		gubunPanel = new JPanel();
 		gubunPanel.setBackground(Color.PINK);
@@ -183,16 +196,24 @@ public class OrderPage extends JFrame {
 		rdbtnNewRadioButton_1.setBackground(Color.PINK);
 		gubunPanel.add(rdbtnNewRadioButton_1);
 		
-		resultPrice = new JTextField();
-		writePanel.add(resultPrice);
-		resultPrice.setColumns(10);
+		tfresultPrice = new JTextField();
+		writePanel.add(tfresultPrice);
+		tfresultPrice.setColumns(10);
 		
 		saveBtnPanel = new JPanel();
 		saveBtnPanel.setBackground(Color.PINK);
 		writePanel.add(saveBtnPanel);
 		
 		btnSave = new JButton("SAVE");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnSave(arg0);
+			}
+		});
 		saveBtnPanel.add(btnSave);
+		
+		JButton btnNewButton = new JButton("New button");
+		saveBtnPanel.add(btnNewButton);
 		
 		backgroundBottom = new JLabel("");
 		writePanel.add(backgroundBottom);
@@ -223,10 +244,52 @@ public class OrderPage extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 	}
 	
-	public JDateChooser getDateChooser() {
-		return dateChooser;
+	public void clearTf() {
+		tfNo.setText("");
+		tfOrderNo.setText("");
+		dateChooser.setDate(new Date());
+		tfId.setText("");
+		tfList.setText("");
+		tfresultPrice.setText("");
+
 	}
-	public void setDateChooser(JDateChooser dateChooser) {
-		this.dateChooser = dateChooser;
+	
+	public Order_program getOrder_program() {
+		
+		//자동생성 번호 tfNo - ??
+		String order_number = tfOrderNo.getText().trim();
+		// 날짜 선택 - ??
+		Date parseDate = setDate();
+		Date order_date = parseDate;
+		
+		String id = tfId.getText().trim();
+		//꽃 선택 -?? 선택한 꽃 나오도록, A001 (꽃이름)
+		//주문 내역 - 꽃 이름(?) : 수량(?)
+		//구분 - 라디오 버튼 선택 하나만 하도록/꽃다발은 포장값 5천원 추가, 꽃바구니 1만원 추가 기능 넣기
+		//판매가 - 꽃 단가 * 수량 + 추가금액
+		
+		return new Order_program(order_number, order_date, id, flower_code, order_count, choice, sale_price);
+//		return null;
+	}
+
+	private Date setDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date parseDate = null;
+		Date order_date1 = dateChooser_1.getDate();
+		String modiDate = sdf.format(order_date1);
+		try {
+			parseDate = sdf.parse(modiDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return parseDate;
+	}
+	
+	
+	protected void actionPerformedBtnSave(ActionEvent e) {
+//		service = new Customer_informationService();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(sdf.format(dateChooser_1.getDate()));
+		
 	}
 }
