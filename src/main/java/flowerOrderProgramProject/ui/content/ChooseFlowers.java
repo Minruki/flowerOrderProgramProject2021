@@ -46,7 +46,7 @@ public class ChooseFlowers extends JFrame {
 		initialize();
 	}
 	private void initialize() {
-		setTitle("꽃 선택하는 페이지");
+		setTitle("Choose Flower");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 913, 549);
 		contentPane = new JPanel();
@@ -55,174 +55,174 @@ public class ChooseFlowers extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(2, 5, 10, 20));
 		
-		JPanel panel1 = new JPanel();
-		panel1.setBackground(Color.WHITE);
-		panel1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A001(Rose)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel1);
-		panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JPanel panelRose = new JPanel();
+		panelRose.setBackground(Color.WHITE);
+		panelRose.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A001(Rose)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelRose);
+		panelRose.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblRose = new JLabel("");
 		lblRose.setHorizontalAlignment(SwingConstants.LEFT);
 		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\장미9.jpg"));
-		panel1.add(lblRose);
+		panelRose.add(lblRose);
 		
-		JCheckBox checkbox1 = new JCheckBox("장미");
-		checkbox1.setVerticalAlignment(SwingConstants.BOTTOM);
-		checkbox1.setBackground(Color.WHITE);
-		panel1.add(checkbox1);
+		JCheckBox checkboxRose = new JCheckBox("장미");
+		checkboxRose.setVerticalAlignment(SwingConstants.BOTTOM);
+		checkboxRose.setBackground(Color.WHITE);
+		panelRose.add(checkboxRose);
 		
-		JSpinner number1 = new JSpinner();
-		panel1.add(number1);
+		JSpinner number_rose = new JSpinner();
+		panelRose.add(number_rose);
 		
-		JPanel panel2 = new JPanel();
-		panel2.setBackground(Color.WHITE);
-		panel2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A002(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel2);
+		JPanel panelRanun = new JPanel();
+		panelRanun.setBackground(Color.WHITE);
+		panelRanun.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A002(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelRanun);
 		
 		JLabel lblRanun = new JLabel("");
 		lblRanun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\라넌큘러스3.jpg"));
 		lblRanun.setHorizontalAlignment(SwingConstants.LEFT);
-		panel2.add(lblRanun);
+		panelRanun.add(lblRanun);
 		
-		JCheckBox checkbox2 = new JCheckBox("라넌큘러스");
-		checkbox1.setBackground(new Color(255, 240, 245));
-		panel2.add(checkbox2);
+		JCheckBox checkboxRanun = new JCheckBox("라넌큘러스");
+		checkboxRose.setBackground(new Color(255, 240, 245));
+		panelRanun.add(checkboxRanun);
 		
-		JSpinner number2 = new JSpinner();
-		panel2.add(number2);
+		JSpinner number_ranun = new JSpinner();
+		panelRanun.add(number_ranun);
 		
-		JPanel panel3 = new JPanel();
-		panel3.setBackground(Color.WHITE);
-		panel3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A003(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel3);
+		JPanel panelLily = new JPanel();
+		panelLily.setBackground(Color.WHITE);
+		panelLily.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A003(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelLily);
 		
-		JLabel lblBaby = new JLabel("");
-		lblBaby.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\백합3.jpg"));
-		lblBaby.setHorizontalAlignment(SwingConstants.LEFT);
-		panel3.add(lblBaby);
+		JLabel lblLily = new JLabel("");
+		lblLily.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\백합3.jpg"));
+		lblLily.setHorizontalAlignment(SwingConstants.LEFT);
+		panelLily.add(lblLily);
 		
 		JCheckBox checkbox3 = new JCheckBox("백합");
-		panel3.add(checkbox3);
+		panelLily.add(checkbox3);
 		
-		JSpinner number3 = new JSpinner();
-		panel3.add(number3);
+		JSpinner number_lily = new JSpinner();
+		panelLily.add(number_lily);
 		
-		JPanel panel4 = new JPanel();
-		panel4.setBackground(Color.WHITE);
-		panel4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A004(Tulip)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel4);
+		JPanel panelTulip = new JPanel();
+		panelTulip.setBackground(Color.WHITE);
+		panelTulip.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A004(Tulip)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelTulip);
 		
 		JLabel lblTulip = new JLabel("");
 		lblTulip.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\튤립3.jpg"));
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
-		panel4.add(lblTulip);
+		panelTulip.add(lblTulip);
 		
-		JCheckBox checkbox4 = new JCheckBox("튤립");
-		checkbox4.setBackground(new Color(255, 240, 245));
-		panel4.add(checkbox4);
+		JCheckBox checkboxTulip = new JCheckBox("튤립");
+		checkboxTulip.setBackground(new Color(255, 240, 245));
+		panelTulip.add(checkboxTulip);
 		
-		JSpinner number4 = new JSpinner();
-		panel4.add(number4);
+		JSpinner numberTulip = new JSpinner();
+		panelTulip.add(numberTulip);
 		
-		JPanel panel5 = new JPanel();
-		panel5.setBackground(Color.WHITE);
-		panel5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A005(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel5);
+		JPanel panelSun = new JPanel();
+		panelSun.setBackground(Color.WHITE);
+		panelSun.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A005(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelSun);
 		
 		JLabel lblSun = new JLabel("");
 		lblSun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\해바라기3.jpg"));
 		lblSun.setHorizontalAlignment(SwingConstants.LEFT);
-		panel5.add(lblSun);
+		panelSun.add(lblSun);
 		
-		JCheckBox checkbox5 = new JCheckBox("해바라기");
-		checkbox5.setBackground(new Color(255, 240, 245));
-		panel5.add(checkbox5);
+		JCheckBox checkboxSun = new JCheckBox("해바라기");
+		checkboxSun.setBackground(new Color(255, 240, 245));
+		panelSun.add(checkboxSun);
 		
-		JSpinner number5 = new JSpinner();
-		panel5.add(number5);
+		JSpinner numberSun = new JSpinner();
+		panelSun.add(numberSun);
 		
-		JPanel panel6 = new JPanel();
-		panel6.setBackground(Color.WHITE);
-		panel6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A006(Peony)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(panel6);
+		JPanel panelPeony = new JPanel();
+		panelPeony.setBackground(Color.WHITE);
+		panelPeony.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A006(Peony)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panelPeony);
 		
 		JLabel lblPeony = new JLabel("");
 		lblPeony.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\피오니4.jpg"));
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
-		panel6.add(lblPeony);
+		panelPeony.add(lblPeony);
 		
-		JCheckBox checkbox6 = new JCheckBox("피오니");
-		checkbox6.setBackground(new Color(255, 240, 245));
-		panel6.add(checkbox6);
+		JCheckBox checkboxPeony = new JCheckBox("피오니");
+		checkboxPeony.setBackground(new Color(255, 240, 245));
+		panelPeony.add(checkboxPeony);
 		
-		JSpinner number6 = new JSpinner();
-		panel6.add(number6);
+		JSpinner numberPeony = new JSpinner();
+		panelPeony.add(numberPeony);
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A007(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.setBackground(Color.WHITE);
-		contentPane.add(panel);
+		JPanel panelFre = new JPanel();
+		panelFre.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A007(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelFre.setBackground(Color.WHITE);
+		contentPane.add(panelFre);
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\프리지아5.jpg"));
-		label.setHorizontalAlignment(SwingConstants.LEFT);
-		panel.add(label);
+		JLabel lblFre = new JLabel("");
+		lblFre.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\프리지아5.jpg"));
+		lblFre.setHorizontalAlignment(SwingConstants.LEFT);
+		panelFre.add(lblFre);
 		
-		JCheckBox chckbxYellowColor = new JCheckBox("프리지아");
-		chckbxYellowColor.setBackground(new Color(255, 240, 245));
-		panel.add(chckbxYellowColor);
+		JCheckBox checkboxFre = new JCheckBox("프리지아");
+		checkboxFre.setBackground(new Color(255, 240, 245));
+		panelFre.add(checkboxFre);
 		
-		JSpinner spinner = new JSpinner();
-		panel.add(spinner);
+		JSpinner numberFre = new JSpinner();
+		panelFre.add(numberFre);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A008(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_1.setBackground(Color.WHITE);
-		contentPane.add(panel_1);
+		JPanel panelCarna = new JPanel();
+		panelCarna.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A008(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelCarna.setBackground(Color.WHITE);
+		contentPane.add(panelCarna);
 		
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\카네이션3.jpg"));
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_1.add(label_1);
+		JLabel lblCarna = new JLabel("");
+		lblCarna.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\카네이션3.jpg"));
+		lblCarna.setHorizontalAlignment(SwingConstants.LEFT);
+		panelCarna.add(lblCarna);
 		
-		JCheckBox chckbxRedColor = new JCheckBox("카네이션");
-		chckbxRedColor.setBackground(new Color(255, 240, 245));
-		panel_1.add(chckbxRedColor);
+		JCheckBox checkboxCarna = new JCheckBox("카네이션");
+		checkboxCarna.setBackground(new Color(255, 240, 245));
+		panelCarna.add(checkboxCarna);
 		
-		JSpinner spinner_1 = new JSpinner();
-		panel_1.add(spinner_1);
+		JSpinner numberCarna = new JSpinner();
+		panelCarna.add(numberCarna);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A009(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_2.setBackground(Color.WHITE);
-		contentPane.add(panel_2);
+		JPanel panelGyps = new JPanel();
+		panelGyps.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A009(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelGyps.setBackground(Color.WHITE);
+		contentPane.add(panelGyps);
 		
-		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\안개꽃5.jpg"));
-		label_2.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_2.add(label_2);
+		JLabel lblGyps = new JLabel("");
+		lblGyps.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\안개꽃5.jpg"));
+		lblGyps.setHorizontalAlignment(SwingConstants.LEFT);
+		panelGyps.add(lblGyps);
 		
-		JCheckBox chckbxWhiteColor = new JCheckBox("안개꽃");
-		chckbxWhiteColor.setBackground(new Color(255, 240, 245));
-		panel_2.add(chckbxWhiteColor);
+		JCheckBox checkGyps = new JCheckBox("안개꽃");
+		checkGyps.setBackground(new Color(255, 240, 245));
+		panelGyps.add(checkGyps);
 		
-		JSpinner spinner_2 = new JSpinner();
-		panel_2.add(spinner_2);
+		JSpinner numberGyps = new JSpinner();
+		panelGyps.add(numberGyps);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.PINK);
-		contentPane.add(panel_3);
-		panel_3.setLayout(null);
+		JPanel panelButton = new JPanel();
+		panelButton.setBackground(Color.PINK);
+		contentPane.add(panelButton);
+		panelButton.setLayout(null);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnBakset = new JButton("");
+		btnBakset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\button2.jpg"));
-		btnNewButton.setBounds(28, 117, 129, 113);
-		panel_3.add(btnNewButton);
+		btnBakset.setBackground(new Color(255, 255, 255));
+		btnBakset.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\button2.jpg"));
+		btnBakset.setBounds(28, 117, 129, 113);
+		panelButton.add(btnBakset);
 	}
 }

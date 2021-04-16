@@ -25,16 +25,15 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class Detailview extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfResult;
-	private Flowerpricelist paneltable;
+	private Flowerpricelist AddPanel;
 	private Flower_informationService service;
+	
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -48,10 +47,12 @@ public class Detailview extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public Detailview() {
+		initialize();
+	}
+	private void initialize() {
+		setTitle("Flower management");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 766, 534);
 		contentPane = new JPanel();
@@ -59,15 +60,15 @@ public class Detailview extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		paneltable = new Flowerpricelist();
-		contentPane.add(paneltable);
-		paneltable.setLayout(new GridLayout(0, 2, 10, 20));
+		AddPanel = new Flowerpricelist();
+		contentPane.add(AddPanel);
+		AddPanel.setLayout(new GridLayout(0, 2, 10, 20));
 		
 		JPanel empty = new JPanel();
-		paneltable.add(empty);
+		AddPanel.add(empty);
 		
 		JPanel panelAddandCancel = new JPanel();
-		paneltable.add(panelAddandCancel);
+		AddPanel.add(panelAddandCancel);
 		panelAddandCancel.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton btnAdd = new JButton("추가");
@@ -86,18 +87,18 @@ public class Detailview extends JFrame {
 		});
 		panelAddandCancel.add(btnCancel);
 		
-		JPanel panel_4 = new JPanel();
-		contentPane.add(panel_4);
+		JPanel picture1 = new JPanel();
+		contentPane.add(picture1);
 		
 		JLabel lblimg2 = new JLabel("");
 		lblimg2.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
-		panel_4.add(lblimg2);
+		picture1.add(lblimg2);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblimg = new JLabel("");
+		JLabel lblimg = new JLabel("picture2");
 		lblimg.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
 		panel_2.add(lblimg, BorderLayout.CENTER);
 		
@@ -121,6 +122,11 @@ public class Detailview extends JFrame {
 		FunctionPanel.add(btnSave);
 		
 		JButton btnDel = new JButton("삭제");
+		btnDel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnDel(e);
+			}
+		});
 		FunctionPanel.add(btnDel);
 		
 		tfResult = new JTextField();
@@ -135,7 +141,7 @@ public class Detailview extends JFrame {
 	
 	
 	protected void actionPerformedBtnAdd(ActionEvent e) {
-		Flower_information flower = paneltable.getItem();
+		Flower_information flower = AddPanel.getItem();
 //		
 		setTextField(String.format("%s,%s,%s", flower.getFlower_code(),flower.getFlower_name(),flower.getFlower_price()));
 	}
@@ -156,6 +162,11 @@ public class Detailview extends JFrame {
 		service.addFlower_information(f);
 	}
 	protected void actionPerformedBtnCancel(ActionEvent e) {
-		paneltable.clearTf();
+		AddPanel.clearTf();
+	}
+	protected void actionPerformedBtnDel(ActionEvent e) {
+		
+		
+		
 	}
 }

@@ -41,6 +41,10 @@ public class SearchPage_main extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchPage_main() {
+		initialize();
+	}
+	private void initialize() {
+		setTitle("View All");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 626, 371);
 		contentPane = new JPanel();

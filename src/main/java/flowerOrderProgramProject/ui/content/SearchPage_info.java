@@ -16,11 +16,12 @@ import javax.swing.table.DefaultTableModel;
 import flowerOrderProgramProject.view.Customer_information_panel;
 
 import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
 
 public class SearchPage_info extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField tfSearch;
 
 	/**
 	 * Launch the application.
@@ -42,7 +43,7 @@ public class SearchPage_info extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchPage_info() {
-		setTitle("고객 정보");
+		setTitle("Customer_information");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1013, 599);
 		contentPane = new JPanel();
@@ -50,38 +51,33 @@ public class SearchPage_info extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
 		
-		JPanel panel_4 = new JPanel();
-		contentPane.add(panel_4);
+		JPanel picture = new JPanel();
+		contentPane.add(picture);
+		picture.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\flowerline.jpg"));
 		
 		
-		panel_4.add(lblNewLabel_1);
+		picture.add(lblNewLabel_1);
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
+		JPanel panelSearch = new JPanel();
+		contentPane.add(panelSearch);
 		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(30);
+		tfSearch = new JTextField();
+		panelSearch.add(tfSearch);
+		tfSearch.setColumns(30);
 		
-		JButton btnNewButton_2 = new JButton("Search");
-		panel_1.add(btnNewButton_2);
+		JButton btnSearch = new JButton("Search");
+		panelSearch.add(btnSearch);
 		
-		Customer_information_panel panel_2 = new Customer_information_panel();
-		panel_2.loadData();
-		contentPane.add(panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		contentPane.add(panel_3);
-		
-		JLabel lblNewLabel_2 = new JLabel("");
-		panel_3.add(lblNewLabel_2);
+		Customer_information_panel panelTable = new Customer_information_panel();
+		panelTable.loadData();
+		contentPane.add(panelTable);
 	}
 
 }

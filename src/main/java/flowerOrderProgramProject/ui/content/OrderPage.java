@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,6 +26,7 @@ import com.toedter.calendar.JDateChooser;
 import flowerOrderProgramProject.dto.Customer_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.service.Customer_informationService;
+import javax.swing.JList;
 
 
 @SuppressWarnings("serial")
@@ -53,7 +55,7 @@ public class OrderPage extends JFrame {
 	private JLabel backgroundBottom;
 	private JPanel gubunPanel;
 	private JRadioButton rdbtn01;
-	private JRadioButton rdbtnNewRadioButton_1;
+	private JRadioButton rdbtn02;
 	private JPanel orderList;
 	private JPanel flowerChoice;
 	private JTextField tfId;
@@ -62,12 +64,12 @@ public class OrderPage extends JFrame {
 	private JPanel saveBtnPanel;
 	private JButton btnSave;
 	private JTextField tfresultPrice;
-	private JPanel panel;
 	private JTextField tfOL;
-	private JTextField tfList;
 	private JDateChooser dateChooser;
 	private Customer_informationService service;
 	private JDateChooser dateChooser_1;
+	private JList ChoiceList;
+
 
 	public OrderPage() {
 		initialize();
@@ -105,31 +107,31 @@ public class OrderPage extends JFrame {
 		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblono);
 		
-		lblorder_number = new JLabel("주문번호");
+		lblorder_number = new JLabel("Order_Number");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_number);
 		
-		lblorder_date = new JLabel("주문날짜");
+		lblorder_date = new JLabel("Order_Date");
 		lblorder_date.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_date);
 		
-		lblid = new JLabel("회원ID");
+		lblid = new JLabel("ID");
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblid);
 		
-		lblflower_code = new JLabel("꽃 선택");
+		lblflower_code = new JLabel("Flower");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblflower_code);
 		
-		lblorder_count = new JLabel("주문내역");
+		lblorder_count = new JLabel("Content");
 		lblorder_count.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_count);
 		
-		lblchoice = new JLabel("구분");
+		lblchoice = new JLabel("Choice");
 		lblchoice.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblchoice);
 		
-		lblsale_price = new JLabel("판매가");
+		lblsale_price = new JLabel("Result_Price");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblsale_price);
 		
@@ -175,27 +177,31 @@ public class OrderPage extends JFrame {
 		orderList.add(tfOL);
 		tfOL.setColumns(10);
 		
-		panel = new JPanel();
-		writePanel.add(panel);
-		panel.setLayout(new BorderLayout(0, 0));
+		JPanel contentPanel = new JPanel();
+		writePanel.add(contentPanel);
+		contentPanel.setLayout(new BorderLayout(0, 0));
 		
-		tfList = new JTextField();
-		panel.add(tfList);
-		tfList.setColumns(10);
+		ChoiceList = new JList();
+		contentPanel.add(ChoiceList, BorderLayout.NORTH);
 		
 		gubunPanel = new JPanel();
 		gubunPanel.setBackground(Color.PINK);
 		writePanel.add(gubunPanel);
 		gubunPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		rdbtn01 = new JRadioButton("꽃다발");
+		rdbtn01 = new JRadioButton("Bouquet");
 		rdbtn01.setBackground(Color.PINK);
 		gubunPanel.add(rdbtn01);
 		
-		rdbtnNewRadioButton_1 = new JRadioButton("꽃바구니");
-		rdbtnNewRadioButton_1.setBackground(Color.PINK);
-		gubunPanel.add(rdbtnNewRadioButton_1);
+		rdbtn02 = new JRadioButton("Besket");
+		rdbtn02.setBackground(Color.PINK);
+		gubunPanel.add(rdbtn02);
 		
+		ButtonGroup group = new ButtonGroup();
+		group.add(rdbtn01);
+		group.add(rdbtn02);
+		
+	
 		tfresultPrice = new JTextField();
 		writePanel.add(tfresultPrice);
 		tfresultPrice.setColumns(10);
@@ -206,8 +212,8 @@ public class OrderPage extends JFrame {
 		
 		btnSave = new JButton("SAVE");
 		btnSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				actionPerformedBtnSave(arg0);
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnSave(e);
 			}
 		});
 		saveBtnPanel.add(btnSave);
@@ -227,7 +233,7 @@ public class OrderPage extends JFrame {
 		btnChoose.setBounds(0, 214, 47, 32);
 		panel3.add(btnChoose);
 		btnChoose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				ChooseFlowers frame = new ChooseFlowers();
 				frame.setVisible(true);
 				
@@ -249,27 +255,33 @@ public class OrderPage extends JFrame {
 		tfOrderNo.setText("");
 		dateChooser.setDate(new Date());
 		tfId.setText("");
-		tfList.setText("");
+//		ChoiceList.setListData(new Data());
 		tfresultPrice.setText("");
 
 	}
 	
 	public Order_program getOrder_program() {
 		
-		//자동생성 번호 tfNo - ??
+		//자동생성 번호 tfNo - ?? - 필요없음
 		String order_number = tfOrderNo.getText().trim();
+		
 		// 날짜 선택 - ??
 		Date parseDate = setDate();
 		Date order_date = parseDate;
 		
 		String id = tfId.getText().trim();
+//		New Data = tfOL.getText().trim();
+		//아래 두 코드 한번에 텍스트 필드 출력 가능?
+//		String flower_code = tfList.getText().trim();
+//		int order_count = tfList.getText().trim();
+		//주문 내역 - 꽃 이름(?) : 수량(?) 예)A002(1개)
 		//꽃 선택 -?? 선택한 꽃 나오도록, A001 (꽃이름)
-		//주문 내역 - 꽃 이름(?) : 수량(?)
+	
 		//구분 - 라디오 버튼 선택 하나만 하도록/꽃다발은 포장값 5천원 추가, 꽃바구니 1만원 추가 기능 넣기
 		//판매가 - 꽃 단가 * 수량 + 추가금액
 		
-		return new Order_program(order_number, order_date, id, flower_code, order_count, choice, sale_price);
-//		return null;
+//		return new Order_program(order_number, order_date, id, flower_code, order_count, choice, sale_price);
+		return null;
 	}
 
 	private Date setDate() {
@@ -284,6 +296,11 @@ public class OrderPage extends JFrame {
 		}
 		return parseDate;
 	}
+	
+	public void setOrder_program(Order_program order_program) {
+		
+	}
+	
 	
 	
 	protected void actionPerformedBtnSave(ActionEvent e) {
