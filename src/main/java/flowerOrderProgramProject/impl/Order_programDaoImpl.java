@@ -22,7 +22,7 @@ public class Order_programDaoImpl implements Order_programDao {
 		return instance;
 	}
 	private Order_programDaoImpl() {
-		
+		 
 	} 
 	 
 	 

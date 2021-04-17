@@ -40,7 +40,7 @@ public class Detailview extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			} 
 		});
 	}
 
