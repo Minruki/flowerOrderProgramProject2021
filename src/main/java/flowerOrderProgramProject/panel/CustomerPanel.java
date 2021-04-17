@@ -99,10 +99,10 @@ public class CustomerPanel extends JPanel {
 		tfPhone_number.setText(customer_information.getPhone_number());
 		tfCumulative_amount.setText(customer_information.getCumulative_amount() + "");
 		tfMembership_title.setText(customer_information.getMembership_title().getMembership_title());
-	}
+	} 
 	
 
-	public void setItem(Customer_information item) {
+	public void setItem(Customer_information item) { 
 		tfid.setText(String.valueOf(item.getId()));
 		tfMember_name.setText(item.getMember_name());
 		tfPhone_number.setText(item.getPhone_number());
