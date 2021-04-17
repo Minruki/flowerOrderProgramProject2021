@@ -8,24 +8,24 @@ public class Order_program {
 	private int ono;
 	private String order_number;
 	private Date order_date;
-	private String id;
-	private String flower_code;
+	private Customer_information id;
+	private Flower_information flower_code;
 	private int order_count;
 	private String choice;
 	private int sale_price;
  
 	public Order_program() {
 
-	}
+	} 
 
-	public Order_program(String id) {
+	public Order_program(Customer_information id) {
 		super();
 		this.id = id;
 	}
 	
 
 
-	public Order_program(String flower_code, int order_count) {
+	public Order_program(Flower_information flower_code, int order_count) {
 		this.flower_code = flower_code;
 		this.order_count = order_count;
 	}
@@ -34,7 +34,7 @@ public class Order_program {
 		this.ono = ono;
 	}
 
-	public Order_program(int ono, String order_number, Date order_date, String id, String flower_code, int order_count,
+	public Order_program(int ono, String order_number, Date order_date, Customer_information id, Flower_information flower_code, int order_count,
 			String choice, int sale_price) {
 		super();
 		this.ono = ono;
@@ -92,28 +92,28 @@ public class Order_program {
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public Customer_information getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
+	public void setId(Customer_information id) {
 		this.id = id;
 	}
 
 	/**
 	 * @return the flower_code
 	 */
-	public String getFlower_code() {
+	public Flower_information getFlower_code() {
 		return flower_code;
 	}
 
 	/**
 	 * @param flower_code the flower_code to set
 	 */
-	public void setFlower_code(String flower_code) {
+	public void setFlower_code(Flower_information flower_code) {
 		this.flower_code = flower_code;
 	}
 
@@ -163,7 +163,8 @@ public class Order_program {
 	public String toString() {
 		return String.format(
 				"%s,%s",
-				flower_code, order_count);
+				flower_code == null ? "" : flower_code,
+				order_count);
 	}
 
 	

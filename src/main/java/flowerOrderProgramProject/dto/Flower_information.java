@@ -73,8 +73,13 @@ public class Flower_information {
 
 	@Override
 	public String toString() {
-		return String.format("%s %s %s", flower_code,
-				flower_name, flower_price);
+		
+		
+		
+		return String.format("%s %s %s",
+				flower_code,
+				flower_name == null ? "" : flower_name,
+				flower_price == 0 ? "" : flower_price);
 	}
 
 }

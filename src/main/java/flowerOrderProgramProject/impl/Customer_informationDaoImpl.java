@@ -9,6 +9,7 @@ import java.util.List;
 
 import flowerOrderProgramProject.dao.Customer_informationDao;
 import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Membership_discount;
 import flowerOrderProgramProject.util.JdbcUtil;
 
 public class Customer_informationDaoImpl implements Customer_informationDao {
@@ -21,7 +22,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 	private Customer_informationDaoImpl() {
 
 	}
-
+ 
 	@Override
 	public List<Customer_information> selectcustomer_informationByAll() {
 		String sql = "select id, member_name, phone_number, cumulative_amount, membership_title from customer_information";
@@ -58,7 +59,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 		}catch(SQLException e) {}
 		
 
-		return new Customer_information(id, member_name, phone_number, cumulative_amount, membership_title);
+		return new Customer_information(id, member_name, phone_number, cumulative_amount, new Membership_discount(membership_title));
 	}
 
 	@Override
@@ -88,7 +89,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 			pstmt.setString(2, customer_information.getMember_name());
 			pstmt.setString(3, customer_information.getPhone_number());
 			pstmt.setInt(4, customer_information.getCumulative_amount());
-			pstmt.setString(5, customer_information.getMembership_title());
+			pstmt.setString(5, customer_information.getMembership_title().getMembership_title());
 			return pstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -107,7 +108,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 			pstmt.setString(1, customer_information.getMember_name());
 			pstmt.setString(2, customer_information.getPhone_number());
 			pstmt.setInt(3, customer_information.getCumulative_amount());
-			pstmt.setString(4, customer_information.getMembership_title());
+			pstmt.setString(4, customer_information.getMembership_title().getMembership_title());
 			pstmt.setString(5, customer_information.getId());
 			
 			System.out.println(pstmt);

@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 import flowerOrderProgramProject.dao.Order_programDao;
+import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.util.JdbcUtil;
 
@@ -21,9 +23,9 @@ public class Order_programDaoImpl implements Order_programDao {
 	}
 	private Order_programDaoImpl() {
 		
-	}
+	} 
 	 
-	
+	 
 	@Override
 	public List<Order_program> selectorder_programByAll() {
 		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program";
@@ -49,19 +51,19 @@ public class Order_programDaoImpl implements Order_programDao {
 		String order_number = rs.getString("order_number");
 		Date order_date = rs.getDate("order_date");
 		String id = rs.getString("id");
-		String flower_code = rs.getString("flower_code");
+		Flower_information flower_code = new Flower_information(rs.getString("flower_code"));
 		int order_count = rs.getInt("order_count");
 		String choice = rs.getString("choice");
 		int sale_price = rs.getInt("sale_price");
 		
-		return new Order_program(ono, order_number, order_date, id, flower_code, order_count, choice, sale_price);
+		return new Order_program(ono, order_number, order_date, new Customer_information(id), flower_code, order_count, choice, sale_price);
 	}
 	
 	@Override
 	public Order_program selectorder_programByNo(Order_program order_program) {
 		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program ord where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setString(1, order_program.getId());
+			pstmt.setString(1, order_program.getId().getId());
 
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
@@ -81,14 +83,14 @@ public class Order_programDaoImpl implements Order_programDao {
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, order_program.getOrder_number());
 			pstmt.setTimestamp(2, new Timestamp(order_program.getOrder_date().getTime()));
-			pstmt.setString(3, order_program.getId());
-			pstmt.setString(4, order_program.getFlower_code());;
+			pstmt.setString(3, order_program.getId().getId());
+			pstmt.setString(4, order_program.getFlower_code().getFlower_code());
 			pstmt.setInt(5, order_program.getOrder_count());
 			pstmt.setString(6, order_program.getChoice());
 			pstmt.setInt(7, order_program.getSale_price());
 			
 			return pstmt.executeUpdate();
-
+ 
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -107,11 +109,11 @@ public class Order_programDaoImpl implements Order_programDao {
 		
 		pstmt.setString(1, order_program.getOrder_number());
 		pstmt.setTimestamp(2, new Timestamp(order_program.getOrder_date().getTime()));
-		pstmt.setString(3, order_program.getFlower_code());;
+		pstmt.setString(3, order_program.getFlower_code().getFlower_code());
 		pstmt.setInt(4, order_program.getOrder_count());
 		pstmt.setString(5, order_program.getChoice());
 		pstmt.setInt(6, order_program.getSale_price());
-		pstmt.setString(7, order_program.getId());
+		pstmt.setString(7, order_program.getId().getId());
 		System.out.println(pstmt);
 		return pstmt.executeUpdate();
 
@@ -128,7 +130,7 @@ public class Order_programDaoImpl implements Order_programDao {
 		String sql = "delete from order_program where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); 
 			PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setString(1, order_program.getId());
+			pstmt.setString(1, order_program.getId().getId());
 			System.out.println(order_program.getId());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

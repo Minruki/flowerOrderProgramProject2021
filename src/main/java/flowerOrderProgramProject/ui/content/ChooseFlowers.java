@@ -19,6 +19,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.panel.tfOLpanel;
 
@@ -244,7 +245,7 @@ public class ChooseFlowers extends JFrame {
 		}
 		int order_count = Integer.parseInt(number_rose.getValue()+"");
 		
-		return new Order_program(flower_code,order_count);
+		return new Order_program(new Flower_information(flower_code),order_count);
 	}
 	
 	public void setTfOL(tfOLpanel tfOL) {

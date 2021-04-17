@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 import flowerOrderProgramProject.dto.Customer_information;
-import flowerOrderProgramProject.dto.Flower_information;
+import flowerOrderProgramProject.dto.Membership_discount;
 import flowerOrderProgramProject.exception.InvalidCheckException;
 
 @SuppressWarnings("serial")
@@ -90,7 +90,7 @@ public class CustomerPanel extends JPanel {
 		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
 		String Membership_title = tfMembership_title.getText().trim();
 		
-		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
+		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, new Membership_discount(Membership_title));
 	}
 
 	public void setcustomer_information(Customer_information customer_information) {
@@ -98,7 +98,7 @@ public class CustomerPanel extends JPanel {
 		tfMember_name.setText(customer_information.getMember_name());
 		tfPhone_number.setText(customer_information.getPhone_number());
 		tfCumulative_amount.setText(customer_information.getCumulative_amount() + "");
-		tfMembership_title.setText(customer_information.getMembership_title());
+		tfMembership_title.setText(customer_information.getMembership_title().getMembership_title());
 	}
 	
 
@@ -120,7 +120,7 @@ public class CustomerPanel extends JPanel {
 		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
 		String Membership_title = tfMembership_title.getText().trim();
 		
-		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
+		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, new Membership_discount(Membership_title));
 		
 	}
 

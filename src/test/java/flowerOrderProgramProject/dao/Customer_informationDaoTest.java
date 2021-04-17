@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Membership_discount;
 import flowerOrderProgramProject.impl.Customer_informationDaoImpl;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -20,7 +21,7 @@ public class Customer_informationDaoTest {
 
 	@After
 	public void tearDown() throws Exception {
-		System.out.println();
+		System.out.println(); 
 	}
 
 	@Test
@@ -47,7 +48,7 @@ public class Customer_informationDaoTest {
 	@Test
 	public void test01Insertcustomer_information() {
 		System.out.printf("%s()%n", "testInsertTitle");
-		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 10000, "소나무");
+		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 10000, new Membership_discount("소나무"));
 		int res = dao.insertcustomer_information(newcustomer_information);
 		Assert.assertEquals(1, res);
 		System.out.println(dao.selectcustomer_informationByNo(newcustomer_information));
@@ -56,7 +57,7 @@ public class Customer_informationDaoTest {
 	@Test
 	public void test02Updatecustomer_information() {
 		System.out.printf("%s()%n", "testUpdatecustomer_information");
-		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 50000, "소나무");
+		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 50000, new Membership_discount("소나무"));
 		int res = dao.updatecustomer_information(newcustomer_information);
 		Assert.assertEquals(1, res);
 		System.out.println(dao.selectcustomer_informationByNo(newcustomer_information));

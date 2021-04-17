@@ -5,19 +5,19 @@ public class Customer_information {
 	private String member_name;
 	private String phone_number;
 	private int cumulative_amount;
-	private String membership_title;
+	private Membership_discount membership_title;
 	
 	public Customer_information() {
 
 	}
 
-	public Customer_information(String id) {
+	public Customer_information(String id) { 
 		super();
 		this.id = id;
 	}
 
 	public Customer_information(String id, String member_name, String phone_number, int cumulative_amount,
-			String membership_title) {
+			Membership_discount membership_title) {
 	
 		this.id = id;
 		this.member_name = member_name;
@@ -58,11 +58,11 @@ public class Customer_information {
 		this.cumulative_amount = cumulative_amount;
 	}
 
-	public String getMembership_title() {
+	public Membership_discount getMembership_title() {
 		return membership_title;
 	}
 
-	public void setMembership_title(String membership_title) {
+	public void setMembership_title(Membership_discount membership_title) {
 		this.membership_title = membership_title;
 	}
 
