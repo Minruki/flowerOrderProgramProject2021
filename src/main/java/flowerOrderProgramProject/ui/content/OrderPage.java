@@ -27,6 +27,7 @@ import flowerOrderProgramProject.dto.Customer_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.service.Customer_informationService;
 import javax.swing.JList;
+import flowerOrderProgramProject.panel.tfOLpanel;
 
 
 @SuppressWarnings("serial")
@@ -64,11 +65,12 @@ public class OrderPage extends JFrame {
 	private JPanel saveBtnPanel;
 	private JButton btnSave;
 	private JTextField tfresultPrice;
-	private JTextField tfOL;
+	private tfOLpanel tfOL;
 	private JDateChooser dateChooser;
 	private Customer_informationService service;
 	private JDateChooser dateChooser_1;
 	private JList ChoiceList;
+	private JButton btnChoose;
 
 
 	public OrderPage() {
@@ -173,9 +175,8 @@ public class OrderPage extends JFrame {
 		writePanel.add(orderList);
 		orderList.setLayout(new BoxLayout(orderList, BoxLayout.X_AXIS));
 		
-		tfOL = new JTextField();
+		tfOL = new tfOLpanel();
 		orderList.add(tfOL);
-		tfOL.setColumns(10);
 		
 		JPanel contentPanel = new JPanel();
 		writePanel.add(contentPanel);
@@ -229,13 +230,14 @@ public class OrderPage extends JFrame {
 		contentPane.add(panel3);
 		panel3.setLayout(null);
 		
-		JButton btnChoose = new JButton("");
+		btnChoose = new JButton("");
 		btnChoose.setBounds(0, 214, 47, 32);
 		panel3.add(btnChoose);
 		btnChoose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ChooseFlowers frame = new ChooseFlowers();
 				frame.setVisible(true);
+				frame.setTfOL(tfOL);
 				
 			}
 		});
@@ -300,13 +302,20 @@ public class OrderPage extends JFrame {
 	public void setOrder_program(Order_program order_program) {
 		
 	}
-	
-	
-	
+
 	protected void actionPerformedBtnSave(ActionEvent e) {
 //		service = new Customer_informationService();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(sdf.format(dateChooser_1.getDate()));
 		
 	}
+
+	public tfOLpanel getTfOL() {
+		return tfOL;
+	}
+
+	public void setTfOL(tfOLpanel tfOL) {
+		this.tfOL = tfOL;
+	}
+	
 }

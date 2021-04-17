@@ -29,7 +29,7 @@ public class FlowerLoginView extends JFrame{
     private boolean bLoginCheck;
     private JLabel lblLeftImage;
     private JLabel lblRightImage;
-   
+    
     public static void main(String[] args) {
     	// 메인클래스 실행
         FlowerMainProgram main = new FlowerMainProgram();

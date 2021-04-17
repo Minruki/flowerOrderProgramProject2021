@@ -19,10 +19,17 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import flowerOrderProgramProject.dto.Order_program;
+import flowerOrderProgramProject.panel.tfOLpanel;
+
 public class ChooseFlowers extends JFrame {
 
 	private JPanel contentPane;
-
+	private JCheckBox checkboxRose;
+	private JSpinner number_rose;
+	private tfOLpanel tfOL;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -66,12 +73,12 @@ public class ChooseFlowers extends JFrame {
 		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\장미9.jpg"));
 		panelRose.add(lblRose);
 		
-		JCheckBox checkboxRose = new JCheckBox("장미");
+		checkboxRose = new JCheckBox("장미");
 		checkboxRose.setVerticalAlignment(SwingConstants.BOTTOM);
 		checkboxRose.setBackground(Color.WHITE);
 		panelRose.add(checkboxRose);
 		
-		JSpinner number_rose = new JSpinner();
+		number_rose = new JSpinner();
 		panelRose.add(number_rose);
 		
 		JPanel panelRanun = new JPanel();
@@ -217,6 +224,9 @@ public class ChooseFlowers extends JFrame {
 		JButton btnBakset = new JButton("");
 		btnBakset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(getOrder());
+				
+				tfOL.getTextField().setText(getOrder()+"");
 			}
 		});
 		
@@ -224,5 +234,20 @@ public class ChooseFlowers extends JFrame {
 		btnBakset.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\button2.jpg"));
 		btnBakset.setBounds(28, 117, 129, 113);
 		panelButton.add(btnBakset);
+	}
+	
+	public Order_program getOrder() {
+		
+		String flower_code = null;
+		if(checkboxRose.getText().equals("장미")) {
+			flower_code = "A001";
+		}
+		int order_count = Integer.parseInt(number_rose.getValue()+"");
+		
+		return new Order_program(flower_code,order_count);
+	}
+	
+	public void setTfOL(tfOLpanel tfOL) {
+		this.tfOL = tfOL;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Order_program {
 
+	private Flower_information flower = new Flower_information();
 	private int ono;
 	private String order_number;
 	private Date order_date;
@@ -22,10 +23,14 @@ public class Order_program {
 		this.id = id;
 	}
 	
-	
+
+
+	public Order_program(String flower_code, int order_count) {
+		this.flower_code = flower_code;
+		this.order_count = order_count;
+	}
 
 	public Order_program(int ono) {
-		super();
 		this.ono = ono;
 	}
 
@@ -157,8 +162,8 @@ public class Order_program {
 	@Override
 	public String toString() {
 		return String.format(
-				"order_program [ono=%s, order_number=%s, order_date=%s, id=%s, flower_code=%s, order_count=%s, choice=%s, sale_price=%s]",
-				ono, order_number, order_date, id, flower_code, order_count, choice, sale_price);
+				"%s,%s",
+				flower_code, order_count);
 	}
 
 	

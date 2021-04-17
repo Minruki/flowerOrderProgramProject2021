@@ -111,7 +111,7 @@ public class CustomerPanel extends JPanel {
 		
 		tfid.setEditable(false);
 	}
-	
+	 
 	public Customer_information getItem() {
 		validCheck();
 		String id = tfid.getText().trim();

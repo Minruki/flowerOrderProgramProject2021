@@ -8,7 +8,7 @@ public class Flower_information {
 	public Flower_information() {
 
 	}
-
+ 
 	public Flower_information(int flower_price) {
 		super();
 		this.flower_price = flower_price;
@@ -21,15 +21,11 @@ public class Flower_information {
 		this.flower_price = flower_price;
 	}
 
-	
-	
-	
 
 	public Flower_information(String flower_code) {
-		super();
 		this.flower_code = flower_code;
 	}
-
+ 
 	/**
 	 * @return the flower_code
 	 */
@@ -77,7 +73,7 @@ public class Flower_information {
 
 	@Override
 	public String toString() {
-		return String.format("flower_information [flower_code=%s, flower_name=%s, flower_price=%s]", flower_code,
+		return String.format("%s %s %s", flower_code,
 				flower_name, flower_price);
 	}
 

@@ -4,35 +4,32 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 
 import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.panel.Flowerpricelist;
 import flowerOrderProgramProject.service.Flower_informationService;
 
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JTextField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 @SuppressWarnings("serial")
 public class Detailview extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tfResult;
+	private JList<Flower_information> tfResult;
 	private Flowerpricelist AddPanel;
 	private Flower_informationService service;
-	
+	private DefaultListModel<Flower_information> model = new DefaultListModel<Flower_information>();
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,6 +46,7 @@ public class Detailview extends JFrame {
 
 
 	public Detailview() {
+		service = new Flower_informationService();
 		initialize();
 	}
 	private void initialize() {
@@ -120,7 +118,7 @@ public class Detailview extends JFrame {
 			}
 		});
 		FunctionPanel.add(btnSave);
-		
+		 
 		JButton btnDel = new JButton("삭제");
 		btnDel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,37 +127,34 @@ public class Detailview extends JFrame {
 		});
 		FunctionPanel.add(btnDel);
 		
-		tfResult = new JTextField();
+		tfResult = new JList<>();
+		tfResult.setModel(model);
 		ListViewPanel.add(tfResult, BorderLayout.CENTER);
-		tfResult.setColumns(10);
 	}
-	
-	private void setTextField(String f) {
-		tfResult.setText(f+"");
-	}
-	
 	
 	
 	protected void actionPerformedBtnAdd(ActionEvent e) {
 		Flower_information flower = AddPanel.getItem();
 //		
-		setTextField(String.format("%s,%s,%s", flower.getFlower_code(),flower.getFlower_name(),flower.getFlower_price()));
+		model.addElement(flower);
+		
+//		setTextField(String.format("%s,%s,%s", flower.getFlower_code(),flower.getFlower_name(),flower.getFlower_price()));
 	}
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
-		String flower = tfResult.getText();	
+		Flower_information flower = tfResult.getSelectedValue();	
+		service.addFlower_information(flower);
 		
-		String fc = flower.substring(0, flower.indexOf(","));
-		String fn = flower.substring(flower.indexOf(",")+1, flower.lastIndexOf(","));
-		int fp = Integer.parseInt((flower.substring(flower.lastIndexOf(",")+1)));
+//		String fc = flower.substring(0, ((DefaultListModel<Flower_information>) flower).indexOf(","));
+//		String fn = flower.substring(flower.indexOf(",")+1, flower.lastIndexOf(","));
+//		int fp = Integer.parseInt((flower.substring(flower.lastIndexOf(",")+1)));
+//		
+//		String flower_code = fc;
+//		String flower_name = fn;
+//		int flower_price = fp;
+//		
+//		Flower_information f = new Flower_information(flower_code, flower_name, flower_price);
+//		System.out.println(f);
 		
-		String flower_code = fc;
-		String flower_name = fn;
-		int flower_price = fp;
-		
-		Flower_information f = new Flower_information(flower_code, flower_name, flower_price);
-		System.out.println(f);
-		service = new Flower_informationService();
-		service.addFlower_information(f);
 	}
 	protected void actionPerformedBtnCancel(ActionEvent e) {
 		AddPanel.clearTf();
