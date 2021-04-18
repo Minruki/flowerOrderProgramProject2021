@@ -48,7 +48,7 @@ public class Customer_informationService {
 		
 	}
 	
-	public void modifyCustomer_information(Customer_information cInformation) {
+	public void cumulativeCustomer_information(Customer_information cInformation) {
 		cusDao.updatecustomer_information(cInformation);
 	}
 

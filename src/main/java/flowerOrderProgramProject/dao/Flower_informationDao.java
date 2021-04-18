@@ -12,4 +12,6 @@ public interface Flower_informationDao {
 	int updateflower_information(Flower_information flower_information);
 	int deleteflower_information(Flower_information flower_information);
 
+	
+	Flower_information selectFlower_informationByCode(Flower_information flower_information);
 }

@@ -21,7 +21,9 @@ import javax.swing.border.TitledBorder;
 
 import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.dto.Order_program;
+import flowerOrderProgramProject.panel.resultPricepanel;
 import flowerOrderProgramProject.panel.tfOLpanel;
+import flowerOrderProgramProject.service.Flower_informationService;
 
 public class ChooseFlowers extends JFrame {
 
@@ -29,8 +31,8 @@ public class ChooseFlowers extends JFrame {
 	private JCheckBox checkboxRose;
 	private JSpinner number_rose;
 	private tfOLpanel tfOL;
-	
-	
+	private resultPricepanel rPP;
+	private Flower_informationService fService;
 	/**
 	 * Launch the application.
 	 */
@@ -51,6 +53,7 @@ public class ChooseFlowers extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseFlowers() {
+		fService = new Flower_informationService();
 		initialize();
 	}
 	private void initialize() {
@@ -225,9 +228,22 @@ public class ChooseFlowers extends JFrame {
 		JButton btnBakset = new JButton("");
 		btnBakset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(getOrder());
-				
+//				System.out.println(getOrder());
+	
+								
 				tfOL.getTextField().setText(getOrder()+"");
+		
+				//가격 뜨게 하기
+				String flower_code = null;
+				if(checkboxRose.getText().equals("장미")) {
+					flower_code = "A001";
+				}
+				int order_count = Integer.parseInt(number_rose.getValue()+"");
+				Flower_information flowerPrice = fService.showFlowerPriceByCode(new Flower_information(flower_code));
+				String fmflowerPrice = flowerPrice+"";
+				int resultPrice = order_count*Integer.parseInt((fmflowerPrice.substring(2)+""));
+				rPP.getTfResultPrice().setText(resultPrice+"");
+				dispose();
 			}
 		});
 		
@@ -250,5 +266,9 @@ public class ChooseFlowers extends JFrame {
 	
 	public void setTfOL(tfOLpanel tfOL) {
 		this.tfOL = tfOL;
+	}
+	
+	public void setRPP(resultPricepanel rPP) {
+		this.rPP = rPP;
 	}
 }

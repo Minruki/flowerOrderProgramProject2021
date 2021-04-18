@@ -11,6 +11,12 @@ public class Customer_information {
 
 	}
 
+	public Customer_information(String id, int cumulative_amount) {
+		super();
+		this.id = id;
+		this.cumulative_amount = cumulative_amount;
+	}
+
 	public Customer_information(String id) { 
 		super();
 		this.id = id;

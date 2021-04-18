@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 
 import flowerOrderProgramProject.ui.content.CustomerInfo;
 import flowerOrderProgramProject.ui.content.Detailview;
+import flowerOrderProgramProject.ui.content.LogoutPage1;
 import flowerOrderProgramProject.ui.content.OrderPage;
 import flowerOrderProgramProject.ui.content.SearchPage_info;
 import flowerOrderProgramProject.ui.content.SearchPage_main;
@@ -84,6 +85,11 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	panel_1.add(btnSD);
     	
     	JButton btnLog = new JButton("LogOut");
+    	btnLog.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			actionPerformedBtnLog(e);
+    		}
+    	});
     	btnLog.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnLog);
     	panel.add(panel_1);
@@ -107,6 +113,12 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
 		CustomerInfo frame = new CustomerInfo();
+		frame.setVisible(true);
+		
+	}
+	protected void actionPerformedBtnLog(ActionEvent e) {
+		
+		LogoutPage1 frame = new LogoutPage1();
 		frame.setVisible(true);
 		
 	}

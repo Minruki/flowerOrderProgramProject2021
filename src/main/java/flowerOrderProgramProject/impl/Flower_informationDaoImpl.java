@@ -43,10 +43,19 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 		return null;
 	}
 
-	private Flower_information getflower_information(ResultSet rs) throws SQLException {
-		String flower_code = rs.getString("flower_code");
-		String flower_name = rs.getString("flower_name");
-		int flower_price = rs.getInt("flower_price");
+	private Flower_information getflower_information(ResultSet rs) {
+		String flower_code = null;
+		String flower_name = null;
+		int flower_price = 0;
+		try {
+			flower_code = rs.getString("flower_code");
+		} catch (SQLException e) {}
+		try {
+			flower_name = rs.getString("flower_name");
+		} catch (SQLException e) {}
+		try {
+			flower_price = rs.getInt("flower_price");
+		} catch (SQLException e) {}
 		
 		return new Flower_information(flower_code, flower_name, flower_price);
 	}
@@ -119,5 +128,22 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 		return 0;
 	}
 
-
+	@Override
+	public Flower_information selectFlower_informationByCode(Flower_information flower_information) {
+		String sql = "select flower_price from flower_information where flower_code = ?";
+		try(Connection con = JdbcUtil.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, flower_information.getFlower_code());
+			try(ResultSet rs = pstmt.executeQuery()){
+				if(rs.next()) {
+					return getflower_information(rs);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	
+	}
+	
 }

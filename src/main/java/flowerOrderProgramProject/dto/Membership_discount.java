@@ -59,8 +59,7 @@ public class Membership_discount {
 
 	@Override
 	public String toString() {
-		return String.format("membership_discount [membership_title=%s, discount_rate=%s]", membership_title,
-				discount_rate);
+		return String.format("%s", membership_title);
 	}
 
 }

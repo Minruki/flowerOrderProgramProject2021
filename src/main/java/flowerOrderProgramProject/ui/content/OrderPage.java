@@ -24,12 +24,14 @@ import javax.swing.SwingConstants;
 import com.toedter.calendar.JDateChooser;
 
 import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.service.Order_ProgramService;
 
 import javax.swing.JList;
 import flowerOrderProgramProject.panel.tfOLpanel;
+import flowerOrderProgramProject.panel.resultPricepanel;
 
 
 @SuppressWarnings("serial")
@@ -65,18 +67,23 @@ public class OrderPage extends JFrame {
 	private JPanel panel_4;
 	private JPanel saveBtnPanel;
 	private JButton btnSave;
-	private JTextField tfresultPrice;
-	private tfOLpanel tfOL;
+	
 	private JDateChooser dateChooser;
 	private JDateChooser dateChooser_1;
 	private JButton btnChoose;
 	private JLabel lblNewLabel_3;
 	private JLabel lblNewLabel_4;
 
+	
+	private resultPricepanel resultPricePanel;
+	private tfOLpanel tfOL;
  
 	private Customer_informationService cService;
 	private Order_ProgramService oService;
 	
+	
+	private boolean isBtn01;
+	private boolean isBtn02;
 	
 	public OrderPage() {
 		cService = new Customer_informationService();
@@ -194,10 +201,20 @@ public class OrderPage extends JFrame {
 		gubunPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		rdbtn01 = new JRadioButton("Bouquet");
+		rdbtn01.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedRdbtn01(e);
+			}
+		});
 		rdbtn01.setBackground(Color.PINK);
 		gubunPanel.add(rdbtn01);
 		
 		rdbtn02 = new JRadioButton("Besket");
+		rdbtn02.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedRdbtn02(e);
+			}
+		});
 		rdbtn02.setBackground(Color.PINK);
 		gubunPanel.add(rdbtn02);
 		
@@ -206,9 +223,8 @@ public class OrderPage extends JFrame {
 		group.add(rdbtn02);
 		
 	
-		tfresultPrice = new JTextField();
-		writePanel.add(tfresultPrice);
-		tfresultPrice.setColumns(10);
+		resultPricePanel = new resultPricepanel();
+		writePanel.add(resultPricePanel);
 		
 		saveBtnPanel = new JPanel();
 		saveBtnPanel.setBackground(Color.PINK);
@@ -239,7 +255,7 @@ public class OrderPage extends JFrame {
 				ChooseFlowers frame = new ChooseFlowers();
 				frame.setVisible(true);
 				frame.setTfOL(tfOL);
-				
+				frame.setRPP(resultPricePanel);
 			}
 		});
 		btnChoose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\icon2.png"));
@@ -259,7 +275,7 @@ public class OrderPage extends JFrame {
 		dateChooser.setDate(new Date());
 		tfId.setText("");
 //		ChoiceList.setListData(new Data());
-		tfresultPrice.setText("");
+		resultPricePanel.getTfResultPrice().setText("");
 
 	}
 	
@@ -277,10 +293,15 @@ public class OrderPage extends JFrame {
 
 //		String flower_code = tfList.getText().trim();
 //		int order_count = tfList.getText().trim();
-	
+		int sale_price = 0;
 		//구분 - 꽃다발은 포장값 5천원 추가, 꽃바구니 1만원 추가 기능 넣기
 		//판매가 - 꽃 단가 * 수량 + 추가금액
-		
+		if(rdbtn01.getText().equals("Bouquet")) {
+			sale_price = Integer.parseInt((resultPricePanel.getTfResultPrice().getText()));
+			sale_price += 5000;
+		}else if(rdbtn02.getText().equals("Besket")){
+			sale_price += 10000;
+		};
 //		return new Order_program(order_number, order_date, id, flower_code, order_count, choice, sale_price);
 		return null;
 	}
@@ -307,21 +328,33 @@ public class OrderPage extends JFrame {
 		
 //		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 //		System.out.println(sdf.format(dateChooser_1.getDate()));
+//		System.out.println(on);
+//		System.out.println(on.substring(0, on.indexOf(" ")));
+//		System.out.println(on.substring(on.indexOf(",")+1));
+//		System.out.printf("%s, %tF, %s, %s, %s, %s, %d", order_number, date, id, flower_code, order_count, choice, price);
+//		
 		String order_number = tfOrderNo.getText().trim();
 		Date date = dateChooser_1.getDate();
 		String id = tfId.getText().trim();
 		String on = tfOL.getTextField().getText();
 		
+		String flower_code = on.substring(0, on.indexOf(" "));
+		
+		int order_count = Integer.parseInt((on.substring(on.indexOf(",")+1)));
+		
 		String choice = null;
 		if(rdbtn01.isSelected()) {
-			choice = "bouquet";
+			choice = "꽃다발";
 		} else {
-			choice = "basket";
+			choice = "꽃바구니";
 		}
 		
-		int price = Integer.parseInt(tfresultPrice.getText().trim());
+		int price = Integer.parseInt(resultPricePanel.getTfResultPrice().getText().trim());
 		
-		System.out.printf("%s, %tF, %s, %s, %s, %d", order_number, date, id, on, choice, price);
+		oService.addOrder_program(new Order_program(order_number, date,new Customer_information(id), new Flower_information(flower_code), order_count, choice, price));
+		
+		Customer_information cInformation = new Customer_information(id,price);
+		cService.cumulativeCustomer_information(cInformation);
 	}
 
 	public tfOLpanel getTfOL() {
@@ -332,4 +365,22 @@ public class OrderPage extends JFrame {
 		this.tfOL = tfOL;
 	}
 	
+	protected void actionPerformedRdbtn01(ActionEvent e) {
+		if(isBtn01 == false) {
+			isBtn01 = true;
+			resultPricePanel.getTfResultPrice().setText((Integer.parseInt(resultPricePanel.getTfResultPrice().getText())+5000)+"");
+		}else {
+			isBtn01 = false;
+			resultPricePanel.getTfResultPrice().setText((Integer.parseInt(resultPricePanel.getTfResultPrice().getText())-5000)+"");
+		}
+	}
+	protected void actionPerformedRdbtn02(ActionEvent e) {
+		if(isBtn02 == false) {
+			isBtn02 = true;
+			resultPricePanel.getTfResultPrice().setText((Integer.parseInt(resultPricePanel.getTfResultPrice().getText())+10000)+"");
+		}else {
+			isBtn02 = false;
+			resultPricePanel.getTfResultPrice().setText((Integer.parseInt(resultPricePanel.getTfResultPrice().getText())-10000)+"");
+		}
+	}
 }

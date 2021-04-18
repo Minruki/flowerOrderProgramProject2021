@@ -24,7 +24,7 @@ public class Customer_informationDaoTest {
 		System.out.println(); 
 	}
 
-	@Test
+//	@Test
 	public void test04Selectcustomer_informationByAll() {
 		System.out.printf("%s()%n", "testSelectTitleByAll");
 		List<Customer_information> customer_informationList = dao.selectcustomer_informationByAll();
@@ -35,7 +35,7 @@ public class Customer_informationDaoTest {
 		}
 	}
 
-	@Test
+//	@Test
 	public void test05Selectcustomer_informationByNo() {
 		System.out.printf("%s()%n", "test05Selectcustomer_informationByNo");
 //		customer_information customer_information = new customer_information("min");
@@ -45,7 +45,7 @@ public class Customer_informationDaoTest {
 	
 	}
 
-	@Test
+//	@Test
 	public void test01Insertcustomer_information() {
 		System.out.printf("%s()%n", "testInsertTitle");
 		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 10000, new Membership_discount("소나무"));
@@ -57,7 +57,7 @@ public class Customer_informationDaoTest {
 	@Test
 	public void test02Updatecustomer_information() {
 		System.out.printf("%s()%n", "testUpdatecustomer_information");
-		Customer_information newcustomer_information = new Customer_information("test2", "가나다", "010-1231-4545", 50000, new Membership_discount("소나무"));
+		Customer_information newcustomer_information = new Customer_information("lys6009",50000);
 		int res = dao.updatecustomer_information(newcustomer_information);
 		Assert.assertEquals(1, res);
 		System.out.println(dao.selectcustomer_informationByNo(newcustomer_information));
@@ -66,7 +66,7 @@ public class Customer_informationDaoTest {
 		
 	
 
-	@Test
+//	@Test
 	public void test03Deletecustomer_information() {
 		System.out.printf("%s()%n", "testDeletecustomer_information");
 		Customer_information Deletecustomer_information = new Customer_information("test2");

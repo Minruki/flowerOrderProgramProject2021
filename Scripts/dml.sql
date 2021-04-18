@@ -87,3 +87,9 @@ select ono, order_number, order_date, op.id as id, order_count, choice,
   	join customer_information ci on op.id= ci.id
   	join membership_discount md on ci.membership_title = md.membership_title 
   	join flower_information fi on op.flower_code = fi.flower_code;
+  
+  
+ select flower_code,flower_price, flower_name from flower_information where flower_code = 'A001';
+
+
+update customer_information set cumulative_amount = cumulative_amount + 3000 where id = 'lys6009'; 

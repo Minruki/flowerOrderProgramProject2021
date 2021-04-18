@@ -77,7 +77,7 @@ public class Flower_information {
 		
 		
 		return String.format("%s %s %s",
-				flower_code,
+				flower_code == null ? "" : flower_code,
 				flower_name == null ? "" : flower_name,
 				flower_price == 0 ? "" : flower_price);
 	}

@@ -34,4 +34,8 @@ public class Flower_informationService {
 		dao.updateflower_information(fInformation);
 	}
 
+	public Flower_information showFlowerPriceByCode(Flower_information fInformation) {
+		return dao.selectFlower_informationByCode(fInformation);
+	}
+	
 }
