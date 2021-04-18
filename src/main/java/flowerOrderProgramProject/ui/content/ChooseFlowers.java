@@ -238,6 +238,11 @@ public class ChooseFlowers extends JFrame {
 				if(checkboxRose.getText().equals("장미")) {
 					flower_code = "A001";
 				}
+				else {
+					if(checkboxRanun.getText().equals("라넌큘러스")){
+						flower_code = "A002";
+					}
+				}
 				int order_count = Integer.parseInt(number_rose.getValue()+"");
 				Flower_information flowerPrice = fService.showFlowerPriceByCode(new Flower_information(flower_code));
 				String fmflowerPrice = flowerPrice+"";

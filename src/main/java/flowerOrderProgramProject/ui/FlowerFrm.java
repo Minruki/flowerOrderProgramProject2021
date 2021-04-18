@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import flowerOrderProgramProject.ui.content.CustomerInfo;
 import flowerOrderProgramProject.ui.content.Detailview;
 import flowerOrderProgramProject.ui.content.LogoutPage1;
+import flowerOrderProgramProject.ui.content.LogoutPageMain;
 import flowerOrderProgramProject.ui.content.OrderPage;
 import flowerOrderProgramProject.ui.content.SearchPage_info;
 import flowerOrderProgramProject.ui.content.SearchPage_main;
@@ -31,7 +32,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	initialize();
     }
     private void initialize() {
-    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);
     	getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
@@ -49,7 +50,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnOrder.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnOrder);
     	
-    	btnCI = new JButton("Customer Info");
+    	btnCI = new JButton("Join New");
     	btnCI.addActionListener(this);
     	btnCI.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnCI);
@@ -58,7 +59,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			Detailview frame = new Detailview();
-				frame.setVisible(true);
+			
     			
     		}
     	});
@@ -78,6 +79,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     		public void actionPerformed(ActionEvent e) {
     			SearchPage_main frame = new SearchPage_main();
 				frame.setVisible(true);
+				
     		}
     		
     	});
@@ -109,17 +111,19 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	protected void actionPerformedBtn01(ActionEvent e) {
 		OrderPage frame = new OrderPage();
 		frame.setVisible(true);
-		
+		this.dispose();
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
 		CustomerInfo frame = new CustomerInfo();
 		frame.setVisible(true);
+		this.dispose();
 		
 	}
 	protected void actionPerformedBtnLog(ActionEvent e) {
 		
-		LogoutPage1 frame = new LogoutPage1();
+		LogoutPageMain frame = new LogoutPageMain();
 		frame.setVisible(true);
+		this.dispose();
 		
 	}
 }

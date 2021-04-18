@@ -7,12 +7,14 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
@@ -30,6 +32,7 @@ public class Detailview extends JFrame {
 	private Flowerpricelist AddPanel;
 	private Flower_informationService service;
 	private DefaultListModel<Flower_information> model = new DefaultListModel<Flower_information>();
+	private AbstractButton btnAdd;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -109,6 +112,11 @@ public class Detailview extends JFrame {
 		ListViewPanel.add(FunctionPanel, BorderLayout.SOUTH);
 		
 		JButton btnModify = new JButton("수정");
+		btnModify.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnModify(arg0);
+			}
+		});
 		FunctionPanel.add(btnModify); 
 		
 		JButton btnSave = new JButton("저장");
@@ -125,6 +133,7 @@ public class Detailview extends JFrame {
 				actionPerformedBtnDel(e);
 			}
 		});
+		
 		FunctionPanel.add(btnDel);
 		
 		tfResult = new JList<>();
@@ -160,8 +169,21 @@ public class Detailview extends JFrame {
 		AddPanel.clearTf();
 	}
 	protected void actionPerformedBtnDel(ActionEvent e) {
+		Flower_information fInformation = tfResult.getSelectedValue();
+		model.removeElement(fInformation);
+		JOptionPane.showMessageDialog(null, "It's been deleted :) ");
+			
+	}
+	protected void actionPerformedBtnModify(ActionEvent e) {
+		Flower_information fInformation = AddPanel.getItem();
+		int updInfo = tfResult.getSelectedIndex();
+		model.set(updInfo, fInformation);
+		AddPanel.clearTf();
+		if(btnAdd.getText().equals("수정")) {
+			btnAdd.setText("추가");
+		}
+		JOptionPane.showMessageDialog(null, "It's been updated :) ");
 		
-		
-		
+	
 	}
 }

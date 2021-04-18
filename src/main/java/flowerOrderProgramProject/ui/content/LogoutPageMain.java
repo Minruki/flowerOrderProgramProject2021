@@ -8,14 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import java.awt.FlowLayout;
-import javax.swing.BoxLayout;
-import java.awt.CardLayout;
-import javax.swing.JButton;
 import flowerOrderProgramProject.panel.LogoutButtonPanel;
-import java.awt.GridLayout;
+import java.awt.Color;
 
-public class LogoutPage1 extends JFrame {
+@SuppressWarnings("serial")
+public class LogoutPageMain extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +23,7 @@ public class LogoutPage1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LogoutPage1 frame = new LogoutPage1();
+					LogoutPageMain frame = new LogoutPageMain();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,28 +35,31 @@ public class LogoutPage1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public LogoutPage1() {
+	public LogoutPageMain() {
 		initialize();
 	}
 	private void initialize() {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 639, 457);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 632, 449);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(5, 5, 613, 408);
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(146, 203, 338, 43);
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		LogoutButtonPanel panel_1 = new LogoutButtonPanel();
+		panel_1.setBackground(Color.WHITE);
 		panel.add(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
-		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		panel.add(lblNewLabel);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 626, 417);
+		contentPane.add(lblNewLabel);
+		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\logout2.jpg"));
 	}
+
 }

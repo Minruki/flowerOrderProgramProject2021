@@ -32,6 +32,10 @@ import flowerOrderProgramProject.service.Order_ProgramService;
 import javax.swing.JList;
 import flowerOrderProgramProject.panel.tfOLpanel;
 import flowerOrderProgramProject.panel.resultPricepanel;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.SystemColor;
 
 
 @SuppressWarnings("serial")
@@ -53,7 +57,6 @@ public class OrderPage extends JFrame {
 	private JLabel lblsale_price;
 	private JLabel lblNewLabel_9;
 	private JLabel lblchoice;
-	private JLabel backgroundTop;
 	private JTextField tfNo;
 	private JTextField tfOrderNo;
 	private JLabel backgroundBottom;
@@ -84,6 +87,10 @@ public class OrderPage extends JFrame {
 	
 	private boolean isBtn01;
 	private boolean isBtn02;
+	private JPanel panel;
+	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel_7;
+	private JButton btnNewButton;
 	
 	public OrderPage() {
 		cService = new Customer_informationService();
@@ -122,31 +129,31 @@ public class OrderPage extends JFrame {
 		lblNewLabel_4 = new JLabel("");
 		listPanel.add(lblNewLabel_4);
 		
-		lblono = new JLabel("No.");
+		lblono = new JLabel("◈ No.  ");
 		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblono);
 		
-		lblorder_number = new JLabel("Order_Number");
+		lblorder_number = new JLabel("◈ Order_Number  ");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_number);
 		
-		lblorder_date = new JLabel("Order_Date");
+		lblorder_date = new JLabel("◈ Order_Date  ");
 		lblorder_date.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_date);
 		
-		lblid = new JLabel("ID");
+		lblid = new JLabel("◈ ID  ");
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblid);
 		
-		lblflower_code = new JLabel("Flower");
+		lblflower_code = new JLabel("◈ Flower  ");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblflower_code);
 		
-		lblchoice = new JLabel("Choice");
+		lblchoice = new JLabel("◈ Choice  ");
 		lblchoice.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblchoice);
 		
-		lblsale_price = new JLabel("Result_Price");
+		lblsale_price = new JLabel("◈ Result_Price  ");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblsale_price);
 		
@@ -165,9 +172,21 @@ public class OrderPage extends JFrame {
 		lblNewLabel_3 = new JLabel("");
 		writePanel.add(lblNewLabel_3);
 		
-		backgroundTop = new JLabel("");
-		backgroundTop.setIcon(null);
-		writePanel.add(backgroundTop);
+		panel = new JPanel();
+		panel.setBackground(Color.PINK);
+		writePanel.add(panel);
+		panel.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		lblNewLabel_6 = new JLabel("");
+		panel.add(lblNewLabel_6);
+		
+		btnNewButton = new JButton("");
+		btnNewButton.setBackground(SystemColor.control);
+		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon1.jpg"));
+		panel.add(btnNewButton);
+		
+		lblNewLabel_7 = new JLabel("");
+		panel.add(lblNewLabel_7);
 		
 		tfNo = new JTextField();
 		writePanel.add(tfNo);
@@ -230,7 +249,10 @@ public class OrderPage extends JFrame {
 		saveBtnPanel.setBackground(Color.PINK);
 		writePanel.add(saveBtnPanel);
 		
-		btnSave = new JButton("SAVE");
+		btnSave = new JButton("");
+		btnSave.setBackground(SystemColor.controlHighlight);
+		btnSave.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnSave.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\saveimage.jpg"));
 		btnSave.addActionListener(new ActionListener() {
 			
 		public void actionPerformed(ActionEvent e) {
