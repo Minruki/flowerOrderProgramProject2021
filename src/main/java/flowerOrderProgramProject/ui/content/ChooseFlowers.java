@@ -35,25 +35,17 @@ public class ChooseFlowers extends JFrame {
 	private JCheckBox checkboxRanun;
 	private JCheckBox checkboxLily;
 	
-	private JSpinner number_rose;
-	private JSpinner number_ranun;
-	private JSpinner number_lily;
-	
 	private tfOLpanel tfOL;
 	private resultPricepanel rPP;
 	private Flower_informationService fService;
 	private JCheckBox checkboxTulip;
-	private JSpinner numberTulip;
+	private JSpinner number_tulip;
 	private JCheckBox checkboxSun;
-	private JSpinner numberSun;
 	private JCheckBox checkboxPeony;
-	private JSpinner numberPeony;
 	private JCheckBox checkboxFre;
-	private JSpinner numberFre;
 	private JCheckBox checkboxCarna;
-	private JSpinner numberCarna;
-	private JCheckBox checkGyps;
-	private JSpinner numberGyps;
+	private JCheckBox checkboxGyps;
+
 
 
 
@@ -101,9 +93,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxRose.setBackground(Color.WHITE);
 		panelRose.add(checkboxRose);
 		
-		number_rose = new JSpinner();
-		panelRose.add(number_rose);
-		
 		JPanel panelRanun = new JPanel();
 		panelRanun.setBackground(Color.WHITE);
 		panelRanun.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A002(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -118,9 +107,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxRose.setBackground(new Color(255, 240, 245));
 		panelRanun.add(checkboxRanun);
 		
-		number_ranun = new JSpinner();
-		panelRanun.add(number_ranun);
-		
 		JPanel panelLily = new JPanel();
 		panelLily.setBackground(Color.WHITE);
 		panelLily.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A003(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -133,9 +119,6 @@ public class ChooseFlowers extends JFrame {
 		
 		checkboxLily = new JCheckBox("백합");
 		panelLily.add(checkboxLily);
-		
-		JSpinner number_lily = new JSpinner();
-		panelLily.add(number_lily);
 		
 		JPanel panelTulip = new JPanel();
 		panelTulip.setBackground(Color.WHITE);
@@ -151,9 +134,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxTulip.setBackground(new Color(255, 240, 245));
 		panelTulip.add(checkboxTulip);
 		
-		numberTulip = new JSpinner();
-		panelTulip.add(numberTulip);
-		
 		JPanel panelSun = new JPanel();
 		panelSun.setBackground(Color.WHITE);
 		panelSun.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A005(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -167,9 +147,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxSun = new JCheckBox("해바라기");
 		checkboxSun.setBackground(new Color(255, 240, 245));
 		panelSun.add(checkboxSun);
-		
-		numberSun = new JSpinner();
-		panelSun.add(numberSun);
 		
 		JPanel panelPeony = new JPanel();
 		panelPeony.setBackground(Color.WHITE);
@@ -185,9 +162,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxPeony.setBackground(new Color(255, 240, 245));
 		panelPeony.add(checkboxPeony);
 		
-		numberPeony = new JSpinner();
-		panelPeony.add(numberPeony);
-		
 		JPanel panelFre = new JPanel();
 		panelFre.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A007(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panelFre.setBackground(Color.WHITE);
@@ -201,9 +175,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxFre = new JCheckBox("프리지아");
 		checkboxFre.setBackground(new Color(255, 240, 245));
 		panelFre.add(checkboxFre);
-		
-		numberFre = new JSpinner();
-		panelFre.add(numberFre);
 		
 		JPanel panelCarna = new JPanel();
 		panelCarna.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A008(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -219,9 +190,6 @@ public class ChooseFlowers extends JFrame {
 		checkboxCarna.setBackground(new Color(255, 240, 245));
 		panelCarna.add(checkboxCarna);
 		
-		numberCarna = new JSpinner();
-		panelCarna.add(numberCarna);
-		
 		JPanel panelGyps = new JPanel();
 		panelGyps.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A009(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panelGyps.setBackground(Color.WHITE);
@@ -232,12 +200,9 @@ public class ChooseFlowers extends JFrame {
 		lblGyps.setHorizontalAlignment(SwingConstants.LEFT);
 		panelGyps.add(lblGyps);
 		
-		checkGyps = new JCheckBox("안개꽃");
-		checkGyps.setBackground(new Color(255, 240, 245));
-		panelGyps.add(checkGyps);
-		
-		numberGyps = new JSpinner();
-		panelGyps.add(numberGyps);
+		checkboxGyps = new JCheckBox("안개꽃");
+		checkboxGyps.setBackground(new Color(255, 240, 245));
+		panelGyps.add(checkboxGyps);
 		
 		JPanel panelButton = new JPanel();
 		panelButton.setBackground(Color.PINK);
@@ -260,19 +225,35 @@ public class ChooseFlowers extends JFrame {
 				else if(checkboxRanun.isSelected() == true){
 					flower_code = "A002";
 				}
-				else if(checkboxLily.getText().equals("백합")) {
+				else if(checkboxLily.isSelected() == true) {
 					flower_code = "A003";
 				}
-				int order_count = 0;
-				if(!number_rose.getValue().equals("0")) {
-					order_count = Integer.parseInt(number_rose.getValue()+"");
+				else if(checkboxTulip.isSelected() == true) {
+					flower_code = "A004";
 				}
-				if(!number_ranun.getValue().equals("0")){
-					System.out.println(222);
-					order_count = Integer.parseInt(number_ranun.getValue()+"");
+				else if(checkboxSun.isSelected() == true) {
+					flower_code = "A005";
+				}
+				else if(checkboxPeony.isSelected() == true) {
+					flower_code = "A006";
+				}
+				else if(checkboxFre.isSelected() == true) {
+					flower_code = "A007";
+				}
+				else if(checkboxCarna.isSelected() == true) {
+					flower_code = "A008";
+				}
+				else if(checkboxGyps.isSelected() == true) {
+					flower_code = "A009";
 				}
 				
- 
+				
+				int order_count = 0;
+				
+				if(!number_tulip.getValue().equals("0")) {
+					order_count = Integer.parseInt(number_tulip.getValue()+"");
+				}
+				
 				
 				
 				Flower_information flowerPrice = fService.showFlowerPriceByCode(new Flower_information(flower_code));
@@ -286,8 +267,12 @@ public class ChooseFlowers extends JFrame {
 		
 		btnBakset.setBackground(new Color(255, 255, 255));
 		btnBakset.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\button2.jpg"));
-		btnBakset.setBounds(28, 117, 129, 113);
+		btnBakset.setBounds(64, 152, 93, 78);
 		panelButton.add(btnBakset);
+		
+		number_tulip = new JSpinner();
+		number_tulip.setBounds(64, 96, 93, 46);
+		panelButton.add(number_tulip);
 	}
 	
 	public Order_program getOrder() {
@@ -300,20 +285,46 @@ public class ChooseFlowers extends JFrame {
 				
 				flower_code="A002";
 		}
+		if(checkboxLily.isSelected() == true) {
+			
+				flower_code="A003";
+		}
+		if(checkboxTulip.isSelected() == true) {
+			
+			flower_code="A004";
+		}
+		if(checkboxSun.isSelected() == true) {
+			
+			flower_code="A005";
+		}
+		if(checkboxPeony.isSelected() == true) {
+			
+			flower_code="A006";
+		}
+		if(checkboxFre.isSelected() == true) {
+			
+			flower_code="A007";
+		}
+		if(checkboxCarna.isSelected() == true) {
+			
+			flower_code="A008";
+		}
+		if(checkboxGyps.isSelected() == true) {
+			
+			flower_code="A009";
+		}
+		
 		
 		int order_count = 0;
-		if(!number_rose.getValue().equals("0")) {
-			order_count = Integer.parseInt(number_rose.getValue()+"");
-		}
-		if(!number_ranun.getValue().equals("0")){
-			System.out.println(222);
-			order_count = Integer.parseInt(number_ranun.getValue()+"");
+		
+		
+		if(!number_tulip.getValue().equals("0")) {
+			order_count = Integer.parseInt(number_tulip.getValue()+"");
 		}
 		
-	
-
 		return new Order_program(new Flower_information(flower_code), order_count);
-	}
+			
+		}
 	
 	public void setTfOL(tfOLpanel tfOL) {
 		this.tfOL = tfOL;
@@ -323,3 +334,4 @@ public class ChooseFlowers extends JFrame {
 		this.rPP = rPP;
 	}
 }
+		
