@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -25,17 +26,37 @@ import flowerOrderProgramProject.panel.resultPricepanel;
 import flowerOrderProgramProject.panel.tfOLpanel;
 import flowerOrderProgramProject.service.Flower_informationService;
 
+@SuppressWarnings("serial")
 public class ChooseFlowers extends JFrame {
 
 	private JPanel contentPane;
+	
 	private JCheckBox checkboxRose;
+	private JCheckBox checkboxRanun;
+	private JCheckBox checkboxLily;
+	
 	private JSpinner number_rose;
+	private JSpinner number_ranun;
+	private JSpinner number_lily;
+	
 	private tfOLpanel tfOL;
 	private resultPricepanel rPP;
 	private Flower_informationService fService;
-	/**
-	 * Launch the application.
-	 */
+	private JCheckBox checkboxTulip;
+	private JSpinner numberTulip;
+	private JCheckBox checkboxSun;
+	private JSpinner numberSun;
+	private JCheckBox checkboxPeony;
+	private JSpinner numberPeony;
+	private JCheckBox checkboxFre;
+	private JSpinner numberFre;
+	private JCheckBox checkboxCarna;
+	private JSpinner numberCarna;
+	private JCheckBox checkGyps;
+	private JSpinner numberGyps;
+
+
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,9 +70,7 @@ public class ChooseFlowers extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public ChooseFlowers() {
 		fService = new Flower_informationService();
 		initialize();
@@ -95,11 +114,11 @@ public class ChooseFlowers extends JFrame {
 		lblRanun.setHorizontalAlignment(SwingConstants.LEFT);
 		panelRanun.add(lblRanun);
 		
-		JCheckBox checkboxRanun = new JCheckBox("라넌큘러스");
+		checkboxRanun = new JCheckBox("라넌큘러스");
 		checkboxRose.setBackground(new Color(255, 240, 245));
 		panelRanun.add(checkboxRanun);
 		
-		JSpinner number_ranun = new JSpinner();
+		number_ranun = new JSpinner();
 		panelRanun.add(number_ranun);
 		
 		JPanel panelLily = new JPanel();
@@ -112,8 +131,8 @@ public class ChooseFlowers extends JFrame {
 		lblLily.setHorizontalAlignment(SwingConstants.LEFT);
 		panelLily.add(lblLily);
 		
-		JCheckBox checkbox3 = new JCheckBox("백합");
-		panelLily.add(checkbox3);
+		checkboxLily = new JCheckBox("백합");
+		panelLily.add(checkboxLily);
 		
 		JSpinner number_lily = new JSpinner();
 		panelLily.add(number_lily);
@@ -128,11 +147,11 @@ public class ChooseFlowers extends JFrame {
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
 		panelTulip.add(lblTulip);
 		
-		JCheckBox checkboxTulip = new JCheckBox("튤립");
+		checkboxTulip = new JCheckBox("튤립");
 		checkboxTulip.setBackground(new Color(255, 240, 245));
 		panelTulip.add(checkboxTulip);
 		
-		JSpinner numberTulip = new JSpinner();
+		numberTulip = new JSpinner();
 		panelTulip.add(numberTulip);
 		
 		JPanel panelSun = new JPanel();
@@ -145,11 +164,11 @@ public class ChooseFlowers extends JFrame {
 		lblSun.setHorizontalAlignment(SwingConstants.LEFT);
 		panelSun.add(lblSun);
 		
-		JCheckBox checkboxSun = new JCheckBox("해바라기");
+		checkboxSun = new JCheckBox("해바라기");
 		checkboxSun.setBackground(new Color(255, 240, 245));
 		panelSun.add(checkboxSun);
 		
-		JSpinner numberSun = new JSpinner();
+		numberSun = new JSpinner();
 		panelSun.add(numberSun);
 		
 		JPanel panelPeony = new JPanel();
@@ -162,11 +181,11 @@ public class ChooseFlowers extends JFrame {
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
 		panelPeony.add(lblPeony);
 		
-		JCheckBox checkboxPeony = new JCheckBox("피오니");
+		checkboxPeony = new JCheckBox("피오니");
 		checkboxPeony.setBackground(new Color(255, 240, 245));
 		panelPeony.add(checkboxPeony);
 		
-		JSpinner numberPeony = new JSpinner();
+		numberPeony = new JSpinner();
 		panelPeony.add(numberPeony);
 		
 		JPanel panelFre = new JPanel();
@@ -179,11 +198,11 @@ public class ChooseFlowers extends JFrame {
 		lblFre.setHorizontalAlignment(SwingConstants.LEFT);
 		panelFre.add(lblFre);
 		
-		JCheckBox checkboxFre = new JCheckBox("프리지아");
+		checkboxFre = new JCheckBox("프리지아");
 		checkboxFre.setBackground(new Color(255, 240, 245));
 		panelFre.add(checkboxFre);
 		
-		JSpinner numberFre = new JSpinner();
+		numberFre = new JSpinner();
 		panelFre.add(numberFre);
 		
 		JPanel panelCarna = new JPanel();
@@ -196,11 +215,11 @@ public class ChooseFlowers extends JFrame {
 		lblCarna.setHorizontalAlignment(SwingConstants.LEFT);
 		panelCarna.add(lblCarna);
 		
-		JCheckBox checkboxCarna = new JCheckBox("카네이션");
+		checkboxCarna = new JCheckBox("카네이션");
 		checkboxCarna.setBackground(new Color(255, 240, 245));
 		panelCarna.add(checkboxCarna);
 		
-		JSpinner numberCarna = new JSpinner();
+		numberCarna = new JSpinner();
 		panelCarna.add(numberCarna);
 		
 		JPanel panelGyps = new JPanel();
@@ -213,11 +232,11 @@ public class ChooseFlowers extends JFrame {
 		lblGyps.setHorizontalAlignment(SwingConstants.LEFT);
 		panelGyps.add(lblGyps);
 		
-		JCheckBox checkGyps = new JCheckBox("안개꽃");
+		checkGyps = new JCheckBox("안개꽃");
 		checkGyps.setBackground(new Color(255, 240, 245));
 		panelGyps.add(checkGyps);
 		
-		JSpinner numberGyps = new JSpinner();
+		numberGyps = new JSpinner();
 		panelGyps.add(numberGyps);
 		
 		JPanel panelButton = new JPanel();
@@ -235,16 +254,29 @@ public class ChooseFlowers extends JFrame {
 		
 				//가격 뜨게 하기
 				String flower_code = null;
-				if(checkboxRose.getText().equals("장미")) {
+				if(checkboxRose.isSelected() == true) {
 					flower_code = "A001";
 				}
-				else {
-					if(checkboxRanun.getText().equals("라넌큘러스")){
-						flower_code = "A002";
-					}
+				else if(checkboxRanun.isSelected() == true){
+					flower_code = "A002";
 				}
-				int order_count = Integer.parseInt(number_rose.getValue()+"");
+				else if(checkboxLily.getText().equals("백합")) {
+					flower_code = "A003";
+				}
+				int order_count = 0;
+				if(!number_rose.getValue().equals("0")) {
+					order_count = Integer.parseInt(number_rose.getValue()+"");
+				}
+				if(!number_ranun.getValue().equals("0")){
+					System.out.println(222);
+					order_count = Integer.parseInt(number_ranun.getValue()+"");
+				}
+				
+ 
+				
+				
 				Flower_information flowerPrice = fService.showFlowerPriceByCode(new Flower_information(flower_code));
+				
 				String fmflowerPrice = flowerPrice+"";
 				int resultPrice = order_count*Integer.parseInt((fmflowerPrice.substring(2)+""));
 				rPP.getTfResultPrice().setText(resultPrice+"");
@@ -261,12 +293,26 @@ public class ChooseFlowers extends JFrame {
 	public Order_program getOrder() {
 		
 		String flower_code = null;
-		if(checkboxRose.getText().equals("장미")) {
+		if(checkboxRose.isSelected() == true) {
 			flower_code = "A001";
 		}
-		int order_count = Integer.parseInt(number_rose.getValue()+"");
+		if(checkboxRanun.isSelected() == true) {
+				
+				flower_code="A002";
+		}
 		
-		return new Order_program(new Flower_information(flower_code),order_count);
+		int order_count = 0;
+		if(!number_rose.getValue().equals("0")) {
+			order_count = Integer.parseInt(number_rose.getValue()+"");
+		}
+		if(!number_ranun.getValue().equals("0")){
+			System.out.println(222);
+			order_count = Integer.parseInt(number_ranun.getValue()+"");
+		}
+		
+	
+
+		return new Order_program(new Flower_information(flower_code), order_count);
 	}
 	
 	public void setTfOL(tfOLpanel tfOL) {

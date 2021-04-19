@@ -78,9 +78,9 @@ public class SearchPage_main extends JFrame {
 		});
 		panel_1.add(btnNewButton_1);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\3d-render-cherry-blossom-bokeh-lights-background_1048-6029.jpg"));
-		lblNewLabel.setBounds(0, -60, 700, 447);
-		contentPane.add(lblNewLabel);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\3d-render-cherry-blossom-bokeh-lights-background_1048-6029.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 610, 332);
+		contentPane.add(lblNewLabel_1);
 	}
 }

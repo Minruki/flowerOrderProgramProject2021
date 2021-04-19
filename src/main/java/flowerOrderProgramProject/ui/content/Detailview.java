@@ -175,14 +175,10 @@ public class Detailview extends JFrame {
 			
 	}
 	protected void actionPerformedBtnModify(ActionEvent e) {
-		Flower_information fInformation = AddPanel.getItem();
-		int updInfo = tfResult.getSelectedIndex();
-		model.set(updInfo, fInformation);
-		AddPanel.clearTf();
-		if(btnAdd.getText().equals("수정")) {
-			btnAdd.setText("추가");
-		}
-		JOptionPane.showMessageDialog(null, "It's been updated :) ");
+		Flower_information flower = tfResult.getSelectedValue();
+		AddPanel.setItem(flower);
+		
+		JOptionPane.showMessageDialog(null, "You can update the values now *^^* ");
 		
 	
 	}

@@ -25,6 +25,7 @@ public class LogoutPageMain extends JFrame {
 				try {
 					LogoutPageMain frame = new LogoutPageMain();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

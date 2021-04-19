@@ -28,6 +28,7 @@ import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.service.Order_ProgramService;
+import flowerOrderProgramProject.ui.FlowerFrm;
 
 import javax.swing.JList;
 import flowerOrderProgramProject.panel.tfOLpanel;
@@ -91,6 +92,7 @@ public class OrderPage extends JFrame {
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_7;
 	private JButton btnNewButton;
+	private FlowerFrm flowerFrm;
 	
 	public OrderPage() {
 		cService = new Customer_informationService();
@@ -181,6 +183,11 @@ public class OrderPage extends JFrame {
 		panel.add(lblNewLabel_6);
 		
 		btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnNewButton(arg0);
+			}
+		});
 		btnNewButton.setBackground(SystemColor.control);
 		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon1.jpg"));
 		panel.add(btnNewButton);
@@ -404,5 +411,9 @@ public class OrderPage extends JFrame {
 			isBtn02 = false;
 			resultPricePanel.getTfResultPrice().setText((Integer.parseInt(resultPricePanel.getTfResultPrice().getText())-10000)+"");
 		}
+	}
+	protected void actionPerformedBtnNewButton(ActionEvent e) {
+		this.flowerFrm = new FlowerFrm();
+		
 	}
 }
