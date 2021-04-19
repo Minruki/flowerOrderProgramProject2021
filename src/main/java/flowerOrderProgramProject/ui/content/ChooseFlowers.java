@@ -1,5 +1,7 @@
 package flowerOrderProgramProject.ui.content;
 
+
+import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -7,7 +9,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -35,6 +37,7 @@ public class ChooseFlowers extends JFrame {
 	private JCheckBox checkboxRanun;
 	private JCheckBox checkboxLily;
 	
+	
 	private tfOLpanel tfOL;
 	private resultPricepanel rPP;
 	private Flower_informationService fService;
@@ -45,8 +48,7 @@ public class ChooseFlowers extends JFrame {
 	private JCheckBox checkboxFre;
 	private JCheckBox checkboxCarna;
 	private JCheckBox checkboxGyps;
-
-
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 
 	public static void main(String[] args) {
@@ -89,6 +91,8 @@ public class ChooseFlowers extends JFrame {
 		panelRose.add(lblRose);
 		
 		checkboxRose = new JCheckBox("장미");
+		buttonGroup.add(checkboxRose);
+	
 		checkboxRose.setVerticalAlignment(SwingConstants.BOTTOM);
 		checkboxRose.setBackground(Color.WHITE);
 		panelRose.add(checkboxRose);
@@ -104,6 +108,8 @@ public class ChooseFlowers extends JFrame {
 		panelRanun.add(lblRanun);
 		
 		checkboxRanun = new JCheckBox("라넌큘러스");
+		buttonGroup.add(checkboxRanun);
+
 		checkboxRose.setBackground(new Color(255, 240, 245));
 		panelRanun.add(checkboxRanun);
 		
@@ -118,6 +124,8 @@ public class ChooseFlowers extends JFrame {
 		panelLily.add(lblLily);
 		
 		checkboxLily = new JCheckBox("백합");
+		buttonGroup.add(checkboxLily);
+
 		panelLily.add(checkboxLily);
 		
 		JPanel panelTulip = new JPanel();
@@ -131,6 +139,8 @@ public class ChooseFlowers extends JFrame {
 		panelTulip.add(lblTulip);
 		
 		checkboxTulip = new JCheckBox("튤립");
+		buttonGroup.add(checkboxTulip);
+	
 		checkboxTulip.setBackground(new Color(255, 240, 245));
 		panelTulip.add(checkboxTulip);
 		
@@ -145,6 +155,8 @@ public class ChooseFlowers extends JFrame {
 		panelSun.add(lblSun);
 		
 		checkboxSun = new JCheckBox("해바라기");
+		buttonGroup.add(checkboxSun);
+
 		checkboxSun.setBackground(new Color(255, 240, 245));
 		panelSun.add(checkboxSun);
 		
@@ -159,6 +171,8 @@ public class ChooseFlowers extends JFrame {
 		panelPeony.add(lblPeony);
 		
 		checkboxPeony = new JCheckBox("피오니");
+		buttonGroup.add(checkboxPeony);
+
 		checkboxPeony.setBackground(new Color(255, 240, 245));
 		panelPeony.add(checkboxPeony);
 		
@@ -173,6 +187,8 @@ public class ChooseFlowers extends JFrame {
 		panelFre.add(lblFre);
 		
 		checkboxFre = new JCheckBox("프리지아");
+		buttonGroup.add(checkboxFre);
+
 		checkboxFre.setBackground(new Color(255, 240, 245));
 		panelFre.add(checkboxFre);
 		
@@ -187,6 +203,8 @@ public class ChooseFlowers extends JFrame {
 		panelCarna.add(lblCarna);
 		
 		checkboxCarna = new JCheckBox("카네이션");
+		buttonGroup.add(checkboxCarna);
+	
 		checkboxCarna.setBackground(new Color(255, 240, 245));
 		panelCarna.add(checkboxCarna);
 		
@@ -201,6 +219,8 @@ public class ChooseFlowers extends JFrame {
 		panelGyps.add(lblGyps);
 		
 		checkboxGyps = new JCheckBox("안개꽃");
+		buttonGroup.add(checkboxGyps);
+
 		checkboxGyps.setBackground(new Color(255, 240, 245));
 		panelGyps.add(checkboxGyps);
 		
@@ -209,11 +229,15 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelButton);
 		panelButton.setLayout(null);
 		
+//		CheckboxGroup cbg = new CheckboxGroup();
+		
+		
+	
+		
 		JButton btnBakset = new JButton("");
 		btnBakset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				System.out.println(getOrder());
-	
 								
 				tfOL.getTextField().setText(getOrder()+"");
 		
@@ -313,6 +337,7 @@ public class ChooseFlowers extends JFrame {
 			
 			flower_code="A009";
 		}
+		
 		
 		
 		int order_count = 0;

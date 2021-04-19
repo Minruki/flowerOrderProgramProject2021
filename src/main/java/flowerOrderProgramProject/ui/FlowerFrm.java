@@ -16,10 +16,10 @@ import javax.swing.JPanel;
 
 import flowerOrderProgramProject.ui.content.CustomerInfo;
 import flowerOrderProgramProject.ui.content.Detailview;
-import flowerOrderProgramProject.ui.content.LogoutPage1;
+
 import flowerOrderProgramProject.ui.content.LogoutPageMain;
 import flowerOrderProgramProject.ui.content.OrderPage;
-import flowerOrderProgramProject.ui.content.SearchPage_info;
+
 import flowerOrderProgramProject.ui.content.SearchPage_main;
 
 // 로그인 성공 후 메인 화면
@@ -32,7 +32,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	initialize();
     }
     private void initialize() {
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);
     	getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
@@ -64,13 +64,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     		}
     	});
     	panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
-    	
-    	
-    		
-    		
-    	
-    	
-    
+   
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnFs);
     	
