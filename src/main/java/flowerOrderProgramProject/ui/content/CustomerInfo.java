@@ -16,6 +16,9 @@ import flowerOrderProgramProject.service.Customer_informationService;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.BoxLayout;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class CustomerInfo extends JFrame {
@@ -49,7 +52,7 @@ private Customer_informationService service;
 		
 		panel_1 = new CustomerPanel();
 		panel_1.setBackground(SystemColor.control);
-		panel_1.setBounds(235, 56, 310, 222);
+		panel_1.setBounds(256, 47, 310, 260);
 		contentPane.add(panel_1);
 		
 		JPanel empty = new JPanel();
@@ -77,6 +80,22 @@ private Customer_informationService service;
 		});
 		panelbuttons.add(btnCancel);
 		
+		JPanel panel_2 = new JPanel();
+		panel_1.add(panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		panel_1.add(panel_3);
+		panel_3.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblNewLabel_1 = new JLabel("Back to ");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel_3.add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("Main");
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setVerticalAlignment(SwingConstants.TOP);
+		panel_3.add(btnNewButton);
+		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
@@ -100,6 +119,4 @@ private Customer_informationService service;
 		panel_1.clearTf();
 		
 	}
-
-	
 }

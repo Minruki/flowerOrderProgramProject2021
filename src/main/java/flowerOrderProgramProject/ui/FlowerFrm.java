@@ -59,7 +59,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			Detailview frame = new Detailview();
-			
+    			frame.setVisible(true);
     			
     		}
     	});

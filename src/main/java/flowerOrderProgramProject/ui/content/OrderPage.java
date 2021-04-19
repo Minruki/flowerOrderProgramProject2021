@@ -58,7 +58,7 @@ public class OrderPage extends JFrame {
 	private JLabel lblsale_price;
 	private JLabel lblNewLabel_9;
 	private JLabel lblchoice;
-	private JTextField tfNo;
+	private JLabel tfNo;
 	private JTextField tfOrderNo;
 	private JLabel backgroundBottom;
 	private JPanel gubunPanel;
@@ -131,31 +131,31 @@ public class OrderPage extends JFrame {
 		lblNewLabel_4 = new JLabel("");
 		listPanel.add(lblNewLabel_4);
 		
-		lblono = new JLabel("◈ No.  ");
+		lblono = new JLabel("");
 		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblono);
 		
-		lblorder_number = new JLabel("◈ Order_Number  ");
+		lblorder_number = new JLabel("★ 주문번호 : ");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_number);
 		
-		lblorder_date = new JLabel("◈ Order_Date  ");
+		lblorder_date = new JLabel("★ 주문날짜 : ");
 		lblorder_date.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_date);
 		
-		lblid = new JLabel("◈ ID  ");
+		lblid = new JLabel("★ 회원 ID : ");
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblid);
 		
-		lblflower_code = new JLabel("◈ Flower  ");
+		lblflower_code = new JLabel("★ 꽃 선택 : ");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblflower_code);
 		
-		lblchoice = new JLabel("◈ Choice  ");
+		lblchoice = new JLabel("★ 구분 : ");
 		lblchoice.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblchoice);
 		
-		lblsale_price = new JLabel("◈ Result_Price  ");
+		lblsale_price = new JLabel("★ 구매금액 : ");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblsale_price);
 		
@@ -195,9 +195,10 @@ public class OrderPage extends JFrame {
 		lblNewLabel_7 = new JLabel("");
 		panel.add(lblNewLabel_7);
 		
-		tfNo = new JTextField();
+		tfNo = new JLabel();
+		tfNo.setHorizontalAlignment(SwingConstants.CENTER);
+		tfNo.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\배경.jpg"));
 		writePanel.add(tfNo);
-		tfNo.setColumns(10);
 		
 		tfOrderNo = new JTextField();
 		writePanel.add(tfOrderNo);
