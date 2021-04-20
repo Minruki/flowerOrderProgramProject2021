@@ -371,7 +371,7 @@ public class ChooseFlowers extends JFrame {
 		this.rPP = rPP;
 	}
 	public void actionPerformedBtnNewButton(ActionEvent e) {
-		
+		dispose();
 		
 	
 	}

@@ -62,6 +62,7 @@ public class Detailview extends JFrame {
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		AddPanel = new Flowerpricelist();
+		AddPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u203B Flower Add \u203B", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(AddPanel);
 		AddPanel.setLayout(new GridLayout(0, 2, 10, 20));
 		

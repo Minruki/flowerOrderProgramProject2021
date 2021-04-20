@@ -45,7 +45,7 @@ public class SearchPage_main extends JFrame {
 	}
 	private void initialize() {
 		setTitle("View All");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 626, 371);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,6 +63,7 @@ public class SearchPage_main extends JFrame {
 				
 				SearchPage_flowers frame = new SearchPage_flowers();
 				frame.setVisible(true);
+				dispose();
 				
 			}
 		});
@@ -74,6 +75,7 @@ public class SearchPage_main extends JFrame {
 				
 				SearchPage_info frame = new SearchPage_info();
 				frame.setVisible(true);
+				dispose();
 			}
 		});
 		panel_1.add(btnNewButton_1);

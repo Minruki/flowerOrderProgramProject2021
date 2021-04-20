@@ -100,7 +100,7 @@ public class FlowerLoginView extends JFrame{
         btnLogin = new JButton("Login");
         btnLogin.setBackground(Color.PINK);
         btnLogin.setFont(new Font("Gabriola", Font.ITALIC, 20));
-        btnLogin.setBounds(470, 174, 100, 25);
+        btnLogin.setBounds(470, 168, 100, 25);
         panel.add(btnLogin);
         btnLogin.addActionListener(new ActionListener() {
             @Override

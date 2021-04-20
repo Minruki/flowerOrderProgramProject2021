@@ -42,6 +42,11 @@ public class LogoutButtonPanel extends JPanel {
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Close Program");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton_1(e);
+			}
+		});
 		panel.add(btnNewButton_1);
 	}
 	
@@ -57,4 +62,7 @@ public class LogoutButtonPanel extends JPanel {
       }
 	
 	
+	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
+		frame.dispose();
+	}
 }
