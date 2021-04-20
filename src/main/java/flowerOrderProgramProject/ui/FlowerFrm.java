@@ -32,7 +32,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	initialize();
     }
     private void initialize() {
-    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);
     	getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));

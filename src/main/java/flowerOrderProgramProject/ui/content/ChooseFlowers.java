@@ -71,7 +71,7 @@ public class ChooseFlowers extends JFrame {
 	}
 	private void initialize() {
 		setTitle("Choose Flower");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 913, 549);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.PINK);
@@ -139,7 +139,7 @@ public class ChooseFlowers extends JFrame {
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
 		panelTulip.add(lblTulip);
 		
-		checkboxTulip = new JCheckBox("Tulip");
+		checkboxTulip = new JCheckBox("Colorful Tulip");
 		buttonGroup.add(checkboxTulip);
 	
 		checkboxTulip.setBackground(new Color(255, 240, 245));
@@ -171,7 +171,7 @@ public class ChooseFlowers extends JFrame {
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
 		panelPeony.add(lblPeony);
 		
-		checkboxPeony = new JCheckBox("Peony");
+		checkboxPeony = new JCheckBox("Pink Peony");
 		buttonGroup.add(checkboxPeony);
 
 		checkboxPeony.setBackground(new Color(255, 240, 245));
@@ -220,7 +220,7 @@ public class ChooseFlowers extends JFrame {
 		lblGyps.setHorizontalAlignment(SwingConstants.LEFT);
 		panelGyps.add(lblGyps);
 		
-		checkboxGyps = new JCheckBox("Gypsophila");
+		checkboxGyps = new JCheckBox("Baby's breath");
 		buttonGroup.add(checkboxGyps);
 
 		checkboxGyps.setBackground(new Color(255, 240, 245));
@@ -299,6 +299,16 @@ public class ChooseFlowers extends JFrame {
 		number_tulip = new JSpinner();
 		number_tulip.setBounds(33, 66, 99, 31);
 		panelButton.add(number_tulip);
+		
+		JButton btnClose = new JButton("");
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton(e);
+			}
+		});
+		btnClose.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\EXIT.jpg"));
+		btnClose.setBounds(133, 199, 36, 31);
+		panelButton.add(btnClose);
 	}
 	
 	public Order_program getOrder() {
@@ -359,6 +369,11 @@ public class ChooseFlowers extends JFrame {
 	
 	public void setRPP(resultPricepanel rPP) {
 		this.rPP = rPP;
+	}
+	public void actionPerformedBtnNewButton(ActionEvent e) {
+		
+		
+	
 	}
 }
 		

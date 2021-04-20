@@ -115,10 +115,12 @@ public class FlowerLoginView extends JFrame{
             JOptionPane.showMessageDialog(null, "Success");
             bLoginCheck = true;
            
-            
-            if(isLogin()){
-                main.showFrameTest(); 
-            }                  
+            FlowerFrm frame = new FlowerFrm();
+            frame.setVisible(true);
+            dispose();
+//            if(isLogin()){
+//                main.showFrameTest(); 
+//            }                  
         }else{
             JOptionPane.showMessageDialog(null, "Faild");
         }

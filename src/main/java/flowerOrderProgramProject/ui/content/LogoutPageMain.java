@@ -54,6 +54,7 @@ public class LogoutPageMain extends JFrame {
 		contentPane.add(panel);
 		
 		LogoutButtonPanel panel_1 = new LogoutButtonPanel();
+		panel_1.setFrame(this);
 		panel_1.setBackground(Color.WHITE);
 		panel.add(panel_1);
 		

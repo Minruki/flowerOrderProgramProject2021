@@ -15,9 +15,9 @@ public class FlowerMainProgram{
    }
   
    // 테스트프레임창
-   public void showFrameTest(){
-       flowerloginView.dispose(); // 로그인창닫기
-       this.flowerFrm = new FlowerFrm(); // 테스트프레임 오픈
-   }
+//   public void showFrameTest(){
+//       flowerloginView.dispose(); // 로그인창닫기
+//       this.flowerFrm = new FlowerFrm(); // 테스트프레임 오픈
+//   }
 
 }

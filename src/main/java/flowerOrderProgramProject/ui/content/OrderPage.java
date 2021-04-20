@@ -37,6 +37,7 @@ import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.SystemColor;
+import java.awt.Font;
 
 
 @SuppressWarnings("serial")
@@ -107,6 +108,7 @@ public class OrderPage extends JFrame {
 	private void initialize() {
 		setTitle("Order Program Main");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
 		setBounds(300, 300, 900, 500);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -135,27 +137,27 @@ public class OrderPage extends JFrame {
 		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblono);
 		
-		lblorder_number = new JLabel("★ 주문번호 : ");
+		lblorder_number = new JLabel("º 주문번호 : ");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_number);
 		
-		lblorder_date = new JLabel("★ 주문날짜 : ");
+		lblorder_date = new JLabel("º 주문날짜 : ");
 		lblorder_date.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_date);
 		
-		lblid = new JLabel("★ 회원 ID : ");
+		lblid = new JLabel("º 회원 ID : ");
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblid);
 		
-		lblflower_code = new JLabel("★ 꽃 선택 : ");
+		lblflower_code = new JLabel("º 꽃 선택 : ");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblflower_code);
 		
-		lblchoice = new JLabel("★ 구분 : ");
+		lblchoice = new JLabel("º 구분 : ");
 		lblchoice.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblchoice);
 		
-		lblsale_price = new JLabel("★ 구매금액 : ");
+		lblsale_price = new JLabel("º 구매금액 : ");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblsale_price);
 		
@@ -186,10 +188,11 @@ public class OrderPage extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				actionPerformedBtnNewButton(arg0);
+				dispose();
 			}
 		});
 		btnNewButton.setBackground(SystemColor.control);
-		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon1.jpg"));
+		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon2.jpg"));
 		panel.add(btnNewButton);
 		
 		lblNewLabel_7 = new JLabel("");
@@ -228,6 +231,7 @@ public class OrderPage extends JFrame {
 		gubunPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		rdbtn01 = new JRadioButton("Bouquet");
+		rdbtn01.setFont(new Font("Gabriola", Font.PLAIN, 17));
 		rdbtn01.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedRdbtn01(e);
@@ -237,6 +241,7 @@ public class OrderPage extends JFrame {
 		gubunPanel.add(rdbtn01);
 		
 		rdbtn02 = new JRadioButton("Besket");
+		rdbtn02.setFont(new Font("Gabriola", Font.PLAIN, 17));
 		rdbtn02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedRdbtn02(e);
@@ -258,15 +263,17 @@ public class OrderPage extends JFrame {
 		writePanel.add(saveBtnPanel);
 		
 		btnSave = new JButton("");
+		btnSave.setBounds(38, 5, 99, 25);
 		btnSave.setBackground(SystemColor.controlHighlight);
 		btnSave.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnSave.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\saveimage.jpg"));
+		btnSave.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\saveicon1.jpg"));
 		btnSave.addActionListener(new ActionListener() {
 			
 		public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnSave(e);
 			}
 		});
+		saveBtnPanel.setLayout(null);
 		saveBtnPanel.add(btnSave);
 		
 		backgroundBottom = new JLabel("");

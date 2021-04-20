@@ -16,7 +16,11 @@ import java.awt.event.ActionEvent;
 public class LogoutButtonPanel extends JPanel {
 	  private FlowerMainProgram main;
 	  private LogoutPageMain logout;
-	
+	  private LogoutPageMain frame;
+
+	public void setFrame(LogoutPageMain frame) {
+		this.frame = frame;
+	}
 	public LogoutButtonPanel() {
 
 		initialize();
@@ -32,6 +36,7 @@ public class LogoutButtonPanel extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
+					
 			}
 		});
 		panel.add(btnNewButton);
@@ -42,11 +47,13 @@ public class LogoutButtonPanel extends JPanel {
 	
 	
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
-		
+        
 		FlowerMainProgram main = new FlowerMainProgram();
+		
         main.flowerloginView = new FlowerLoginView(); // 로그인창 보이기
         main.flowerloginView.setMain(main); // 로그인창에게 메인 클래스보내기
         
+        frame.dispose();
       }
 	
 	

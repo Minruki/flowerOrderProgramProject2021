@@ -43,6 +43,9 @@ public class SearchPage_info extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchPage_info() {
+		initialize();
+	}
+	private void initialize() {
 		setTitle("Customer_information");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1013, 599);
@@ -78,6 +81,15 @@ public class SearchPage_info extends JFrame {
 		Customer_information_panel panelTable = new Customer_information_panel();
 		panelTable.loadData();
 		contentPane.add(panelTable);
+		
+		JPanel panel_1 = new JPanel();
+		contentPane.add(panel_1);
+		
+		JButton btnNewButton = new JButton("Main");
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Join");
+		panel_1.add(btnNewButton_1);
 	}
 
 }
