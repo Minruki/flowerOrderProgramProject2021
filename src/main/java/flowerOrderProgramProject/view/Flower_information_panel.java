@@ -2,7 +2,7 @@ package flowerOrderProgramProject.view;
 
 import javax.swing.SwingConstants;
 
-import flowerOrderProgramProject.dto.Customer_information;
+
 import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.exception.NotSelectedException;
 import flowerOrderProgramProject.service.Customer_informationService;

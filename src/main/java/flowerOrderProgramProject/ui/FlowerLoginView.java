@@ -22,7 +22,7 @@ public class FlowerLoginView extends JFrame{
     private FlowerMainProgram main;
 
     // 로그인 실행하는 창
-   
+    
     private JButton btnLogin;
     private JPasswordField textpass;
     private JTextField textId;

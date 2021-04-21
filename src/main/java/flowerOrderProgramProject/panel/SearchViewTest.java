@@ -21,6 +21,7 @@ import java.awt.CardLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
+@SuppressWarnings("serial")
 public class SearchViewTest extends JFrame {
 	private JTextField jtf;
 	private JLabel searchLbl;

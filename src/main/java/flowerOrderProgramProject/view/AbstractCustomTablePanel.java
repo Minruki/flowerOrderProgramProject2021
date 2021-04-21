@@ -23,6 +23,8 @@ public abstract class AbstractCustomTablePanel<T> extends JPanel {
 	public AbstractCustomTablePanel() {
 		initialize();
 	}
+	
+
 
 	public abstract T getItem();/* {
 		int idx = table.getSelectedRow();

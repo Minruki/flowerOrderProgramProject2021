@@ -136,7 +136,7 @@ private Customer_informationService service;
 		
 		service.addCustomer_information(panel_1.getItem());
 	
-		dispose();
+		
 				
 	}
 	

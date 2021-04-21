@@ -73,6 +73,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     		public void actionPerformed(ActionEvent e) {
     			SearchPage_main frame = new SearchPage_main();
 				frame.setVisible(true);
+				dispose();
 				
     		}
     		

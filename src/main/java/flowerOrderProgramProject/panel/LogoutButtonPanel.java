@@ -14,8 +14,7 @@ import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class LogoutButtonPanel extends JPanel {
-	  private FlowerMainProgram main;
-	  private LogoutPageMain logout;
+
 	  private LogoutPageMain frame;
 
 	public void setFrame(LogoutPageMain frame) {

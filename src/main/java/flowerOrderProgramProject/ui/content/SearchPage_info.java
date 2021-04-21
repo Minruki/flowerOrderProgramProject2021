@@ -20,17 +20,17 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import flowerOrderProgramProject.dto.Customer_information;
+
 import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Customer_information_panel;
 
 @SuppressWarnings("serial")
-public class SearchPage_info extends JFrame implements ActionListener {
+public class SearchPage_info extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfSearch;
-	private JPopupMenu popMenu;
+
 	private Customer_informationService service;
 	
 	protected void setService() {

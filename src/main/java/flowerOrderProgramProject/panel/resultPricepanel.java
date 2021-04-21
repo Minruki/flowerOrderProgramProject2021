@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
 
+@SuppressWarnings("serial")
 public class resultPricepanel extends JPanel {
 	private JTextField tfResultPrice;
 
