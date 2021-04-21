@@ -52,5 +52,12 @@ public class Customer_informationService {
 		cusDao.updatecustomer_information(cInformation);
 	}
 
+	public Customer_information showCusInfoByNo(Customer_information customer_information) {
+		return cusDao.selectcustomer_informationByNo(customer_information);
+	}
+	
+	public void modiCusDetailInfo(Customer_information customer_information) {
+		cusDao.updatecustomer_Detail_Information(customer_information);
+	}
 
 }

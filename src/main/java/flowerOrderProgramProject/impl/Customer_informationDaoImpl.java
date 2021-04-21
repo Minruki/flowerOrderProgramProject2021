@@ -64,7 +64,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 
 	@Override
 	public Customer_information selectcustomer_informationByNo(Customer_information customer_information) {
-		String sql = "select id, member_name, phone_number from customer_information cus where id = ?";
+		String sql = "select id,member_name,phone_number,cumulative_amount,membership_title from customer_information where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, customer_information.getId());
 			
@@ -101,7 +101,7 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 
 	@Override
 	public int updatecustomer_information(Customer_information customer_information) {
-		String sql = "update customer_information set cumulative_amount = cumulative_amount + ? where id = ? ";
+		String sql = "update customer_information set cumulative_amount = cumulative_amount + ? where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			
 			
@@ -125,6 +125,22 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 			PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, customer_information.getId());
 			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public int updatecustomer_Detail_Information(Customer_information customer_information) {
+		String sql = "update customer_information set member_name = ?, phone_number = ?, membership_title = ? where id = ?";
+		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, customer_information.getMember_name());
+			pstmt.setString(2, customer_information.getPhone_number());
+			pstmt.setString(3, customer_information.getMembership_title().getMembership_title());
+			pstmt.setString(4, customer_information.getId());
+			return pstmt.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

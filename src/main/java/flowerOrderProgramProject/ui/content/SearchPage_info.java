@@ -2,10 +2,8 @@ package flowerOrderProgramProject.ui.content;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.MenuItem;
-import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,19 +17,29 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
-
+import flowerOrderProgramProject.dto.Customer_information;
+import flowerOrderProgramProject.dto.Membership_discount;
 import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Customer_information_panel;
 
 @SuppressWarnings("serial")
-public class SearchPage_info extends JFrame {
+public class SearchPage_info extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField tfSearch;
+	private TableRowSorter sorter;
 
 	private Customer_informationService service;
+	private JTextField tfCusId;
+	private JTextField tfCusName;
+	private JTextField tfCusPhone;
+	private JTextField tfCusAmount;
+	private JTextField tfCusMBS;
+	private Customer_information_panel panelTable;
 	
 	protected void setService() {
 		service = new Customer_informationService();
@@ -58,7 +66,7 @@ public class SearchPage_info extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchPage_info() {
-		
+		service = new Customer_informationService();
 		initialize();
 	}
 	private void initialize() {
@@ -92,51 +100,75 @@ public class SearchPage_info extends JFrame {
 		tfSearch.setColumns(30);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnSearch(arg0);
+			}
+		});
 		panelSearch.add(btnSearch);
 		
-		Customer_information_panel panelTable = new Customer_information_panel();
+		panelTable = new Customer_information_panel();
 		panelTable.loadData();
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.add(panel_2);
+		
+		JLabel lblNewLabel = new JLabel("id");
+		panel_2.add(lblNewLabel);
+		
+		tfCusId = new JTextField();
+		panel_2.add(tfCusId);
+		tfCusId.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("member");
+		panel_2.add(lblNewLabel_2);
+		
+		tfCusName = new JTextField();
+		panel_2.add(tfCusName);
+		tfCusName.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("phone");
+		panel_2.add(lblNewLabel_3);
+		
+		tfCusPhone = new JTextField();
+		panel_2.add(tfCusPhone);
+		tfCusPhone.setColumns(10);
+		
+		JLabel lblNewLabel_4 = new JLabel("amount");
+		panel_2.add(lblNewLabel_4);
+		
+		tfCusAmount = new JTextField();
+		panel_2.add(tfCusAmount);
+		tfCusAmount.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("membership");
+		panel_2.add(lblNewLabel_5);
+		
+		tfCusMBS = new JTextField();
+		panel_2.add(tfCusMBS);
+		tfCusMBS.setColumns(10);
+		
+		JButton btnNewButton_1 = new JButton("↓");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton_1(e);
+			}
+		});
+		panel_2.add(btnNewButton_1);
 		contentPane.add(panelTable);
-		
-//		
-//		JPopupMenu popMenu = new JPopupMenu();
-//		panelTable.setPopupMenu(popMenu);
-//		
-//	}
-//		private JPopupMenu createPopupMenu() {
-//			
-//			
-//			JMenuItem deleteItem = new JMenuItem("Delete");
-//			deleteItem.addActionListener(this);
-//			popMenu.add(deleteItem);
-//			
-//			return popMenu;
-//		}
-//		
-//		public void actionPerformed(ActionEvent popMenu) {
-//			
-//			
-//			if(popMenu.getSource() instanceof JMenuItem) {
-//				if(popMenu.getActionCommand().equals("삭제")) {
-//					actionPerformedMenuDelete();
-//				}
-//			}
-		
-		
-		
-		
-		MenuItem item = new MenuItem();
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		
 		JButton btnNewButton = new JButton("◀ Back");
+		
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
 			}
 		});
+		
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_2 = new JButton("Main ▶");
@@ -145,21 +177,23 @@ public class SearchPage_info extends JFrame {
 				actionPerformedBtnNewButton_2(e);
 			}
 		});
+		
 		btnNewButton_2.setBackground(new Color(255, 255, 255));
 		panel_1.add(btnNewButton_2);
+		
+		JPopupMenu popupMenu = createPopupMenu();
+		panelTable.setPopupMenu(popupMenu);
 	}
 
+	private JPopupMenu createPopupMenu() {
+		JPopupMenu popMenu = new JPopupMenu();
+		
+		JMenuItem deleteItem = new JMenuItem("삭제");
+		deleteItem.addActionListener(this);
+		popMenu.add(deleteItem);
+		return popMenu;
+	}
 
-
-
-
-
-//	private void actionPerformedMenuDelete() {
-//			Customer_information delInformation = p
-//			
-//			
-//			
-//		}
 
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		SearchPage_main frame = new SearchPage_main();
@@ -172,5 +206,48 @@ public class SearchPage_info extends JFrame {
 		frame.setVisible(true);
 		dispose();
 		
+	}
+
+
+	@Override
+	//삭제용
+	public void actionPerformed(ActionEvent arg0) {
+		Customer_information searchCus = new Customer_information(tfSearch.getText());
+		service.removeCustomer_information(searchCus);
+		panelTable.loadData();
+	}
+	
+	
+	private void setItemPanel(Customer_information cus) {
+		tfCusId.setText(cus.getId());
+		tfCusName.setText(cus.getMember_name());
+		tfCusPhone.setText(cus.getPhone_number());
+		tfCusAmount.setText(cus.getCumulative_amount()+"");
+		tfCusMBS.setText(cus.getMembership_title().getMembership_title());
+		tfCusId.setEnabled(false);
+		tfCusAmount.setEnabled(false);
+	}
+	
+	private Customer_information getItemPanel() {
+		String id = tfCusId.getText();
+		String member_name = tfCusName.getText();
+		String phone_number = tfCusPhone.getText();
+		int cumulative_amount = Integer.parseInt(tfCusAmount.getText());
+		Membership_discount membership_title = new Membership_discount(tfCusMBS.getText());
+		return new Customer_information(id, member_name, phone_number, cumulative_amount, membership_title);
+	}
+	
+	
+	protected void actionPerformedBtnSearch(ActionEvent arg0) {
+		Customer_information searchCus = new Customer_information(tfSearch.getText());
+		Customer_information cus = service.showCusInfoByNo(searchCus);
+		setItemPanel(cus);
+	}
+	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
+		System.out.println("수정용");
+		System.out.println(getItemPanel());
+		
+		service.modiCusDetailInfo(getItemPanel());
+		panelTable.loadData();
 	}
 }

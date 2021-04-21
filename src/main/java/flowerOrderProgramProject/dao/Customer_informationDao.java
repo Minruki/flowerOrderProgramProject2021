@@ -12,6 +12,7 @@ public interface Customer_informationDao {
 	int updatecustomer_information(Customer_information customer_information);
 	int deletecustomer_information(Customer_information customer_information);
 	
-	
+	////회원 수정용
+	int updatecustomer_Detail_Information(Customer_information customer_information);
 
 }

@@ -93,3 +93,8 @@ select ono, order_number, order_date, op.id as id, order_count, choice,
 
 
 update customer_information set cumulative_amount = cumulative_amount + 3000 where id = 'lys6009'; 
+
+select id,member_name,phone_number,cumulative_amount,membership_title from customer_information;
+
+-- 회원 정보 수정
+update customer_information set member_name = ?,phone_number =?,membership_title =? where id = ?; 
