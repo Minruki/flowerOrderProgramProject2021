@@ -163,46 +163,46 @@ public class SearchPage_info extends JFrame implements ActionListener{
 //		}
 		
 		
-		JButton btnNewButton_1 = new JButton("↓");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnModify = new JButton("↓");
+		btnModify.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_1(e);
 			}
 		});
-		panel_2.add(btnNewButton_1);
+		panel_2.add(btnModify);
 		
-		JButton btnNewButton_3 = new JButton("X");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnCancel = new JButton("X");
+		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_3(e);
 			}
 		});
-		panel_2.add(btnNewButton_3);
+		panel_2.add(btnCancel);
 		contentPane.add(panelTable);
 
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		
-		JButton btnNewButton = new JButton("◀ Back");
+		JButton btnBack = new JButton("◀ Back");
 		
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.addActionListener(new ActionListener() {
+		btnBack.setBackground(new Color(255, 255, 255));
+		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
 			}
 		});
 		
-		panel_1.add(btnNewButton);
+		panel_1.add(btnBack);
 		
-		JButton btnNewButton_2 = new JButton("Main ▶");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnMain = new JButton("Main ▶");
+		btnMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_2(e);
 			}
 		});
 		
-		btnNewButton_2.setBackground(new Color(255, 255, 255));
-		panel_1.add(btnNewButton_2);
+		btnMain.setBackground(new Color(255, 255, 255));
+		panel_1.add(btnMaindddddddd);
 		
 		JPopupMenu popupMenu = createPopupMenu();
 		panelTable.setPopupMenu(popupMenu);

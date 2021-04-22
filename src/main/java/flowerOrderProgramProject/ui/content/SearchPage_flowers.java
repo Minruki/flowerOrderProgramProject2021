@@ -1,6 +1,10 @@
 package flowerOrderProgramProject.ui.content;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -11,27 +15,30 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import flowerOrderProgramProject.service.Flower_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Flower_information_panel;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.CardLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class SearchPage_flowers extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfSearch;
-
-	/**
-	 * Launch the application.
-	 */
+	
+	private Flower_informationService service;
+	private JTextField tfCode;
+	private JTextField tfName;
+	private JTextField tfPrice;
+	private Flower_information_panel panelTable;
+		
+//	private JTextField tf
+	
+	protected void setService() {
+		service = new Flower_informationService();
+	}
+	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+			EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					SearchPage_flowers frame = new SearchPage_flowers();
@@ -47,6 +54,7 @@ public class SearchPage_flowers extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchPage_flowers() {
+		service = new Flower_informationService();
 		initialize();
 	}
 	private void initialize() {
@@ -86,25 +94,55 @@ public class SearchPage_flowers extends JFrame {
 		panelTable.loadData();
 		contentPane.add(panelTable);
 		
+		JPanel panel_2 = new JPanel();
+		panelTable.add(panel_2, BorderLayout.NORTH);
+		
+		JLabel lblCode = new JLabel("Code");
+		panel_2.add(lblCode);
+		
+		tfCode = new JTextField();
+		panel_2.add(tfCode);
+		tfCode.setColumns(10);
+		
+		JLabel lblName = new JLabel("Name");
+		panel_2.add(lblName);
+		
+		tfName = new JTextField();
+		panel_2.add(tfName);
+		tfName.setColumns(10);
+		
+		JLabel lblPrice = new JLabel("Price");
+		panel_2.add(lblPrice);
+		
+		tfPrice = new JTextField();
+		panel_2.add(tfPrice);
+		tfPrice.setColumns(10);
+		
+		JButton btnNewButton = new JButton("↓");
+		panel_2.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("x");
+		panel_2.add(btnNewButton_1);
+		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btnNewButton = new JButton("◀ Back");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnBack = new JButton("◀ Back");
+		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
 			}
 		});
-		panel_1.add(btnNewButton);
+		panel_1.add(btnBack);
 		
-		JButton btnNewButton_1 = new JButton(" Main ▶");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnMain = new JButton(" Main ▶");
+		btnMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_1(e);
 			}
 		});
-		panel_1.add(btnNewButton_1);
+		panel_1.add(btnMain);
 	}
 
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
