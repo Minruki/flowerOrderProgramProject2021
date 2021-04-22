@@ -14,13 +14,13 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 	private Customer_informationService service;
 	
 	@Override
-	public Customer_information getItem() {
-		int idx = table.getSelectedRow();
-		if (idx == -1) {
-			throw new NotSelectedException();
-		}
-		return list.get(idx);
+	public Customer_information getItem(){
+		int row = table.getSelectedRow();
+		String Customer_information = table.getValueAt(row, 0)+"";
+		System.out.println(Customer_information);
+		return list.get(list.indexOf(new Customer_information(Customer_information)));
 	}
+	
 
 	@Override
 	public void initList() {
@@ -59,5 +59,6 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 				"membership"
 		};
 	}
+	
 
 }

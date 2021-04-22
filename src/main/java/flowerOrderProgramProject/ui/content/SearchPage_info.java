@@ -148,6 +148,21 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		panel_2.add(tfCusMBS);
 		tfCusMBS.setColumns(10);
 		
+//		public void clearTf() {
+//			
+//			tfCusId.setText("");
+//			tfCusName.setText("");
+//			tfCusPhone.setText("");
+//			tfCusAmount.setText("");
+//			tfCusMBS.setText("");
+//			
+//			if (!tfCusId.isEditable()) {
+//				tfCusId.setEditable(false);
+//			}
+//			
+//		}
+		
+		
 		JButton btnNewButton_1 = new JButton("↓");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -155,6 +170,14 @@ public class SearchPage_info extends JFrame implements ActionListener{
 			}
 		});
 		panel_2.add(btnNewButton_1);
+		
+		JButton btnNewButton_3 = new JButton("X");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton_3(e);
+			}
+		});
+		panel_2.add(btnNewButton_3);
 		contentPane.add(panelTable);
 
 		JPanel panel_1 = new JPanel();
@@ -212,8 +235,8 @@ public class SearchPage_info extends JFrame implements ActionListener{
 	@Override
 	//삭제용
 	public void actionPerformed(ActionEvent arg0) {
-		Customer_information searchCus = new Customer_information(tfSearch.getText());
-		service.removeCustomer_information(searchCus);
+		
+		service.removeCustomer_information(panelTable.getItem());
 		panelTable.loadData();
 	}
 	
@@ -244,10 +267,16 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		setItemPanel(cus);
 	}
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
-		System.out.println("수정용");
-		System.out.println(getItemPanel());
+
 		
 		service.modiCusDetailInfo(getItemPanel());
 		panelTable.loadData();
+	}
+	protected void actionPerformedBtnNewButton_3(ActionEvent e) {
+//		panelTable.clearTf();
+		//초기화 시키기 버튼
+		//삭제 안됨
+
+		
 	}
 }
