@@ -145,5 +145,24 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 		return null;
 	
 	}
+
+	@Override
+	public int updateFlower_Detail_Information(Flower_information flower_information) {
+		String sql = "update flower_information set flower_name = ?, flower_price = ? where flower_code = ?";
+		try(Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, flower_information.getFlower_name());
+			pstmt.setInt(2, flower_information.getFlower_price());
+			pstmt.setString(3, flower_information.getFlower_code());
+			
+			return pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	
 	
 }

@@ -91,6 +91,7 @@ select ono, order_number, order_date, op.id as id, order_count, choice,
   
  select flower_code,flower_price, flower_name from flower_information where flower_code = 'A001';
 
+update flower_information set flower_name = '히아신스', flower_price = 10000 where flower_code = 'A011';
 
 update customer_information set cumulative_amount = cumulative_amount + 3000 where id = 'lys6009'; 
 

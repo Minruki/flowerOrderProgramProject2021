@@ -11,25 +11,29 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.service.Flower_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Flower_information_panel;
 
 @SuppressWarnings("serial")
-public class SearchPage_flowers extends JFrame {
+public class SearchPage_flowers extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private JTextField tfSearch;
 	
 	private Flower_informationService service;
 	private JTextField tfCode;
 	private JTextField tfName;
 	private JTextField tfPrice;
 	private Flower_information_panel panelTable;
+	private JButton btnSearch;
+	private JTextField tfSearch;
 		
 //	private JTextField tf
 	
@@ -83,11 +87,17 @@ public class SearchPage_flowers extends JFrame {
 		JPanel panel_search = new JPanel();
 		contentPane.add(panel_search);
 		
-		tfSearch = new JTextField();
+		JTextField tfSearch = new JTextField();
 		panel_search.add(tfSearch);
 		tfSearch.setColumns(20);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnSearch(arg0);
+			}
+		});
+		
 		panel_search.add(btnSearch);
 		
 		Flower_information_panel panelTable = new Flower_information_panel();
@@ -119,6 +129,11 @@ public class SearchPage_flowers extends JFrame {
 		tfPrice.setColumns(10);
 		
 		JButton btnNewButton = new JButton("↓");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton(e);
+			}
+		});
 		panel_2.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("x");
@@ -143,6 +158,18 @@ public class SearchPage_flowers extends JFrame {
 			}
 		});
 		panel_1.add(btnMain);
+		
+		JPopupMenu popupMenu = createPopupMenu();
+		panelTable.setPopupMenu(popupMenu);
+	}
+
+	private JPopupMenu createPopupMenu() {
+		JPopupMenu popMenu = new JPopupMenu();
+		
+		JMenuItem deleteItem = new JMenuItem("삭제");
+		deleteItem.addActionListener(this);
+		popMenu.add(deleteItem);
+		return popMenu;
 	}
 
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
@@ -156,4 +183,45 @@ public class SearchPage_flowers extends JFrame {
 		frame.setVisible(true);
 		dispose();
 	}
+	
+	@Override
+	
+	public void actionPerformed(ActionEvent arg0) {
+		service.removeFlower_information(panelTable.getItem());
+		panelTable.loadData();
+	}
+	
+	private void setItemPanel(Flower_information fInfo) {
+		tfCode.setText(fInfo.getFlower_code());
+		tfName.setText(fInfo.getFlower_name());
+		tfPrice.setText(fInfo.getFlower_price()+"");
+		tfCode.setEnabled(false);
+		
+	}
+	
+	private Flower_information getItemPanel() {
+		String code = tfCode.getText();
+		String name = tfName.getText();
+		int price = Integer.parseInt(tfPrice.getText());
+		
+		return new Flower_information(code, name, price);
+	}
+	
+	protected void actionPerformedBtnSearch(ActionEvent arg0) {
+		Flower_information searchFlower_information = new Flower_information(tfSearch.getText());
+		Flower_information fInfo = service.showFlowerPriceByCode(searchFlower_information);
+		setItemPanel(fInfo);
+	}
+	
+	protected void actionPerformedBtnNewButton1(ActionEvent e) {
+		service.modifyFlower_information(getItemPanel());
+		panelTable.loadData();
+	}
+	
+	
+	
+	
+	
+	
+	
 }

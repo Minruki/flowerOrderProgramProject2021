@@ -202,7 +202,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		});
 		
 		btnMain.setBackground(new Color(255, 255, 255));
-		panel_1.add(btnMaindddddddd);
+		panel_1.add(btnMain);
 		
 		JPopupMenu popupMenu = createPopupMenu();
 		panelTable.setPopupMenu(popupMenu);
@@ -275,7 +275,8 @@ public class SearchPage_info extends JFrame implements ActionListener{
 	protected void actionPerformedBtnNewButton_3(ActionEvent e) {
 //		panelTable.clearTf();
 		//초기화 시키기 버튼
-		//삭제 안됨
+		//기존 DB에 있는 데이터는 삭제 안됨, 새로 추가한 데이터만 가능
+		
 
 		
 	}

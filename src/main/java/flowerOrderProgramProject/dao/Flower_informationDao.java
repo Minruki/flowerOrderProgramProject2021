@@ -14,4 +14,5 @@ public interface Flower_informationDao {
 
 	
 	Flower_information selectFlower_informationByCode(Flower_information flower_information);
+	int updateFlower_Detail_Information(Flower_information flower_information);
 }
