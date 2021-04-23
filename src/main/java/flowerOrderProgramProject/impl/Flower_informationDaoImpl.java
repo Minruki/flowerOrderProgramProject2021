@@ -130,7 +130,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	@Override
 	public Flower_information selectFlower_informationByCode(Flower_information flower_information) {
-		String sql = "select flower_price from flower_information where flower_code = ?";
+		String sql = "select flower_code, flower_name, flower_price from flower_information where flower_code = ?";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, flower_information.getFlower_code());

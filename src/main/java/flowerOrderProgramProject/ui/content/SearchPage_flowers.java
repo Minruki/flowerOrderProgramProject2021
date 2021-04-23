@@ -87,20 +87,20 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		JPanel panel_search = new JPanel();
 		contentPane.add(panel_search);
 		
-		JTextField tfSearch = new JTextField();
+		tfSearch = new JTextField();
 		panel_search.add(tfSearch);
 		tfSearch.setColumns(20);
 		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.addActionListener(new ActionListener() {
+		JButton btnSearch_1 = new JButton("Search");
+		btnSearch_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				actionPerformedBtnSearch(arg0);
 			}
 		});
 		
-		panel_search.add(btnSearch);
+		panel_search.add(btnSearch_1);
 		
-		Flower_information_panel panelTable = new Flower_information_panel();
+		panelTable = new Flower_information_panel();
 		panelTable.loadData();
 		contentPane.add(panelTable);
 		
@@ -136,8 +136,13 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		});
 		panel_2.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("x");
-		panel_2.add(btnNewButton_1);
+		JButton btnClear = new JButton("x");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnNewButton_1(arg0);
+			}
+		});
+		panel_2.add(btnClear);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -150,14 +155,6 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 			}
 		});
 		panel_1.add(btnBack);
-		
-		JButton btnMain = new JButton(" Main ▶");
-		btnMain.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformedBtnNewButton_1(e);
-			}
-		});
-		panel_1.add(btnMain);
 		
 		JPopupMenu popupMenu = createPopupMenu();
 		panelTable.setPopupMenu(popupMenu);
@@ -179,14 +176,25 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		
 	}
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
-		FlowerFrm frame = new FlowerFrm();
-		frame.setVisible(true);
-		dispose();
+		clearTf();
+		
+//		FlowerFrm frame = new FlowerFrm();
+//		frame.setVisible(true);
+//		dispose();
+	}
+
+
+	
+	private void clearTf() {
+		tfCode.setText("");
+		tfName.setText("");
+		tfPrice.setText("");
+		tfSearch.setText("");
 	}
 	
 	@Override
-	
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println(panelTable.getItem());
 		service.removeFlower_information(panelTable.getItem());
 		panelTable.loadData();
 	}
@@ -217,11 +225,5 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		service.modifyFlower_information(getItemPanel());
 		panelTable.loadData();
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }

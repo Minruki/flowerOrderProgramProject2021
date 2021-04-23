@@ -260,6 +260,14 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		return new Customer_information(id, member_name, phone_number, cumulative_amount, membership_title);
 	}
 	
+	private void clearTf() {
+		tfCusId.setText("");
+		tfCusName.setText("");
+		tfCusPhone.setText("");
+		tfCusAmount.setText("");
+		tfCusMBS.setText("");
+		tfSearch.setText("");
+	}
 	
 	protected void actionPerformedBtnSearch(ActionEvent arg0) {
 		Customer_information searchCus = new Customer_information(tfSearch.getText());
@@ -273,11 +281,13 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		panelTable.loadData();
 	}
 	protected void actionPerformedBtnNewButton_3(ActionEvent e) {
-//		panelTable.clearTf();
-		//초기화 시키기 버튼
+		clearTf();
+		
 		//기존 DB에 있는 데이터는 삭제 안됨, 새로 추가한 데이터만 가능
-		
-
-		
+			
 	}
+	
+	
+		
+	
 }

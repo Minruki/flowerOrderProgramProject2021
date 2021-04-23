@@ -32,9 +32,6 @@ public class Flower_information {
 		this.flower_price = flower_price;
 	}
 
-
-	
-
 	public String getFlower_code() {
 		return flower_code;
 	}
@@ -60,9 +57,6 @@ public class Flower_information {
 	public void setFlower_price(int flower_price) {
 		this.flower_price = flower_price;
 	}
-
-	
-	
 
 	@Override
 	public int hashCode() {

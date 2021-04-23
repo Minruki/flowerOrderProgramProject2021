@@ -27,7 +27,7 @@
     project="flowerOrderProgramProject" 
     file="/flowerOrderProgramProject/src/main/java/flowerOrderProgramProject/dao/Membership_discountDao.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="651" y="553"/>    
+    <position height="-1" width="-1" x="881" y="526"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -38,7 +38,7 @@
     project="flowerOrderProgramProject" 
     file="/flowerOrderProgramProject/src/main/java/flowerOrderProgramProject/dao/Order_programDao.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="153" width="312" x="900" y="367"/>    
+    <position height="-1" width="-1" x="1306" y="369"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
