@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 import java.awt.GridLayout;
+import java.awt.Color;
 
 
 @SuppressWarnings("serial")
@@ -58,6 +59,7 @@ public class SearchPage_main extends JFrame {
 		panel_1.setLayout(new GridLayout(0, 2, 5, 0));
 		
 		JButton btnNewButton = new JButton("Flower_Information : 꽃 정보");
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -70,6 +72,7 @@ public class SearchPage_main extends JFrame {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Customer_information : 고객 정보");
+		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

@@ -1,5 +1,8 @@
 package flowerOrderProgramProject.view;
 
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.SwingConstants;
 
 import flowerOrderProgramProject.dto.Customer_information;
@@ -9,6 +12,16 @@ import flowerOrderProgramProject.service.Customer_informationService;
 @SuppressWarnings("serial")
 public class Customer_information_panel extends AbstractCustomTablePanel<Customer_information> {
 	public Customer_information_panel() {
+		
+		initialize();
+	}
+	
+	private void initialize() {
+		table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));
+		table.getTableHeader().setForeground(Color.black);
+		table.getTableHeader().setBackground(Color.pink);
+		table.setBackground(Color.WHITE);
+		
 	}
 	
 	private Customer_informationService service;
@@ -32,7 +45,7 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 	protected void setAlignAndWidth() {
 		// 컬럼내용 정렬
 		setTableCellAlign(SwingConstants.CENTER, 0, 1, 4);
-		setTableCellAlign(SwingConstants.RIGHT, 2,3);
+		setTableCellAlign(SwingConstants.CENTER, 2,3);
 
 		// 컬럼별 너비 조정
 		setTableCellWidth(80, 80, 120,80,100);
@@ -44,7 +57,7 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 				t.getId(),
 				t.getMember_name(),
 				t.getPhone_number(),
-				t.getCumulative_amount(),
+				String.format("%,d", t.getCumulative_amount()),
 				t.getMembership_title()
 		};
 	}
@@ -52,11 +65,11 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 	@Override
 	public String[] getColumnNames() {
 		return new String[] {
-				"id",
-				"member",
-				"phone",
-				"amount",
-				"membership"
+				"Id",
+				"Member Name",
+				"Phone Number",
+				"Cumulative amount",
+				"Membership"
 		};
 	}
 	

@@ -21,6 +21,7 @@ import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.service.Flower_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Flower_information_panel;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class SearchPage_flowers extends JFrame implements ActionListener {
@@ -66,6 +67,7 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 592);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
@@ -145,10 +147,12 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		panel_2.add(btnClear);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
 		contentPane.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btnBack = new JButton("◀ Back");
+		btnBack.setBackground(Color.WHITE);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);

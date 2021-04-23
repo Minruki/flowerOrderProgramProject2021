@@ -6,10 +6,20 @@ import javax.swing.SwingConstants;
 import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.exception.NotSelectedException;
 import flowerOrderProgramProject.service.Customer_informationService;
+import java.awt.Color;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class Flower_information_panel extends AbstractCustomTablePanel<Flower_information> {
 	public Flower_information_panel() {
+		initialize();
+	}
+	private void initialize() {
+		table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));
+		table.getTableHeader().setForeground(Color.black);
+		table.getTableHeader().setBackground(Color.pink);
+		table.setBackground(Color.WHITE);
+		table.setSelectionBackground(Color.pink);
 	}
 	
 	private Customer_informationService service;
@@ -44,17 +54,16 @@ public class Flower_information_panel extends AbstractCustomTablePanel<Flower_in
 		return new Object[] {
 				t.getFlower_code(),
 				t.getFlower_name(),
-				t.getFlower_price(),
-		
+			String.format("%,d", t.getFlower_price())
 		};
 	}
 
 	@Override
 	public String[] getColumnNames() {
 		return new String[] {
-				"code",
-				"name",
-				"price",
+				"Flower Code",
+				"Flower Name",
+				"Flower Price",
 			
 		};
 	}
