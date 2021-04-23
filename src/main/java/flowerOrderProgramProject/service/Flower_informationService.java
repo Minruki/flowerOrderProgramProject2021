@@ -42,5 +42,8 @@ public class Flower_informationService {
 		dao.updateFlower_Detail_Information(fInformation);
 		
 	}
+	public Flower_information selectFlower_infoByNo(Flower_information fInformation) {
+		return dao.selectflower_informationByNo(fInformation);
+	}		
 	
 }

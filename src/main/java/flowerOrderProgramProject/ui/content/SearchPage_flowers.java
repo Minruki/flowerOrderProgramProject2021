@@ -128,13 +128,13 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		panel_2.add(tfPrice);
 		tfPrice.setColumns(10);
 		
-		JButton btnNewButton = new JButton("↓");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnSave = new JButton("↓");
+		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actionPerformedBtnNewButton(e);
+				actionPerformedBtnNewButton1(e);
 			}
 		});
-		panel_2.add(btnNewButton);
+		panel_2.add(btnSave);
 		
 		JButton btnClear = new JButton("x");
 		btnClear.addActionListener(new ActionListener() {
@@ -217,7 +217,7 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 	
 	protected void actionPerformedBtnSearch(ActionEvent arg0) {
 		Flower_information searchFlower_information = new Flower_information(tfSearch.getText());
-		Flower_information fInfo = service.showFlowerPriceByCode(searchFlower_information);
+		Flower_information fInfo = service.selectFlower_infoByNo(searchFlower_information);
 		setItemPanel(fInfo);
 	}
 	

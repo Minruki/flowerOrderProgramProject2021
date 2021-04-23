@@ -97,11 +97,12 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	@Override
 	public int updateflower_information(Flower_information flower_information) {
-		String sql = "update flower_information set flower_price = ? where flower_code = ?";
+		String sql = "update flower_information set flower_name = ?, flower_price = ? where flower_code = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			
-			pstmt.setInt(1, flower_information.getFlower_price());
-			pstmt.setString(2, flower_information.getFlower_code());
+			pstmt.setString(1, flower_information.getFlower_name());
+			pstmt.setInt(2, flower_information.getFlower_price());
+			pstmt.setString(3, flower_information.getFlower_code());
 			
 			System.out.println(pstmt);
 			return pstmt.executeUpdate();
@@ -130,7 +131,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	@Override
 	public Flower_information selectFlower_informationByCode(Flower_information flower_information) {
-		String sql = "select flower_code, flower_name, flower_price from flower_information where flower_code = ?";
+		String sql = "select flower_price from flower_information where flower_code = ?";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, flower_information.getFlower_code());

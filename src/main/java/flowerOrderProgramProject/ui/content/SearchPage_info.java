@@ -31,7 +31,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField tfSearch;
-	private TableRowSorter sorter;
+
 
 	private Customer_informationService service;
 	private JTextField tfCusId;
