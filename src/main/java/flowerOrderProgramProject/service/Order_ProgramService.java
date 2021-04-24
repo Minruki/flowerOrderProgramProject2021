@@ -40,6 +40,8 @@ public class Order_ProgramService {
 	
 	public void addOrder_program(Order_program oProgram) {
 		ordDao.insertorder_program(oProgram);
+	} 
+	public Order_program showByOno(Order_program oProgram){
+		return ordDao.selectorder_programByOno(oProgram);
 	}
-
 }

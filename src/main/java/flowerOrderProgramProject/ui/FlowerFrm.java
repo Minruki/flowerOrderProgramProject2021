@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import flowerOrderProgramProject.ui.content.ConfirmationPage;
 import flowerOrderProgramProject.ui.content.CustomerInfo;
 import flowerOrderProgramProject.ui.content.Detailview;
 
@@ -52,6 +53,15 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	
     	btnCI = new JButton("Join New");
     	btnCI.addActionListener(this);
+    	
+    	JButton btnConfirm = new JButton("Confirmation");
+    	btnConfirm.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			actionPerformedBtnConfirm(e);
+    		}
+    	});
+    	btnConfirm.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
+    	panel_1.add(btnConfirm);
     	btnCI.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnCI);
     	
@@ -119,6 +129,11 @@ public class FlowerFrm extends JFrame implements ActionListener{
 		LogoutPageMain frame = new LogoutPageMain();
 		frame.setVisible(true);
 		this.dispose();
+		
+	}
+	protected void actionPerformedBtnConfirm(ActionEvent e) {
+		ConfirmationPage frame = new ConfirmationPage();
+		frame.setVisible(true);
 		
 	}
 }

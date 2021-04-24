@@ -21,7 +21,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 		}
 		return instance;
 	}
-	
+	 
 	private Flower_informationDaoImpl() {}
 
 	@Override

@@ -56,6 +56,8 @@ select * from customer_information;
 select * from flower_information;
 select * from order_program;
 
+select * from order_program where ono = 29;
+
 -- view 생성
 create view vm_flower as
 select ono, order_number, order_date, op.id as id, order_count, choice,

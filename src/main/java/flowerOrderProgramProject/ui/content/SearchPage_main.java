@@ -56,9 +56,9 @@ public class SearchPage_main extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(82, 263, 463, 37);
 		contentPane.add(panel_1);
-		panel_1.setLayout(new GridLayout(0, 3, 5, 0));
+		panel_1.setLayout(new GridLayout(0, 2, 5, 0));
 		
-		JButton btnNewButton = new JButton("꽃 관리");
+		JButton btnNewButton = new JButton("Flower_Information : 꽃 정보");
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -71,8 +71,7 @@ public class SearchPage_main extends JFrame {
 		});
 		panel_1.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("고객 정보");
-		btnNewButton_1.setBackground(Color.WHITE);
+		JButton btnNewButton_1 = new JButton("Customer_information : 고객 정보");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -82,9 +81,6 @@ public class SearchPage_main extends JFrame {
 			}
 		});
 		panel_1.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("주문 확인");
-		panel_1.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\3d-render-cherry-blossom-bokeh-lights-background_1048-6029.jpg"));

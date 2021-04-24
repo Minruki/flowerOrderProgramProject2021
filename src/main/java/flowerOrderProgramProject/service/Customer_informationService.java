@@ -14,7 +14,7 @@ import flowerOrderProgramProject.impl.Customer_informationDaoImpl;
 import flowerOrderProgramProject.impl.Flower_informationDaoImpl;
 import flowerOrderProgramProject.impl.Membership_discountDaoImpl;
 import flowerOrderProgramProject.impl.Order_programDaoImpl;
-
+ 
 public class Customer_informationService {
 	private Order_programDao ordDao = Order_programDaoImpl.getInstance();
 	private Membership_discountDao memDao = Membership_discountDaoImpl.getInstance();

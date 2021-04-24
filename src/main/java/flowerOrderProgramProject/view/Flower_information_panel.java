@@ -62,8 +62,8 @@ public class Flower_information_panel extends AbstractCustomTablePanel<Flower_in
 	public String[] getColumnNames() {
 		return new String[] {
 				"Flower Code",
-				"Flower Name",
-				"Flower Price",
+				"Flower Name", 
+				"Flower Price"
 			
 		};
 	}

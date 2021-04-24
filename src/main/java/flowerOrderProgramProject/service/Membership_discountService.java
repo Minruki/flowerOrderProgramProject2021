@@ -20,7 +20,7 @@ public class Membership_discountService {
 	
 	public List<Membership_discount> showMemList(){
 		return memDao.selectmembership_discountByAll();
-	}
+	} 
 	
 	public void addMembership_discount(Membership_discount mDiscount) {
 		memDao.insertmembership_discount(mDiscount);

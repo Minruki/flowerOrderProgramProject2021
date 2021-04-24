@@ -59,7 +59,7 @@ public class OrderPage extends JFrame {
 	private JLabel lblsale_price;
 	private JLabel lblNewLabel_9;
 	private JLabel lblchoice;
-	private JLabel tfNo;
+	private JButton tfNo;
 	private JTextField tfOrderNo;
 	private JLabel backgroundBottom;
 	private JPanel gubunPanel;
@@ -105,7 +105,7 @@ public class OrderPage extends JFrame {
 		cService = new Customer_informationService();
 	}
 	
-	private void initialize() {
+	private void initialize() { 
 		setTitle("Order Program Main");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
@@ -133,10 +133,6 @@ public class OrderPage extends JFrame {
 		lblNewLabel_4 = new JLabel("");
 		listPanel.add(lblNewLabel_4);
 		
-		lblono = new JLabel("");
-		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
-		listPanel.add(lblono);
-		
 		lblorder_number = new JLabel("º 주문번호 : ");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblorder_number);
@@ -160,6 +156,10 @@ public class OrderPage extends JFrame {
 		lblsale_price = new JLabel("º 구매금액 : ");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
 		listPanel.add(lblsale_price);
+		
+		lblono = new JLabel("");
+		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
+		listPanel.add(lblono);
 		
 		panel_4 = new JPanel();
 		panel_4.setBackground(Color.PINK);
@@ -197,11 +197,6 @@ public class OrderPage extends JFrame {
 		
 		lblNewLabel_7 = new JLabel("");
 		panel.add(lblNewLabel_7);
-		
-		tfNo = new JLabel();
-		tfNo.setHorizontalAlignment(SwingConstants.CENTER);
-		tfNo.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\배경.jpg"));
-		writePanel.add(tfNo);
 		
 		tfOrderNo = new JTextField();
 		writePanel.add(tfOrderNo);
@@ -258,6 +253,16 @@ public class OrderPage extends JFrame {
 		resultPricePanel = new resultPricepanel();
 		writePanel.add(resultPricePanel);
 		
+		tfNo = new JButton();
+		tfNo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedTfNo(e);
+			}
+		});
+		tfNo.setHorizontalAlignment(SwingConstants.CENTER);
+		tfNo.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\reciept1.jpg"));
+		writePanel.add(tfNo);
+		
 		saveBtnPanel = new JPanel();
 		saveBtnPanel.setBackground(Color.PINK);
 		writePanel.add(saveBtnPanel);
@@ -285,7 +290,7 @@ public class OrderPage extends JFrame {
 		panel3.setLayout(null);
 		
 		btnChoose = new JButton("");
-		btnChoose.setBounds(0, 256, 47, 32);
+		btnChoose.setBounds(0, 214, 47, 32);
 		panel3.add(btnChoose);
 		btnChoose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -423,5 +428,21 @@ public class OrderPage extends JFrame {
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		this.flowerFrm = new FlowerFrm();
 		
+	}
+	
+	protected void actionPerformedTfNo(ActionEvent e) {
+		Reciept frame = new Reciept();
+		frame.getPanel_1().setRecItem(getReceipt());
+		frame.setVisible(true);
+	}
+
+	private Order_program getReceipt() {
+		Order_program op = new Order_program();
+		op.setOrder_date(dateChooser_1.getDate());
+		op.setFlower_code(new Flower_information(tfOL.getTextField().getText().substring(0, tfOL.getTextField().getText().indexOf(",")-2)));
+		op.setOrder_count(Integer.parseInt(tfOL.getTextField().getText().substring(tfOL.getTextField().getText().lastIndexOf(",")-1, tfOL.getTextField().getText().lastIndexOf(","))));
+		op.setSale_price(Integer.parseInt(resultPricePanel.getTfResultPrice().getText()));
+		
+		return op;
 	}
 }

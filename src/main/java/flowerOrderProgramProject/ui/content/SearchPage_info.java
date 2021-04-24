@@ -201,7 +201,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_2(e);
 			}
-		});
+		}); 
 		
 		btnMain.setBackground(new Color(255, 255, 255));
 		panel_1.add(btnMain);

@@ -12,6 +12,6 @@ public interface Order_programDao {
 	int updateorder_program(Order_program order_program);
 	int deleteorder_program(Order_program order_program); 
 
-	
+	Order_program selectorder_programByOno(Order_program order_program);
 	
 }

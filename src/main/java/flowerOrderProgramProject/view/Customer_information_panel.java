@@ -14,7 +14,7 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 	public Customer_information_panel() {
 		
 		initialize();
-	}
+	} 
 	
 	private void initialize() {
 		table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));

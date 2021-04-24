@@ -139,5 +139,22 @@ public class Order_programDaoImpl implements Order_programDao {
 		return 0;
 		
 	}
+	@Override
+	public Order_program selectorder_programByOno(Order_program order_program) {
+		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program ord where ono = ?";
+		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setInt(1, order_program.getOno());
+
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					return getorder_program(rs);
+				}
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 }

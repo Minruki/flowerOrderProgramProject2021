@@ -12,7 +12,7 @@ public class CustomerListPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public CustomerListPanel() {
-		setLayout(new BorderLayout(0, 0));
+		setLayout(new BorderLayout(0, 0)); 
 		
 		JPanel panel = new JPanel();
 		add(panel);

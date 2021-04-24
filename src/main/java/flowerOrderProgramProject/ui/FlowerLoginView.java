@@ -46,7 +46,7 @@ public class FlowerLoginView extends JFrame{
         setLocation(800, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
        
-      
+       
         JPanel panel = new JPanel();
         placeLoginPanel(panel);
        

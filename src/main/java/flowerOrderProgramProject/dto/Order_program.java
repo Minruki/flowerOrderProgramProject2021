@@ -17,7 +17,7 @@ public class Order_program {
 	public Order_program() {
 
 	} 
-
+ 
 	public Order_program(Customer_information id) {
 		super();
 		this.id = id;
@@ -175,9 +175,10 @@ public class Order_program {
 	@Override
 	public String toString() {
 		return String.format(
-				"%s,%s",
+				"%s,%s,%s",
 				flower_code == null ? "" : flower_code,
-				order_count);
+				order_count,
+				sale_price == 0 ? "" : sale_price);
 	}
 
 	
