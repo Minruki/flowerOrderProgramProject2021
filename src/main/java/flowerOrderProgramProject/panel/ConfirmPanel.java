@@ -49,7 +49,7 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 	 
 
 		// 컬럼별 너비 조정
-		setTableCellWidth(80, 100, 120, 80, 100, 100, 80, 50);
+		setTableCellWidth(30, 100, 90, 70, 100, 100, 80, 100);
 	}
 
 	@Override

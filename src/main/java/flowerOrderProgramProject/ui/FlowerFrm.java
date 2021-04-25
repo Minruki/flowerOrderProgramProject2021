@@ -36,8 +36,9 @@ public class FlowerFrm extends JFrame implements ActionListener{
 			public void run() {
 				try {
 					FlowerFrm frame = new FlowerFrm();
-					frame.setResizable(false);
+					
 					frame.setVisible(true);
+					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -88,6 +89,8 @@ public class FlowerFrm extends JFrame implements ActionListener{
     			Detailview frame = new Detailview();
     			frame.setResizable(false);
     			frame.setVisible(true);
+    			dispose();
+    			
     			
     		}
     	});
@@ -154,6 +157,17 @@ public class FlowerFrm extends JFrame implements ActionListener{
 		this.dispose();
 		
 	}
+	
+	protected void actionPerformedBtnSD(ActionEvent e) {
+		SearchPage_main frame = new SearchPage_main();
+		frame.setResizable(false);
+		frame.setVisible(true);
+		dispose();
+		
+	}
+	
+	
+	
 	protected void actionPerformedBtnConfirm(ActionEvent e) {
 		
 		ConfirmationPage frame = new ConfirmationPage();

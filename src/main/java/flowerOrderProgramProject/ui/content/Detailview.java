@@ -23,6 +23,7 @@ import javax.swing.border.TitledBorder;
 import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.panel.Flowerpricelist;
 import flowerOrderProgramProject.service.Flower_informationService;
+import flowerOrderProgramProject.ui.FlowerFrm;
 
 @SuppressWarnings("serial")
 public class Detailview extends JFrame {
@@ -69,6 +70,17 @@ public class Detailview extends JFrame {
 		
 		JPanel empty = new JPanel();
 		AddPanel.add(empty);
+		empty.setLayout(null);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedBtnNewButton(e);
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon1.jpg"));
+		btnNewButton.setBounds(0, 10, 50, 23);
+		empty.add(btnNewButton);
 		
 		JPanel panelAddandCancel = new JPanel();
 		AddPanel.add(panelAddandCancel);
@@ -92,18 +104,25 @@ public class Detailview extends JFrame {
 		
 		JPanel picture1 = new JPanel();
 		contentPane.add(picture1);
+		picture1.setLayout(null);
 		
-		JLabel lblimg2 = new JLabel("");
-		lblimg2.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
-		picture1.add(lblimg2);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\background.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 370, 242);
+		picture1.add(lblNewLabel_1);
+		
+		JButton button = new JButton("New button");
+		button.setBounds(31, 186, 97, 23);
+		picture1.add(button);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
-		panel_2.setLayout(new BorderLayout(0, 0));
+		panel_2.setLayout(null);
 		
-		JLabel lblimg = new JLabel("picture2");
-		lblimg.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
-		panel_2.add(lblimg, BorderLayout.CENTER);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		lblNewLabel.setBounds(0, 0, 370, 242);
+		panel_2.add(lblNewLabel);
 		
 		JPanel ListViewPanel = new JPanel();
 		contentPane.add(ListViewPanel);
@@ -183,5 +202,12 @@ public class Detailview extends JFrame {
 		JOptionPane.showMessageDialog(null, "You can update the values now *^^* ");
 		
 	
+	}
+	protected void actionPerformedBtnNewButton(ActionEvent e) {
+		FlowerFrm frame = new FlowerFrm();
+		frame.setVisible(true);
+		frame.setResizable(false);
+		dispose();
+		
 	}
 }

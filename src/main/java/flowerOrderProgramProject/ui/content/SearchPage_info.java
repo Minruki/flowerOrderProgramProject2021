@@ -186,7 +186,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		panel_1.setBackground(Color.WHITE);
 		contentPane.add(panel_1);
 		
-		JButton btnBack = new JButton("◀ Back");
+		JButton btnBack = new JButton("◀ Main");
 		
 		btnBack.setBackground(new Color(255, 255, 255));
 		btnBack.addActionListener(new ActionListener() {
@@ -197,12 +197,12 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		
 		panel_1.add(btnBack);
 		
-		JButton btnMain = new JButton("Main ▶");
+		JButton btnMain = new JButton("Menu ▶");
 		btnMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton_2(e);
 			}
-		}); 
+		});
 		
 		btnMain.setBackground(new Color(255, 255, 255));
 		panel_1.add(btnMain);
