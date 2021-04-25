@@ -21,6 +21,7 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 		table.getTableHeader().setForeground(Color.black);
 		table.getTableHeader().setBackground(Color.pink);
 		table.setBackground(Color.WHITE);
+		table.setSelectionBackground(Color.pink);
 		
 	}
 	

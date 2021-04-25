@@ -56,7 +56,7 @@ select * from customer_information;
 select * from flower_information;
 select * from order_program;
 
-select * from order_program where ono = 29;
+select * from order_program where ono = 28;
 
 -- view 생성
 create view vm_flower as
@@ -81,7 +81,7 @@ select id,member_name,phone_number,cumulative_amount,membership_title from custo
 DELETE FROM flower_information
 where flower_code ='A011';
 -- 
-delete from order_program where id = 'lys6009';
+delete from order_program where ono = 28;
 
 select ono, order_number, order_date, op.id as id, order_count, choice,
  sale_price, member_name, phone_number, cumulative_amount, ci.membership_title as membership, discount_rate, fi.flower_code as flower_code, flower_name, flower_price

@@ -2,6 +2,7 @@ package flowerOrderProgramProject.ui;
  
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,7 @@ import flowerOrderProgramProject.ui.content.Detailview;
 
 import flowerOrderProgramProject.ui.content.LogoutPageMain;
 import flowerOrderProgramProject.ui.content.OrderPage;
-
+import flowerOrderProgramProject.ui.content.Reciept;
 import flowerOrderProgramProject.ui.content.SearchPage_main;
 
 // 로그인 성공 후 메인 화면
@@ -29,7 +30,23 @@ import flowerOrderProgramProject.ui.content.SearchPage_main;
 public class FlowerFrm extends JFrame implements ActionListener{
 	private JButton btnOrder;
 	private JButton btnCI;
-    public FlowerFrm() {
+    
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FlowerFrm frame = new FlowerFrm();
+					frame.setResizable(false);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public FlowerFrm() {
     	initialize();
     }
     private void initialize() {
@@ -69,6 +86,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			Detailview frame = new Detailview();
+    			frame.setResizable(false);
     			frame.setVisible(true);
     			
     		}
@@ -82,6 +100,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnSD.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			SearchPage_main frame = new SearchPage_main();
+    			frame.setResizable(false);
 				frame.setVisible(true);
 				dispose();
 				
@@ -115,11 +134,13 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	}
 	protected void actionPerformedBtn01(ActionEvent e) {
 		OrderPage frame = new OrderPage();
+		frame.setResizable(false);
 		frame.setVisible(true);
 		this.dispose();
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
 		CustomerInfo frame = new CustomerInfo();
+		frame.setResizable(false);
 		frame.setVisible(true);
 		this.dispose();
 		
@@ -127,13 +148,18 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	protected void actionPerformedBtnLog(ActionEvent e) {
 		
 		LogoutPageMain frame = new LogoutPageMain();
+	
 		frame.setVisible(true);
+		frame.setResizable(false);
 		this.dispose();
 		
 	}
 	protected void actionPerformedBtnConfirm(ActionEvent e) {
+		
 		ConfirmationPage frame = new ConfirmationPage();
+		frame.setResizable(false);
 		frame.setVisible(true);
+		this.dispose();
 		
 	}
 }

@@ -113,6 +113,7 @@ private Customer_informationService service;
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
+				
 				dispose();
 			}
 		});
@@ -146,6 +147,9 @@ private Customer_informationService service;
 	}
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		this.flowerFrm = new FlowerFrm();
+		FlowerFrm frame = new FlowerFrm();
+		frame.setResizable(false);
+		
 
 	}
 }

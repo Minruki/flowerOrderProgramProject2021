@@ -1,6 +1,9 @@
 package flowerOrderProgramProject.panel;
 
 
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.SwingConstants;
 
 
@@ -19,7 +22,15 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 	}
 
 	private void initialize() {
+		table.getTableHeader().setFont(new Font("SanSerif", Font.BOLD, 13));
+		table.getTableHeader().setForeground(Color.WHITE);
+		table.getTableHeader().setBackground(Color.BLACK);
+		table.setBackground(Color.white);
+		table.setSelectionBackground(Color.pink);
+		
 	}
+	
+	
 	
 	private Order_ProgramService service;
 	private Order_program oProgram;

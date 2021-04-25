@@ -3,6 +3,7 @@ package flowerOrderProgramProject.ui.content;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -95,7 +96,23 @@ public class OrderPage extends JFrame {
 	private JButton btnNewButton;
 	private FlowerFrm flowerFrm;
 	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					OrderPage frame = new OrderPage();
+					frame.setResizable(false);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	
 	public OrderPage() {
+		
 		cService = new Customer_informationService();
 		oService = new Order_ProgramService();
 		initialize();
@@ -109,16 +126,17 @@ public class OrderPage extends JFrame {
 		setTitle("Order Program Main");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		setBounds(300, 300, 900, 500);
+		setBounds(300, 300, 865, 503);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 5, 0, 0));
 		
 		background1 = new JPanel();
 		contentPane.add(background1);
-		background1.setLayout(new BoxLayout(background1, BoxLayout.X_AXIS));
+		background1.setLayout(null);
 		
 		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(0, 0, 496, 464);
 		lblNewLabel_1.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 		background1.add(lblNewLabel_1);
 		
@@ -188,6 +206,7 @@ public class OrderPage extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				actionPerformedBtnNewButton(arg0);
+				
 				dispose();
 			}
 		});
@@ -256,6 +275,8 @@ public class OrderPage extends JFrame {
 		tfNo = new JButton();
 		tfNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Reciept frame = new Reciept();
+				frame.setResizable(false);
 				actionPerformedTfNo(e);
 			}
 		});
@@ -295,6 +316,7 @@ public class OrderPage extends JFrame {
 		btnChoose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ChooseFlowers frame = new ChooseFlowers();
+				frame.setResizable(false);
 				frame.setVisible(true);
 				frame.setTfOL(tfOL);
 				frame.setRPP(resultPricePanel);
@@ -304,9 +326,10 @@ public class OrderPage extends JFrame {
 		
 		background2 = new JPanel();
 		contentPane.add(background2);
-		background2.setLayout(new BorderLayout(0, 0));
+		background2.setLayout(null);
 		
 		lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(-327, 0, 496, 464);
 		background2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 	}
@@ -439,6 +462,7 @@ public class OrderPage extends JFrame {
 	private Order_program getReceipt() {
 		Order_program op = new Order_program();
 		op.setOrder_date(dateChooser_1.getDate());
+		op.setId(new Customer_information(tfId.getText()));
 		op.setFlower_code(new Flower_information(tfOL.getTextField().getText().substring(0, tfOL.getTextField().getText().indexOf(",")-2)));
 		op.setOrder_count(Integer.parseInt(tfOL.getTextField().getText().substring(tfOL.getTextField().getText().lastIndexOf(",")-1, tfOL.getTextField().getText().lastIndexOf(","))));
 		op.setSale_price(Integer.parseInt(resultPricePanel.getTfResultPrice().getText()));

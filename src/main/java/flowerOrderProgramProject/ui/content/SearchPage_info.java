@@ -54,6 +54,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 			public void run() {
 				try {
 					SearchPage_info frame = new SearchPage_info();
+					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

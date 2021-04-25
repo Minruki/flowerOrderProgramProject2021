@@ -160,6 +160,15 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		});
 		panel_1.add(btnBack);
 		
+		JButton btnMain = new JButton("Main ▶");
+		btnMain.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				actionPerformedBtnMain(arg0);
+			}
+		});
+		btnMain.setBackground(Color.WHITE);
+		panel_1.add(btnMain);
+		
 		JPopupMenu popupMenu = createPopupMenu();
 		panelTable.setPopupMenu(popupMenu);
 	}
@@ -230,4 +239,10 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		panelTable.loadData();
 	}
 
+	protected void actionPerformedBtnMain(ActionEvent arg0) {
+		FlowerFrm frame = new FlowerFrm();
+		frame.setVisible(true);
+		dispose();
+		
+	}
 }

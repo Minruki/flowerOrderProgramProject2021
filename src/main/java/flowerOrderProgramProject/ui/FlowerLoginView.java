@@ -63,6 +63,7 @@ public class FlowerLoginView extends JFrame{
         panel.add(lblRightImage);
        
         setVisible(true);
+    	setResizable(false);
     }
    
     public void placeLoginPanel(JPanel panel){

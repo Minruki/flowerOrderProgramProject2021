@@ -40,6 +40,7 @@ public class Detailview extends JFrame {
 				try {
 					Detailview frame = new Detailview();
 					frame.setVisible(true);
+					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

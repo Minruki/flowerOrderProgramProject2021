@@ -56,6 +56,7 @@ public class ChooseFlowers extends JFrame {
 			public void run() {
 				try {
 					ChooseFlowers frame = new ChooseFlowers();
+					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -133,7 +134,7 @@ public class ChooseFlowers extends JFrame {
 		panelTulip.setBackground(Color.WHITE);
 		panelTulip.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u203B A004<\uD2A4\uB9BD> \u203B", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panelTulip);
-		
+		 
 		JLabel lblTulip = new JLabel("");
 		lblTulip.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\튤립3.jpg"));
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
@@ -373,7 +374,7 @@ public class ChooseFlowers extends JFrame {
 	public void actionPerformedBtnNewButton(ActionEvent e) {
 		dispose();
 		
-	
+	 
 	}
 }
 		

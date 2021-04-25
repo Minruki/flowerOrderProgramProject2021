@@ -115,6 +115,7 @@ public class Order_program {
 	public void setId(Customer_information id) {
 		this.id = id;
 	}
+	
 
 	/**
 	 * @return the flower_code
@@ -172,6 +173,15 @@ public class Order_program {
 		this.sale_price = sale_price;
 	}
 
+//	@Override
+//	public String toString() {
+//		return String.format(
+//				"%s,%s",
+//				flower_code == null ? "" : flower_code,
+//				order_count
+//				);
+//	}
+
 	@Override
 	public String toString() {
 		return String.format(
@@ -180,6 +190,8 @@ public class Order_program {
 				order_count,
 				sale_price == 0 ? "" : sale_price);
 	}
+
+
 
 	
 

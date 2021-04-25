@@ -30,6 +30,7 @@ public class SearchPage_main extends JFrame {
 			public void run() {
 				try {
 					SearchPage_main frame = new SearchPage_main();
+					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -65,6 +66,7 @@ public class SearchPage_main extends JFrame {
 				
 				SearchPage_flowers frame = new SearchPage_flowers();
 				frame.setVisible(true);
+				frame.setResizable(false);
 				dispose();
 				
 			}
@@ -72,11 +74,14 @@ public class SearchPage_main extends JFrame {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Customer_information : 고객 정보");
+		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				SearchPage_info frame = new SearchPage_info();
+				
 				frame.setVisible(true);
+				frame.setResizable(false);
 				dispose();
 			}
 		});

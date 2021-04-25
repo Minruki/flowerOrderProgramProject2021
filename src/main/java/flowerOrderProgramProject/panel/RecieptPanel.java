@@ -22,6 +22,8 @@ public class RecieptPanel extends JPanel {
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_3;
 	private JLabel lbl5;
+	private JLabel lbl6;
+	private JLabel lblNewLabel_6;
 
 	public RecieptPanel() {
 
@@ -37,6 +39,13 @@ public class RecieptPanel extends JPanel {
 		
 		lbl1 = new JLabel("");
 		add(lbl1);
+		
+		lbl6 = new JLabel("▒ Id >>>  ");
+		lbl6.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		add(lbl6);
+		
+		lblNewLabel_6 = new JLabel("");
+		add(lblNewLabel_6);
 		
 		lblNewLabel = new JLabel("▒ Flower_code >>>  ");
 		lblNewLabel.setFont(new Font("Century Gothic", Font.BOLD, 15));
@@ -73,6 +82,7 @@ public class RecieptPanel extends JPanel {
 	
 	public void setRecItem(Order_program o) {
 		lbl1.setText(o.getOrder_date()+"");
+		lblNewLabel_6.setText(o.getId()+"");
 		lbl2.setText(o.getFlower_code().getFlower_code());
 		lbl3.setText(o.getOrder_count()+"");
 		lbl4.setText(o.getSale_price()+"");

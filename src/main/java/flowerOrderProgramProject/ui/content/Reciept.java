@@ -29,6 +29,7 @@ public class Reciept extends JFrame {
 			public void run() {
 				try {
 					Reciept frame = new Reciept();
+					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

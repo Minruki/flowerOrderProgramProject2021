@@ -100,9 +100,17 @@ public class Customer_information {
 	@Override
 	public String toString() {
 		return String.format(
-				"customer_information [id=%s, member_name=%s, phone_number=%s, cumulative_amount=%s, membership_title=%s]",
-				id, member_name, phone_number, cumulative_amount, membership_title);
+				"%s",
+				id);
 	}
+	
+//	@Override
+//	public String toString() {
+//		return String.format(
+//				"%s, %s, %s, %s, %s",
+//				id, member_name, phone_number, cumulative_amount, membership_title);
+//	}
+	
 	
 }
 
