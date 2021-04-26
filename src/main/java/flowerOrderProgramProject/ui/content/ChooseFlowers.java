@@ -1,7 +1,6 @@
 package flowerOrderProgramProject.ui.content;
 
 
-import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;

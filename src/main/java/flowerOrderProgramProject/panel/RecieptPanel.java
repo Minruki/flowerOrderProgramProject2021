@@ -86,6 +86,7 @@ public class RecieptPanel extends JPanel {
 		lbl2.setText(o.getFlower_code().getFlower_code());
 		lbl3.setText(o.getOrder_count()+"");
 		lbl4.setText(o.getSale_price()+"");
+		lbl5.setText(o.getChoice());
 	}
 
 }

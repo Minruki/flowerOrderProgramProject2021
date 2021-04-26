@@ -31,27 +31,11 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	private JButton btnOrder;
 	private JButton btnCI;
     
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FlowerFrm frame = new FlowerFrm();
-					
-					frame.setVisible(true);
-					frame.setResizable(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	
 	public FlowerFrm() {
     	initialize();
     }
     private void initialize() {
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);
     	getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));

@@ -32,6 +32,8 @@ import flowerOrderProgramProject.service.Order_ProgramService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import flowerOrderProgramProject.panel.tfOLpanel;
 import flowerOrderProgramProject.panel.resultPricepanel;
 import java.awt.FlowLayout;
@@ -405,7 +407,7 @@ public class OrderPage extends JFrame {
 		
 		String flower_code = on.substring(0, on.indexOf(" "));
 		
-		int order_count = Integer.parseInt((on.substring(on.indexOf(",")+1)));
+		int order_count = Integer.parseInt((on.substring(on.indexOf(",")+1,on.lastIndexOf(","))));
 		
 		String choice = null;
 		if(rdbtn01.isSelected()) {
@@ -466,6 +468,14 @@ public class OrderPage extends JFrame {
 		op.setFlower_code(new Flower_information(tfOL.getTextField().getText().substring(0, tfOL.getTextField().getText().indexOf(",")-2)));
 		op.setOrder_count(Integer.parseInt(tfOL.getTextField().getText().substring(tfOL.getTextField().getText().lastIndexOf(",")-1, tfOL.getTextField().getText().lastIndexOf(","))));
 		op.setSale_price(Integer.parseInt(resultPricePanel.getTfResultPrice().getText()));
+		if(rdbtn01.isSelected() == true) {
+			op.setChoice(rdbtn01.getText());
+		}else if(rdbtn02.isSelected() == true) {
+			op.setChoice(rdbtn02.getText());
+		}else {
+			JOptionPane.showMessageDialog(null, "선택해주세요");
+		}
+		
 		
 		return op;
 	}
