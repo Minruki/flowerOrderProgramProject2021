@@ -46,7 +46,7 @@ public class Flower_information_panel extends AbstractCustomTablePanel<Flower_in
 	
 
 		// 컬럼별 너비 조정
-		setTableCellWidth(80, 80, 120);
+		setTableCellWidth(50, 50, 50);
 	}
 
 	@Override

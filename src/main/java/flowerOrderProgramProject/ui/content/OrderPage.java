@@ -299,6 +299,7 @@ public class OrderPage extends JFrame {
 			
 		public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnSave(e);
+				JOptionPane.showMessageDialog(null, "Thank you for Order :) ");
 			}
 		});
 		saveBtnPanel.setLayout(null);

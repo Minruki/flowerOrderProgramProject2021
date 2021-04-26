@@ -167,7 +167,7 @@ public class Detailview extends JFrame {
 		Flower_information flower = AddPanel.getItem();
 //		
 		model.addElement(flower);
-		
+		JOptionPane.showMessageDialog(null, "It's been added :) ");
 //		setTextField(String.format("%s,%s,%s", flower.getFlower_code(),flower.getFlower_name(),flower.getFlower_price()));
 	}
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {

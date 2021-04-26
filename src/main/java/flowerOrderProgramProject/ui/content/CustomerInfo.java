@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -74,6 +75,7 @@ private Customer_informationService service;
 			
 		public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnSaveInfo(e);
+				JOptionPane.showMessageDialog(null, "Welcome to Join us♥ ");
 			}
 		});
 		panelbuttons.add(btnSaveInfo);

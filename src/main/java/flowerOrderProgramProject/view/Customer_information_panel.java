@@ -49,7 +49,7 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 		setTableCellAlign(SwingConstants.CENTER, 2,3);
 
 		// 컬럼별 너비 조정
-		setTableCellWidth(80, 80, 120,80,100);
+		setTableCellWidth(50, 50, 70, 50, 50);
 	}
 
 	@Override
