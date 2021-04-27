@@ -110,3 +110,10 @@ select id,member_name,phone_number,cumulative_amount,membership_title from custo
 
 -- 회원 정보 수정
 update customer_information set member_name = ?,phone_number =?,membership_title =? where id = ?; 
+
+select count(*) from order_program;
+select sum(order_count) from order_program;
+select sum(sale_price) from order_program;
+
+create view total as 
+

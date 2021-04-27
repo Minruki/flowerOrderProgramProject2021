@@ -50,7 +50,7 @@ public class Order_programDaoTest {
 		// 월 -1
 		// 일 >> 그대로 들어가도 됨
 		
-		Order_program neworder_program = new Order_program(0, "00/210421", d ,new Customer_information("teacher"), new Flower_information("A002"), 2, "꽃바구니", 0);
+		Order_program neworder_program = new Order_program(0, "00/210421", d ,new Customer_information("ABCDE"), new Flower_information("A002"), 2, "꽃바구니", 0);
 		int res = dao.insertorder_program(neworder_program);
 		Assert.assertEquals(1, res);
 		System.out.println(dao.selectorder_programByNo(neworder_program));
@@ -62,7 +62,7 @@ public class Order_programDaoTest {
 		Date d = new Date(121, 2, 29);
 		
 		
-		Order_program neworder_program = new Order_program(0, "01/210422", d ,new Customer_information("teacher"), new Flower_information("A002"), 3, "꽃다발", 0);
+		Order_program neworder_program = new Order_program(0, "02/210423", d ,new Customer_information("ABCDE"), new Flower_information("A002"), 3, "꽃다발", 0);
 		int res = dao.updateorder_program(neworder_program);
 		Assert.assertEquals(1, res);
 		System.out.println(dao.selectorder_programByNo(neworder_program));
@@ -71,7 +71,7 @@ public class Order_programDaoTest {
 	@Test
 	public void test03Deleteorder_programByNo() {
 		System.out.printf("%s()%n", "test03Deletemembership_discount");
-		Order_program Deleteorder_program = new Order_program(new Customer_information("teacher"));
+		Order_program Deleteorder_program = new Order_program(new Customer_information("ABCDE"));
 		System.out.println(Deleteorder_program);
 		int res = dao.deleteorder_program(Deleteorder_program);
 		Assert.assertEquals(1, res);

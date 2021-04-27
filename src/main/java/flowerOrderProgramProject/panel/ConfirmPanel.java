@@ -6,7 +6,6 @@ import java.awt.Font;
 
 import javax.swing.SwingConstants;
 
-
 import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.service.Order_ProgramService;
 import flowerOrderProgramProject.view.AbstractCustomTablePanel;
@@ -40,6 +39,7 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 	public void initList() {
 		service = new Order_ProgramService();
 		list = service.showOList(oProgram);
+		System.out.println(list.size());
 	}
 	
 	@Override
@@ -87,5 +87,6 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

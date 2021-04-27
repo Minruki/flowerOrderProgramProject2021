@@ -14,6 +14,20 @@ public class Order_program {
 	private String choice;
 	private int sale_price;
  
+	public Order_program(Flower_information flower, int ono, String order_number, Date order_date,
+			Customer_information id, Flower_information flower_code, int order_count, String choice, int sale_price) {
+		super();
+		this.flower = flower;
+		this.ono = ono;
+		this.order_number = order_number;
+		this.order_date = order_date;
+		this.id = id;
+		this.flower_code = flower_code;
+		this.order_count = order_count;
+		this.choice = choice;
+		this.sale_price = sale_price;
+	}
+
 	public Order_program() {
 
 	} 
