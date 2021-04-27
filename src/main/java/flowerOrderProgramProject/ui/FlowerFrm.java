@@ -35,6 +35,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	initialize();
     }
     private void initialize() {
+    	setTitle("Main Page");
     	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);

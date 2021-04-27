@@ -22,6 +22,7 @@ public class Reciept extends JFrame {
 	private JPanel contentPane;
 	private RecieptPanel panel_1;
 	private JButton button;
+	private JButton btnNewButton;
 	private JLabel lblNewLabel;
 
 	public static void main(String[] args) {
@@ -42,6 +43,7 @@ public class Reciept extends JFrame {
 		initialize();
 	}
 	private void initialize() {
+		setTitle("Reciept Screen");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 711, 398);
 		contentPane = new JPanel();
@@ -62,13 +64,18 @@ public class Reciept extends JFrame {
 		});
 		button.setBackground(Color.WHITE);
 		button.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\1111111111.jpg"));
-		button.setBounds(429, 286, 67, 67);
+		button.setBounds(504, 286, 67, 67);
 		contentPane.add(button);
 		
+		btnNewButton = new JButton("");
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\파워포인트 자료\\프린터.jpg"));
+		btnNewButton.setBounds(423, 286, 78, 67);
+		contentPane.add(btnNewButton);
+		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\IMG_00061.jpg"));
-		lblNewLabel.setBounds(0, -15, 695, 374);
+		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\1231.jpg"));
+		lblNewLabel.setBounds(0, 0, 695, 359);
 		contentPane.add(lblNewLabel);
 	}
 

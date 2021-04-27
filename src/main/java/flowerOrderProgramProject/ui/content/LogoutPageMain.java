@@ -40,6 +40,7 @@ public class LogoutPageMain extends JFrame {
 		initialize();
 	}
 	private void initialize() {
+		setTitle("Before Logout ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 632, 449);
 		contentPane = new JPanel();

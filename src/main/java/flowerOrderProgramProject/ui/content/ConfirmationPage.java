@@ -42,6 +42,7 @@ public class ConfirmationPage extends JFrame {
 		initialize();
 	}
 	private void initialize() {
+		setTitle("Confirmation List");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 877, 480);
 		contentPane = new JPanel();

@@ -47,7 +47,7 @@ private Customer_informationService service;
 	
 	
 	private void initialize() {
-		setTitle("customer information");
+		setTitle("Join New");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 635, 403);
 		contentPane = new JPanel();

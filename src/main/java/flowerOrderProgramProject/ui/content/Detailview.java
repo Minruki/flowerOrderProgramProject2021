@@ -173,7 +173,7 @@ public class Detailview extends JFrame {
 	protected void actionPerformedBtnNewButton_1(ActionEvent e) {
 		Flower_information flower = tfResult.getSelectedValue();	
 		service.addFlower_information(flower);
-		
+		JOptionPane.showMessageDialog(null, "It's been Saved :) ");
 //		String fc = flower.substring(0, ((DefaultListModel<Flower_information>) flower).indexOf(","));
 //		String fn = flower.substring(flower.indexOf(",")+1, flower.lastIndexOf(","));
 //		int fp = Integer.parseInt((flower.substring(flower.lastIndexOf(",")+1)));
