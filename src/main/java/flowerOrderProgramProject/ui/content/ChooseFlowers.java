@@ -87,7 +87,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JLabel lblRose = new JLabel("");
 		lblRose.setHorizontalAlignment(SwingConstants.LEFT);
-		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\장미9.jpg"));
+		lblRose.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\장미9.jpg"));
 		panelRose.add(lblRose);
 		
 		checkboxRose = new JCheckBox("Red Rose");
@@ -104,7 +104,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelRanun);
 		
 		JLabel lblRanun = new JLabel("");
-		lblRanun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\라넌큘러스3.jpg"));
+		lblRanun.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\라넌큘러스3.jpg"));
 		lblRanun.setHorizontalAlignment(SwingConstants.LEFT);
 		panelRanun.add(lblRanun);
 		
@@ -120,7 +120,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelLily);
 		
 		JLabel lblLily = new JLabel("");
-		lblLily.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\백합3.jpg"));
+		lblLily.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\백합3.jpg"));
 		lblLily.setHorizontalAlignment(SwingConstants.LEFT);
 		panelLily.add(lblLily);
 		
@@ -135,7 +135,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelTulip);
 		 
 		JLabel lblTulip = new JLabel("");
-		lblTulip.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\튤립3.jpg"));
+		lblTulip.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\튤립3.jpg"));
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
 		panelTulip.add(lblTulip);
 		
@@ -151,7 +151,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelSun);
 		
 		JLabel lblSun = new JLabel("");
-		lblSun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\해바라기3.jpg"));
+		lblSun.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\해바라기3.jpg"));
 		lblSun.setHorizontalAlignment(SwingConstants.LEFT);
 		panelSun.add(lblSun);
 		
@@ -167,7 +167,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelPeony);
 		
 		JLabel lblPeony = new JLabel("");
-		lblPeony.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\피오니4.jpg"));
+		lblPeony.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\피오니4.jpg"));
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
 		panelPeony.add(lblPeony);
 		
@@ -184,7 +184,7 @@ public class ChooseFlowers extends JFrame {
 		panelFre.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblFre = new JLabel("");
-		lblFre.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\프리지아5.jpg"));
+		lblFre.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\프리지아5.jpg"));
 		lblFre.setHorizontalAlignment(SwingConstants.LEFT);
 		panelFre.add(lblFre);
 		
@@ -200,7 +200,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelCarna);
 		
 		JLabel lblCarna = new JLabel("");
-		lblCarna.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\카네이션3.jpg"));
+		lblCarna.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\카네이션3.jpg"));
 		lblCarna.setHorizontalAlignment(SwingConstants.LEFT);
 		panelCarna.add(lblCarna);
 		
@@ -216,7 +216,7 @@ public class ChooseFlowers extends JFrame {
 		contentPane.add(panelGyps);
 		
 		JLabel lblGyps = new JLabel("");
-		lblGyps.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\안개꽃5.jpg"));
+		lblGyps.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\안개꽃5.jpg"));
 		lblGyps.setHorizontalAlignment(SwingConstants.LEFT);
 		panelGyps.add(lblGyps);
 		
@@ -292,7 +292,7 @@ public class ChooseFlowers extends JFrame {
 		});
 		
 		btnBakset.setBackground(new Color(255, 255, 255));
-		btnBakset.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\basketicon2.jpg"));
+		btnBakset.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\basketicon2.jpg"));
 		btnBakset.setBounds(33, 107, 99, 123);
 		panelButton.add(btnBakset);
 		
@@ -306,7 +306,7 @@ public class ChooseFlowers extends JFrame {
 				actionPerformedBtnNewButton(e);
 			}
 		});
-		btnClose.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\EXIT.jpg"));
+		btnClose.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\EXIT.jpg"));
 		btnClose.setBounds(133, 199, 36, 31);
 		panelButton.add(btnClose);
 	}

@@ -62,7 +62,7 @@ public class LogoutPageMain extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 626, 417);
 		contentPane.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\logout2.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\logout2.jpg"));
 	}
 
 }

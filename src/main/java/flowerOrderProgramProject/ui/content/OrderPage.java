@@ -139,7 +139,7 @@ public class OrderPage extends JFrame {
 		
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(0, 0, 496, 464);
-		lblNewLabel_1.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\IMG_0006.JPG"));
 		background1.add(lblNewLabel_1);
 		
 		listPanel = new JPanel(); 
@@ -213,7 +213,7 @@ public class OrderPage extends JFrame {
 			}
 		});
 		btnNewButton.setBackground(SystemColor.control);
-		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon2.jpg"));
+		btnNewButton.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\returnicon2.jpg"));
 		panel.add(btnNewButton);
 		
 		lblNewLabel_7 = new JLabel("");
@@ -283,7 +283,7 @@ public class OrderPage extends JFrame {
 			}
 		});
 		tfNo.setHorizontalAlignment(SwingConstants.CENTER);
-		tfNo.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\reciept1.jpg"));
+		tfNo.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\reciept1.jpg"));
 		writePanel.add(tfNo);
 		
 		saveBtnPanel = new JPanel();
@@ -294,7 +294,7 @@ public class OrderPage extends JFrame {
 		btnSave.setBounds(38, 5, 99, 25);
 		btnSave.setBackground(SystemColor.controlHighlight);
 		btnSave.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnSave.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\saveicon1.jpg"));
+		btnSave.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\saveicon1.jpg"));
 		btnSave.addActionListener(new ActionListener() {
 			
 		public void actionPerformed(ActionEvent e) {
@@ -325,7 +325,7 @@ public class OrderPage extends JFrame {
 				frame.setRPP(resultPricePanel);
 			}
 		});
-		btnChoose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\icon2.png"));
+		btnChoose.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\icon2.png"));
 		
 		background2 = new JPanel();
 		contentPane.add(background2);
@@ -334,7 +334,7 @@ public class OrderPage extends JFrame {
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(-327, 0, 496, 464);
 		background2.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\IMG_0006.JPG"));
 	}
 	
 	public void clearTf() {

@@ -85,7 +85,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		picture.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\flowerline.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flowerline.png"));
 		
 		
 		picture.add(lblNewLabel_1);

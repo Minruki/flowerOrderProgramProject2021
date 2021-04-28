@@ -34,7 +34,7 @@ public class Order_programDaoTest {
 	@Test
 	public void test05Selectorder_programByNo() {
 		System.out.printf("%s()%n", "testSelectorder_programByNo");
-		Order_program order = new Order_program(new Customer_information("lys6009"));
+		Order_program order = new Order_program(new Customer_information("Minruki"));
 		
 		Order_program searchorder_program = dao.selectorder_programByNo(order);
 		Assert.assertNotNull(searchorder_program);

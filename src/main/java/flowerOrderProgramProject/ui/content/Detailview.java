@@ -79,7 +79,7 @@ public class Detailview extends JFrame {
 				actionPerformedBtnNewButton(e);
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\returnicon1.jpg"));
+		btnNewButton.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\returnicon1.jpg"));
 		btnNewButton.setBounds(0, 10, 50, 23);
 		empty.add(btnNewButton);
 		
@@ -108,7 +108,7 @@ public class Detailview extends JFrame {
 		picture1.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\background.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\background.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 370, 242);
 		picture1.add(lblNewLabel_1);
 		
@@ -121,7 +121,7 @@ public class Detailview extends JFrame {
 		panel_2.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\_convertToPNG.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\_convertToPNG.png"));
 		lblNewLabel.setBounds(0, 0, 370, 242);
 		panel_2.add(lblNewLabel);
 		

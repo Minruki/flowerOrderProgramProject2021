@@ -62,6 +62,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnConfirm.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			actionPerformedBtnConfirm(e);
+    			dispose();
     		}
     	});
     	btnConfirm.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
@@ -110,7 +111,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	panel.add(panel_1);
     	
     	JLabel lblNewLabel = new JLabel("");
-    	lblNewLabel.setIcon(new ImageIcon("C:\\workspace_java\\FlowerOrderProgramProject\\image\\flower\\flowershop.jpg"));
+    	lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flowershop1.jpg"));
     	panel.add(lblNewLabel);
     }
 	public void actionPerformed(ActionEvent e) {

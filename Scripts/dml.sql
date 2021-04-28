@@ -90,7 +90,7 @@ select id,member_name,phone_number,cumulative_amount,membership_title from custo
 DELETE FROM flower_information
 where flower_code ='A011';
 -- 
-delete from order_program where order_number = '00/0411';
+delete from order_program where ono = '4';
 
 select ono, order_number, order_date, op.id as id, order_count, choice,
  sale_price, member_name, phone_number, cumulative_amount, ci.membership_title as membership, discount_rate, fi.flower_code as flower_code, flower_name, flower_price

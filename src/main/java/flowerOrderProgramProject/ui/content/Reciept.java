@@ -63,18 +63,18 @@ public class Reciept extends JFrame {
 			}
 		});
 		button.setBackground(Color.WHITE);
-		button.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\1111111111.jpg"));
+		button.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\1111111111.jpg"));
 		button.setBounds(504, 286, 67, 67);
 		contentPane.add(button);
 		
 		btnNewButton = new JButton("");
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\파워포인트 자료\\프린터.jpg"));
+		btnNewButton.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\프린터.jpg"));
 		btnNewButton.setBounds(423, 286, 78, 67);
 		contentPane.add(btnNewButton);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\1231.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\1231.jpg"));
 		lblNewLabel.setBounds(0, 0, 695, 359);
 		contentPane.add(lblNewLabel);
 	}

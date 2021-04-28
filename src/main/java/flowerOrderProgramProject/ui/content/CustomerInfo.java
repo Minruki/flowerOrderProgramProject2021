@@ -108,7 +108,7 @@ private Customer_informationService service;
 		
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setBounds(12, 0, 36, 25);
-		lblNewLabel_2.setIcon(new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\arrow1.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\arrow1.jpg"));
 		panel_4.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("Main");
@@ -126,7 +126,7 @@ private Customer_informationService service;
 		
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
 		lblNewLabel.setBounds(0, -187, 1002, 735);
 		contentPane.add(lblNewLabel);
 	}

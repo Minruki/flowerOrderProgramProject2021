@@ -86,7 +86,7 @@ public class ConfirmationPage extends JFrame {
 		});
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setIcon(
-				new ImageIcon("D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\1111111111.jpg"));
+				new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\1111111111.jpg"));
 		btnNewButton.setBounds(766, 358, 71, 67);
 		contentPane.add(btnNewButton);
 
@@ -136,8 +136,7 @@ public class ConfirmationPage extends JFrame {
 		panel_1.add(lblTotal3);
 
 		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setIcon(new ImageIcon(
-				"D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\different-color-roses.jpg"));
+		lblNewLabel_5.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\different-color-roses.jpg"));
 		lblNewLabel_5.setBounds(0, 0, 861, 473);
 		contentPane.add(lblNewLabel_5);
 		

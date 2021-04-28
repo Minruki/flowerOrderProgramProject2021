@@ -53,12 +53,12 @@ public class FlowerLoginView extends JFrame{
         getContentPane().add(panel);
         
         lblLeftImage = new JLabel("");
-        lblLeftImage.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\flower.JPG"));
+        lblLeftImage.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\flower.JPG"));
         lblLeftImage.setBounds(0, 0, 439, 427);
         panel.add(lblLeftImage);
         
         lblRightImage = new JLabel("");
-        lblRightImage.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\heart.jpg"));
+        lblRightImage.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\heart.jpg"));
         lblRightImage.setBounds(415, -13, 539, 1031);
         panel.add(lblRightImage);
        
