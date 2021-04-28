@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,7 +16,9 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import flowerOrderProgramProject.dto.Order_program;
 import flowerOrderProgramProject.panel.ConfirmPanel;
+import flowerOrderProgramProject.service.Order_ProgramService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import java.awt.FlowLayout;
 import javax.swing.JTextField;
@@ -27,8 +30,14 @@ import javax.swing.SwingConstants;
 public class ConfirmationPage extends JFrame {
 
 	private JPanel contentPane;
+	private Order_ProgramService service;
+	private Order_program oProgram;
+	private List<Order_program> list;
+	
+	private JTextField lblTotal1;
 	private JTextField lblTotal2;
-
+	private JTextField lblTotal3;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,6 +53,9 @@ public class ConfirmationPage extends JFrame {
 	}
 
 	public ConfirmationPage() {
+		service = new Order_ProgramService();
+		list = service.showOList(oProgram);
+		
 		initialize();
 	}
 
@@ -96,7 +108,7 @@ public class ConfirmationPage extends JFrame {
 		lbl1.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lbl1);
 
-		JTextField lblTotal1 = new JTextField("");
+		lblTotal1 = new JTextField("");
 		lblTotal1.setEditable(false);
 		lblTotal1.setBackground(Color.WHITE);
 		panel_1.add(lblTotal1);
@@ -115,7 +127,7 @@ public class ConfirmationPage extends JFrame {
 		lbl3.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lbl3);
 
-		JTextField lblTotal3 = new JTextField("");
+		lblTotal3 = new JTextField("");
 		lblTotal3.setBackground(Color.WHITE);
 		lblTotal3.setEditable(false);
 		panel_1.add(lblTotal3);
@@ -125,6 +137,8 @@ public class ConfirmationPage extends JFrame {
 				"D:\\flowerOrderProgramProject\\flowerOrderProgramProject\\image\\flower\\different-color-roses.jpg"));
 		lblNewLabel_5.setBounds(0, 0, 861, 473);
 		contentPane.add(lblNewLabel_5);
+		
+		setTotal(list);
 	}
 	
 	 
@@ -137,4 +151,12 @@ public class ConfirmationPage extends JFrame {
 		frame.setVisible(true);
 	}
 
+	public void setTotal(List<Order_program> list) {
+		int total1 = list.size();
+		int total2 = list.parallelStream().mapToInt(Order_program::getOrder_count).sum();
+		int total3 = list.parallelStream().mapToInt(Order_program::getSale_price).sum();
+		lblTotal1.setText(total1+"");
+		lblTotal2.setText(total2+"");
+		lblTotal3.setText(total3+"");
+	}
 }

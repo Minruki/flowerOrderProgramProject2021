@@ -34,6 +34,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
 	public FlowerFrm() {
     	initialize();
     }
+	
     private void initialize() {
     	setTitle("Main Page");
     	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
