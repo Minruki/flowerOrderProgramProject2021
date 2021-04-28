@@ -36,23 +36,24 @@ public class Detailview extends JFrame {
 	private AbstractButton btnAdd;
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Detailview frame = new Detailview();
-					frame.setVisible(true);
-					frame.setResizable(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} 
-		});
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Detailview frame = new Detailview();
+//					frame.setVisible(true);
+//					frame.setResizable(false);
+//					} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			} 
+//		});
 	}
 
 
 	public Detailview() {
 		service = new Flower_informationService();
 		initialize();
+		dispose();
 	}
 	private void initialize() {
 		setTitle("Flower management");
@@ -205,9 +206,10 @@ public class Detailview extends JFrame {
 	}
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		FlowerFrm frame = new FlowerFrm();
+		dispose();
 		frame.setVisible(true);
 		frame.setResizable(false);
-		dispose();
+		
 		
 	}
 }

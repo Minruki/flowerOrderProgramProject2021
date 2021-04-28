@@ -109,6 +109,7 @@ public class ConfirmationPage extends JFrame {
 		panel_1.add(lbl1);
 
 		lblTotal1 = new JTextField("");
+		lblTotal1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTotal1.setEditable(false);
 		lblTotal1.setBackground(Color.WHITE);
 		panel_1.add(lblTotal1);
@@ -118,6 +119,7 @@ public class ConfirmationPage extends JFrame {
 		panel_1.add(lbl2);
 
 		lblTotal2 = new JTextField();
+		lblTotal2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTotal2.setBackground(Color.WHITE);
 		lblTotal2.setEditable(false);
 		panel_1.add(lblTotal2);
@@ -128,6 +130,7 @@ public class ConfirmationPage extends JFrame {
 		panel_1.add(lbl3);
 
 		lblTotal3 = new JTextField("");
+		lblTotal3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTotal3.setBackground(Color.WHITE);
 		lblTotal3.setEditable(false);
 		panel_1.add(lblTotal3);
