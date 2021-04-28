@@ -117,6 +117,7 @@ public class FlowerLoginView extends JFrame{
             bLoginCheck = true;
            
             FlowerFrm frame = new FlowerFrm();
+            frame.setResizable(false);
             frame.setVisible(true);
             dispose();
 //            if(isLogin()){

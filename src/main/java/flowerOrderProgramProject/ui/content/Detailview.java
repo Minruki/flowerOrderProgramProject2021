@@ -77,6 +77,7 @@ public class Detailview extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnNewButton(e);
+				dispose();
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\returnicon1.jpg"));
@@ -111,10 +112,6 @@ public class Detailview extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\background.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 370, 242);
 		picture1.add(lblNewLabel_1);
-		
-		JButton button = new JButton("New button");
-		button.setBounds(31, 186, 97, 23);
-		picture1.add(button);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
@@ -206,10 +203,9 @@ public class Detailview extends JFrame {
 	}
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		FlowerFrm frame = new FlowerFrm();
-		dispose();
 		frame.setVisible(true);
 		frame.setResizable(false);
-		
+		dispose();
 		
 	}
 }
