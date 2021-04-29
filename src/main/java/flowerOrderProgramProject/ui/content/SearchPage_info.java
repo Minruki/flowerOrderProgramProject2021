@@ -25,6 +25,7 @@ import flowerOrderProgramProject.dto.Membership_discount;
 import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Customer_information_panel;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class SearchPage_info extends JFrame implements ActionListener{
@@ -96,6 +97,11 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		
 		JPanel panelSearch = new JPanel();
 		contentPane.add(panelSearch);
+		
+		JLabel lblNewLabel_6 = new JLabel("id");
+		lblNewLabel_6.setForeground(Color.BLACK);
+		lblNewLabel_6.setFont(new Font("Arial", Font.BOLD, 15));
+		panelSearch.add(lblNewLabel_6);
 		
 		tfSearch = new JTextField();
 		panelSearch.add(tfSearch);

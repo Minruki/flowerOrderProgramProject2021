@@ -33,12 +33,14 @@ private Customer_informationService service;
 	private JButton btnSave; 
 	private CustomerPanel panel;
 	private CustomerPanel panel_1;
-
 	private FlowerFrm flowerFrm;
+	private JButton btnMain;
 
+	public static void main(String[] args) { }
 	
 	public CustomerInfo() {
 		initialize();
+		dispose();
 	}
 	
 	protected void setService() {
@@ -111,24 +113,30 @@ private Customer_informationService service;
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\arrow1.jpg"));
 		panel_4.add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("Main");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnMain = new JButton("Main");
+		btnMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actionPerformedBtnNewButton(e);
+				actionPerformedBtnMain(e);
 				
-				dispose();
 			}
 		});
-		panel_3.add(btnNewButton);
-		btnNewButton.setFont(new Font("Georgia", Font.BOLD, 12));
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setVerticalAlignment(SwingConstants.TOP);
+		panel_3.add(btnMain);
+		btnMain.setFont(new Font("Georgia", Font.BOLD, 12));
+		btnMain.setBackground(new Color(255, 255, 255));
+		btnMain.setVerticalAlignment(SwingConstants.TOP);
 		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
 		lblNewLabel.setBounds(0, -187, 1002, 735);
 		contentPane.add(lblNewLabel);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnMain) {
+			actionPerformedBtnMain(e);
+		}
+		
 	}
 
 	
@@ -147,10 +155,12 @@ private Customer_informationService service;
 		panel_1.clearTf();
 		
 	}
-	protected void actionPerformedBtnNewButton(ActionEvent e) {
-		this.flowerFrm = new FlowerFrm();
+	protected void actionPerformedBtnMain(ActionEvent e) {
+//		this.flowerFrm = new FlowerFrm();
 		FlowerFrm frame = new FlowerFrm();
 		frame.setResizable(false);
+		frame.setVisible(true);
+		dispose();
 		
 
 	}

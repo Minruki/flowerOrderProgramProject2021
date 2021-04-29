@@ -30,10 +30,14 @@ import flowerOrderProgramProject.ui.content.SearchPage_main;
 public class FlowerFrm extends JFrame implements ActionListener{
 	private JButton btnOrder;
 	private JButton btnCI;
+	private JButton btnConfirm;
+	private JButton btnFs;
+	private JButton btnSD;
+	private JButton btnLog;
     
 	public FlowerFrm() {
     	initialize();
-    }
+    	}
 	
     private void initialize() {
     	setTitle("Main Page");
@@ -58,54 +62,28 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnCI = new JButton("Join New");
     	btnCI.addActionListener(this);
     	
-    	JButton btnConfirm = new JButton("Confirmation");
-    	btnConfirm.addActionListener(new ActionListener() {
-    		public void actionPerformed(ActionEvent e) {
-    			actionPerformedBtnConfirm(e);
-    			dispose();
-    		}
-    	});
+    	btnConfirm = new JButton("Confirmation");
+    	btnConfirm.addActionListener(this);
     	btnConfirm.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnConfirm);
     	btnCI.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnCI);
     	
-    	JButton btnFs = new JButton("Manage Flowers");
-    	btnFs.addActionListener(new ActionListener() {
-    		public void actionPerformed(ActionEvent e) {
-    			Detailview frame = new Detailview();
-    			frame.setResizable(false);
-    			frame.setVisible(true);
-    			dispose();
-    			
-    			
-    		}
-    	});
+    	btnFs = new JButton("Manage Flowers");
+    	btnFs.addActionListener(this);
     	panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
    
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnFs);
     	
-    	JButton btnSD = new JButton("View All");
-    	btnSD.addActionListener(new ActionListener() {
-    		public void actionPerformed(ActionEvent e) {
-    			SearchPage_main frame = new SearchPage_main();
-    			frame.setResizable(false);
-				frame.setVisible(true);
-				dispose();
-				
-    		}
-    		
-    	});
+    	btnSD = new JButton("View All");
+    	btnSD.addActionListener(this);
     	btnSD.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnSD);
     	
-    	JButton btnLog = new JButton("LogOut");
-    	btnLog.addActionListener(new ActionListener() {
-    		public void actionPerformed(ActionEvent e) {
-    			actionPerformedBtnLog(e);
-    		}
-    	});
+    	btnLog = new JButton("LogOut");
+    	btnLog.addActionListener(this);
+    		
     	btnLog.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnLog);
     	panel.add(panel_1);
@@ -114,27 +92,57 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	lblNewLabel.setIcon(new ImageIcon("C:\\workspace_proj\\flowerOrderProgramProject (8)\\flowerOrderProgramProject\\flowerOrderProgramProject2021\\image\\flowershop1.jpg"));
     	panel.add(lblNewLabel);
     }
+    
+    
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnCI) {
-			actionPerformedBtn02(e);
+			actionPerformedBtnCI(e);
 		}
 		if (e.getSource() == btnOrder) {
-			actionPerformedBtn01(e);
+			actionPerformedBtnOrder(e);
 		}
+		if (e.getSource() == btnConfirm) {
+			actionPerformedBtnConfirm(e);
+		}
+		if (e.getSource() == btnFs) {
+			actionPerformedBtnFs(e);
+		}
+	
+		if (e.getSource() == btnSD) {
+			actionPerformedBtnSD(e);
+		}
+		
+		if (e.getSource() == btnLog) {
+			actionPerformedBtnLog(e);
+		}
+		
+	
+		
 	}
-	protected void actionPerformedBtn01(ActionEvent e) {
+	
+	
+	
+	protected void actionPerformedBtnOrder(ActionEvent e) {
+
 		OrderPage frame = new OrderPage();
+
 		frame.setResizable(false);
 		frame.setVisible(true);
 		this.dispose();
 	}
-	protected void actionPerformedBtn02(ActionEvent e) {
+	
+	
+	protected void actionPerformedBtnCI(ActionEvent e) {
+
 		CustomerInfo frame = new CustomerInfo();
+		
 		frame.setResizable(false);
 		frame.setVisible(true);
 		this.dispose();
 		
 	}
+	
+	
 	protected void actionPerformedBtnLog(ActionEvent e) {
 		
 		LogoutPageMain frame = new LogoutPageMain();
@@ -145,11 +153,23 @@ public class FlowerFrm extends JFrame implements ActionListener{
 		
 	}
 	
+	protected void actionPerformedBtnFs(ActionEvent e) {
+	
+		Detailview frame = new Detailview();
+
+		frame.setVisible(true);
+		frame.setResizable(false);
+		this.dispose();
+		
+	}
+	
 	protected void actionPerformedBtnSD(ActionEvent e) {
+	
 		SearchPage_main frame = new SearchPage_main();
+
 		frame.setResizable(false);
 		frame.setVisible(true);
-		dispose();
+		this.dispose();
 		
 	}
 	

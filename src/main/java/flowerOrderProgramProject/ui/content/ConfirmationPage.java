@@ -39,17 +39,7 @@ public class ConfirmationPage extends JFrame {
 	private JTextField lblTotal3;
 	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ConfirmationPage frame = new ConfirmationPage();
-					frame.setResizable(false);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
 	}
 
 	public ConfirmationPage() {
