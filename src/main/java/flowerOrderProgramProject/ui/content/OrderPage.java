@@ -466,6 +466,7 @@ public class OrderPage extends JFrame {
 
 	private Order_program getReceipt() {
 		Order_program op = new Order_program();
+		op.setOrder_number(tfOrderNo.getText().trim());
 		op.setOrder_date(dateChooser_1.getDate());
 		op.setId(new Customer_information(tfId.getText()));
 		op.setFlower_code(new Flower_information(tfOL.getTextField().getText().substring(0, tfOL.getTextField().getText().indexOf(",")-2)));

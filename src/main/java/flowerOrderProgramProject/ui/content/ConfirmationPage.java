@@ -87,6 +87,8 @@ public class ConfirmationPage extends JFrame {
 		ConfirmPanel panel = new ConfirmPanel();
 		scrollPane.setViewportView(panel);
 		panel.loadData();
+		
+		
 		////////////////////////////////////////////////////////
 
 		JPanel panel_1 = new JPanel();

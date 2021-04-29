@@ -21,7 +21,7 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 	}
 
 	private void initialize() {
-		table.setFont(new Font("굴림", Font.PLAIN, 15));
+		table.setFont(new Font("굴림", Font.PLAIN, 13));
 		table.getTableHeader().setFont(new Font("SanSerif", Font.BOLD, 13));
 		table.getTableHeader().setForeground(Color.WHITE);
 		table.getTableHeader().setBackground(Color.BLACK);

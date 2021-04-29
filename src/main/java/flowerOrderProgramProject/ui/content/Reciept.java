@@ -57,6 +57,7 @@ public class Reciept extends JFrame {
 		contentPane.setLayout(null);
 		
 		panel_1 = new RecieptPanel();
+		panel_1.setBackground(new Color(255, 240, 245));
 		panel_1.setBounds(12, 10, 405, 343);
 		contentPane.add(panel_1);
 		
