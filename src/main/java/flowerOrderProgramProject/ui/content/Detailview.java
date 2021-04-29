@@ -24,6 +24,7 @@ import flowerOrderProgramProject.dto.Flower_information;
 import flowerOrderProgramProject.panel.Flowerpricelist;
 import flowerOrderProgramProject.service.Flower_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class Detailview extends JFrame {
@@ -156,6 +157,7 @@ public class Detailview extends JFrame {
 		FunctionPanel.add(btnDel);
 		
 		tfResult = new JList<>();
+		tfResult.setFont(new Font("굴림", Font.PLAIN, 15));
 		tfResult.setModel(model);
 		ListViewPanel.add(tfResult, BorderLayout.CENTER);
 	}

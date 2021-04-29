@@ -26,6 +26,7 @@ public class Flowerpricelist extends JPanel {
 		add(lblNewLabel);
 		
 		tfFlowerCode = new JTextField();
+		tfFlowerCode.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfFlowerCode);
 		tfFlowerCode.setColumns(10);
 		
@@ -34,6 +35,7 @@ public class Flowerpricelist extends JPanel {
 		add(lblNewLabel_1);
 		
 		tfFlowerName = new JTextField();
+		tfFlowerName.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfFlowerName);
 		tfFlowerName.setColumns(10);
 		
@@ -42,6 +44,7 @@ public class Flowerpricelist extends JPanel {
 		add(lblNewLabel_2);
 		
 		tfFlowerPrice = new JTextField();
+		tfFlowerPrice.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfFlowerPrice);
 		tfFlowerPrice.setColumns(10);
 

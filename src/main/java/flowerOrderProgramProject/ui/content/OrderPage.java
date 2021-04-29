@@ -220,6 +220,7 @@ public class OrderPage extends JFrame {
 		panel.add(lblNewLabel_7);
 		
 		tfOrderNo = new JTextField();
+		tfOrderNo.setHorizontalAlignment(SwingConstants.RIGHT);
 		writePanel.add(tfOrderNo);
 		tfOrderNo.setColumns(10);
 		
@@ -272,6 +273,7 @@ public class OrderPage extends JFrame {
 		
 	
 		resultPricePanel = new resultPricepanel();
+		resultPricePanel.getTfResultPrice().setHorizontalAlignment(SwingConstants.RIGHT);
 		writePanel.add(resultPricePanel);
 		
 		tfNo = new JButton();

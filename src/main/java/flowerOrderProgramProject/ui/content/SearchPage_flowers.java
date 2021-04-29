@@ -22,6 +22,8 @@ import flowerOrderProgramProject.service.Flower_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Flower_information_panel;
 import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class SearchPage_flowers extends JFrame implements ActionListener {
@@ -90,6 +92,7 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		contentPane.add(panel_search);
 		
 		tfSearch = new JTextField();
+		tfSearch.setFont(new Font("굴림", Font.BOLD, 15));
 		panel_search.add(tfSearch);
 		tfSearch.setColumns(20);
 		
@@ -127,6 +130,7 @@ public class SearchPage_flowers extends JFrame implements ActionListener {
 		panel_2.add(lblPrice);
 		
 		tfPrice = new JTextField();
+		tfPrice.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_2.add(tfPrice);
 		tfPrice.setColumns(10);
 		

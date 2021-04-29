@@ -85,10 +85,12 @@ public class FlowerLoginView extends JFrame{
         panel.add(lblPass);
        
         textId = new JTextField(20);
+        textId.setFont(new Font("굴림", Font.BOLD, 15));
         textId.setBounds(470, 54, 212, 30);
         panel.add(textId);
        
         textpass = new JPasswordField(20);
+        textpass.setFont(new Font("굴림", Font.PLAIN, 15));
         textpass.setBounds(470, 118, 212, 30);
         panel.add(textpass);
         textpass.addActionListener(new ActionListener() {          

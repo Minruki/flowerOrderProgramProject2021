@@ -15,6 +15,7 @@ public class Flower_information_panel extends AbstractCustomTablePanel<Flower_in
 		initialize();
 	}
 	private void initialize() {
+		table.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));
 		table.getTableHeader().setForeground(Color.black);
 		table.getTableHeader().setBackground(Color.pink);

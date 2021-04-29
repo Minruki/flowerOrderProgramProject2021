@@ -26,6 +26,7 @@ import flowerOrderProgramProject.service.Customer_informationService;
 import flowerOrderProgramProject.ui.FlowerFrm;
 import flowerOrderProgramProject.view.Customer_information_panel;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class SearchPage_info extends JFrame implements ActionListener{
@@ -146,6 +147,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		panel_2.add(lblNewLabel_4);
 		
 		tfCusAmount = new JTextField();
+		tfCusAmount.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_2.add(tfCusAmount);
 		tfCusAmount.setColumns(10);
 		
@@ -192,7 +194,7 @@ public class SearchPage_info extends JFrame implements ActionListener{
 		panel_1.setBackground(Color.WHITE);
 		contentPane.add(panel_1);
 		
-		JButton btnBack = new JButton("◀ Main");
+		JButton btnBack = new JButton("◀ Back");
 		
 		btnBack.setBackground(new Color(255, 255, 255));
 		btnBack.addActionListener(new ActionListener() {

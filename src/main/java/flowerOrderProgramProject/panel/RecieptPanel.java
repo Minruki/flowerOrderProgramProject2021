@@ -38,6 +38,7 @@ public class RecieptPanel extends JPanel {
 		add(lblNewLabel_4);
 		
 		lbl1 = new JLabel("");
+		lbl1.setFont(new Font("맑은 고딕", Font.BOLD, 12));
 		add(lbl1);
 		
 		lbl6 = new JLabel("▒ Id >>>  ");
@@ -45,6 +46,7 @@ public class RecieptPanel extends JPanel {
 		add(lbl6);
 		
 		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		add(lblNewLabel_6);
 		
 		lblNewLabel = new JLabel("▒ Flower_code >>>  ");
@@ -54,6 +56,7 @@ public class RecieptPanel extends JPanel {
 		add(lblNewLabel);
 		
 		lbl2 = new JLabel("");
+		lbl2.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		add(lbl2);
 		
 		lblNewLabel_1 = new JLabel("▒ Order_count >>>  ");
@@ -62,6 +65,7 @@ public class RecieptPanel extends JPanel {
 		add(lblNewLabel_1);
 		
 		lbl3 = new JLabel("");
+		lbl3.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		add(lbl3);
 		
 		lblNewLabel_3 = new JLabel("▒ Choice >>>");
@@ -69,6 +73,7 @@ public class RecieptPanel extends JPanel {
 		add(lblNewLabel_3);
 		
 		lbl5 = new JLabel("");
+		lbl5.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		add(lbl5);
 		
 		lblNewLabel_2 = new JLabel("▒ Sale_Price >>>  ");
@@ -77,6 +82,7 @@ public class RecieptPanel extends JPanel {
 		add(lblNewLabel_2);
 		
 		lbl4 = new JLabel("");
+		lbl4.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		add(lbl4);
 	}
 	
