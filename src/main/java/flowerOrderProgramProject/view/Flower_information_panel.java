@@ -42,7 +42,8 @@ public class Flower_information_panel extends AbstractCustomTablePanel<Flower_in
 	@Override
 	protected void setAlignAndWidth() {
 		// 컬럼내용 정렬
-		setTableCellAlign(SwingConstants.CENTER, 0, 1, 2);
+		setTableCellAlign(SwingConstants.CENTER, 0, 1);
+		setTableCellAlign(SwingConstants.RIGHT, 2);
 	
 
 		// 컬럼별 너비 조정

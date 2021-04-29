@@ -33,6 +33,7 @@ public class CustomerPanel extends JPanel {
 		add(lblid);
 
 		tfid = new JTextField();
+		tfid.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfid);
 		tfid.setColumns(10);
 
@@ -41,6 +42,7 @@ public class CustomerPanel extends JPanel {
 		add(lblname);
 
 		tfMember_name = new JTextField();
+		tfMember_name.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfMember_name);
 		tfMember_name.setColumns(10);
 
@@ -49,6 +51,7 @@ public class CustomerPanel extends JPanel {
 		add(lblphonenumber);
 
 		tfPhone_number = new JTextField();
+		tfPhone_number.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(tfPhone_number);
 		tfPhone_number.setColumns(10);
 
@@ -57,6 +60,7 @@ public class CustomerPanel extends JPanel {
 		add(lblcumulativemoney);
 
 		tfCumulative_amount = new JTextField();
+		tfCumulative_amount.setHorizontalAlignment(SwingConstants.RIGHT);
 		tfCumulative_amount.setColumns(10);
 		add(tfCumulative_amount);
 
@@ -65,6 +69,7 @@ public class CustomerPanel extends JPanel {
 		add(lblmembership);
 
 		tfMembership_title = new JTextField();
+		tfMembership_title.setHorizontalAlignment(SwingConstants.RIGHT);
 		tfMembership_title.setColumns(10);
 		add(tfMembership_title);
 	}

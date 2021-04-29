@@ -45,8 +45,8 @@ public class ConfirmPanel  extends AbstractCustomTablePanel<Order_program> {
 	@Override
 	protected void setAlignAndWidth() {
 		// 컬럼내용 정렬
-		setTableCellAlign(SwingConstants.CENTER, 0, 1, 2, 3, 4, 5, 6, 7);
-	 
+		setTableCellAlign(SwingConstants.CENTER, 0, 1, 2, 3, 4, 5, 6);
+		setTableCellAlign(SwingConstants.RIGHT, 7);
 
 		// 컬럼별 너비 조정
 		setTableCellWidth(40, 100, 90, 90, 100, 100, 80, 100);

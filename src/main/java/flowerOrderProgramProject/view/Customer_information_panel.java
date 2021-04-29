@@ -45,8 +45,8 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 	@Override
 	protected void setAlignAndWidth() {
 		// 컬럼내용 정렬
-		setTableCellAlign(SwingConstants.CENTER, 0, 1, 4);
-		setTableCellAlign(SwingConstants.CENTER, 2,3);
+		setTableCellAlign(SwingConstants.CENTER, 0, 1, 2, 3);
+		setTableCellAlign(SwingConstants.RIGHT, 4);
 
 		// 컬럼별 너비 조정
 		setTableCellWidth(50, 50, 70, 50, 50);
@@ -58,8 +58,8 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 				t.getId(),
 				t.getMember_name(),
 				t.getPhone_number(),
-				String.format("%,d", t.getCumulative_amount()),
-				t.getMembership_title()
+				t.getMembership_title(),
+				String.format("%,d", t.getCumulative_amount())
 		};
 	}
 
@@ -69,8 +69,9 @@ public class Customer_information_panel extends AbstractCustomTablePanel<Custome
 				"Id",
 				"Member Name",
 				"Phone Number",
-				"Cumulative amount",
-				"Membership"
+				"Membership",
+				"Cumulative amount"
+				
 		};
 	}
 	
